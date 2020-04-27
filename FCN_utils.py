@@ -76,7 +76,8 @@ def run_training(dataset,
     valid_labels = labels[train_size:]
     
     # Uso do meu callback para pegar o tempo por iteração
-    iter_time = EpochTime()
+    iter_time = CountTime()
+    epoch_time = EpochTime()
     new_model = FCN_Lenet5(num_labels=num_labels, keep_prob=keep_prob, weightsPath=weightsPath, img_shape=img_shape)
     sgd = optimizers.SGD(lr=learning_rate, decay=decay_rate, momentum=momentum, nesterov=False)
     if num_gpus == 1 or num_gpus == 0:
@@ -110,9 +111,9 @@ def run_training(dataset,
         #checkpointer = ModelCheckpoint(weigths_file, monitor='val_loss', verbose=1, save_best_only=True, save_weights_only=False, mode='min', period=1)
         early_stopping = EarlyStopping(monitor='val_acc', min_delta=0.001, patience=5, verbose=0, mode='auto', baseline=0.9000, restore_best_weights=False)
         if num_gpus == 1 or num_gpus == 0:
-            history = new_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[early_stopping, iter_time])
+            history = new_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[epoch_time, iter_time])
         else:
-            history = parallel_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[early_stopping, iter_time])
+            history = parallel_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[epoch_time, iter_time])
     
         print("Modelo salvo:" + save_file)
         new_model.save(save_file, overwrite=True)
