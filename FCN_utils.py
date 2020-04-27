@@ -76,7 +76,7 @@ def run_training(dataset,
     valid_labels = labels[train_size:]
     
     # Uso do meu callback para pegar o tempo por iteração
-    iter_time = CountTime()
+    iter_time = EpochTime()
     new_model = FCN_Lenet5(num_labels=num_labels, keep_prob=keep_prob, weightsPath=weightsPath, img_shape=img_shape)
     sgd = optimizers.SGD(lr=learning_rate, decay=decay_rate, momentum=momentum, nesterov=False)
     if num_gpus == 1 or num_gpus == 0:

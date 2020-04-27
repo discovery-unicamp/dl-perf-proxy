@@ -76,4 +76,42 @@ class CountTime(Callback):
 
 			self.val_init_time = time.time()
 			self.first_valid = False
-		
+
+class IterTime(Callback):
+	def __init__(self,
+		count = 0,
+		final_time = 0.0,
+		init_time = 0.0
+		):
+	
+		self.count = count
+		self.final_time = final_time
+		self.init_time = init_time
+
+	def on_train_batch_begin(self, batch, logs=None):
+		if self.count > 0:
+			self.final_time = time.time() - self.init_time
+			print('\n{} step training time: {}s'.format(self.count, self.final_time))
+			print('\nReal time: {}'.format(time.time()))
+
+		self.init_time = time.time()		
+
+		self.count = self.count + 1
+
+class EpochTime(Callback):
+	def __init__(self,
+		final_time = 0.0,
+		init_time = 0.0):
+
+		self.final_time = final_time
+		self.init_time = init_time
+
+	def on_epoch_begin(self, epoch, logs=None):
+		print('\nReal time: {}'.format(time.time()))
+		self.init_time = time.time()		
+
+
+	def on_epoch_end(self, epoch, logs=None):
+
+		self.final_time = time.time() - self.init_time
+		print('\nEpoch time: {}s'.format(self.final_time))
