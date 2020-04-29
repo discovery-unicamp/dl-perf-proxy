@@ -14,6 +14,10 @@ do
     done
     (( batch *= 2 ))
     i=1
-done 
+done
+mkdir "numgpu-$num_gpus"
+mv "result-$num_gpus"* "numgpu-$num_gpus"
+aws s3 cp "numgpu-$num_gpus" s3://fcncloudml/ec2-experiments/"numgpu-$num_gpus" --recursive
+python stop-instance.py 
 conda deactivate
 #sudo shutdown now
