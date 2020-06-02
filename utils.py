@@ -8,7 +8,6 @@ import pymei as pm
 import matplotlib.pyplot as plt
 import random
 import os
-import sys
 from six.moves import cPickle as pickle
 from scipy import ndimage
 #import sys
@@ -151,24 +150,24 @@ def normalize_as_pic(stack, verbose=True):
 	return stack
 
 def clip_std(stack, max_std = None):
-	""" Realiza um clip no dado por desvio padrao
-	Args: 
-		stack: numpy.array contendo od dados do empilhamento (sem cabeçalho)
-		max_std: valor pelo qual quer multiplicar o desvio padrao para fazer o clip
-			Default: None
-	"""
-	if not max_std is None:
-		#Faz o clip do dado
-		max = stack.std() * max_std
-		min = -max
-		stack = np.clip(stack, min, max)
-		
-		#imprime os novos valores de minimo e maximo do dado
-		print("\n Caracteristicas do Clip:")
-		print("- minimo:", min)
-		print("- maximo:", max)
-	  
-	return stack
+    """ Realiza um clip no dado por desvio padrao
+    Args: 
+        stack: numpy.array contendo od dados do empilhamento (sem cabeçalho)
+        max_std: valor pelo qual quer multiplicar o desvio padrao para fazer o clip
+            Default: None
+    """
+    if not max_std is None:
+        #Faz o clip do dado
+        max = stack.std() * max_std
+        min = -max
+        stack = np.clip(stack, min, max)
+        
+        #imprime os novos valores de minimo e maximo do dado
+        print("\n Caracteristicas do Clip:")
+        print("- minimo:", min)
+        print("- maximo:", max)
+      
+    return stack
 
 
 
@@ -237,132 +236,132 @@ def std_normalize(stack, verbose=True):
 	return stack
 
 def range_normalize_std(stack, verbose=True, max_std = None):
-	"""Normaliza o empilhamento para um intervalo de [-1,1] com a opcao de dar clip
-	no dado de entrada em relacao ao desvio padrao
+    """Normaliza o empilhamento para um intervalo de [-1,1] com a opcao de dar clip
+    no dado de entrada em relacao ao desvio padrao
 
-	Args:
-		stack: numpy.array contendo os dados do empilhamento (sem cabeçalho)
-		verbose: se gostaria de imprimir informações pré e pós empilhamento.
-			Default: True
-		max_std: realiza clip do dado multiplicando esse valor pelo desvio padrao
-			Defaut: None
+    Args:
+        stack: numpy.array contendo os dados do empilhamento (sem cabeçalho)
+        verbose: se gostaria de imprimir informações pré e pós empilhamento.
+            Default: True
+        max_std: realiza clip do dado multiplicando esse valor pelo desvio padrao
+            Defaut: None
 
-	Retorno:
-		stack: dado normalizado
-	"""
-	if (verbose):
-		print("Caracteristicas pre-normalizacao:")
-		print(" - minimo:", stack.min())
-		print(" - maximo:", stack.max())
-		print(" - media:", stack.mean())
-		print(" - desvio padrao:", stack.std())
-	
-	#Clip no dado a partir do desvio padrao 
-	stack = clip_std(stack, max_std)
-	
-	# Normaliza o dado para ficar entre o iteralo de [-1,1]
-	mean = np.mean(stack)
-	maximum = np.max(stack)
-	minimum = np.min(stack)
-	stack = stack / max(maximum, abs(minimum))
+    Retorno:
+        stack: dado normalizado
+    """
+    if (verbose):
+        print("Caracteristicas pre-normalizacao:")
+        print(" - minimo:", stack.min())
+        print(" - maximo:", stack.max())
+        print(" - media:", stack.mean())
+        print(" - desvio padrao:", stack.std())
+    
+    #Clip no dado a partir do desvio padrao 
+    stack = clip_std(stack, max_std)
+    
+    # Normaliza o dado para ficar entre o iteralo de [-1,1]
+    mean = np.mean(stack)
+    maximum = np.max(stack)
+    minimum = np.min(stack)
+    stack = stack / max(maximum, abs(minimum))
 
-	if (verbose):
-		print("\nCaracteristicas pos-normalizacao:")
-		print(" - minimo:", stack.min())
-		print(" - maximo:", stack.max())
-		print(" - media:", stack.mean())
-		print(" - desvio padrao:", stack.std())
-	return stack
+    if (verbose):
+        print("\nCaracteristicas pos-normalizacao:")
+        print(" - minimo:", stack.min())
+        print(" - maximo:", stack.max())
+        print(" - media:", stack.mean())
+        print(" - desvio padrao:", stack.std())
+    return stack
 
 
 def cut_off_dataset_top(dataset, labels, label, max_height=0.25, max_width= 1.0, min_height= 0, min_width = 0, crop_type='bottom' ):
-	"""Normaliza o empilhamento para um intervalo de [-1,1] com a opcao de dar clip
-	no dado de entrada em relacao ao desvio padrao
+    """Normaliza o empilhamento para um intervalo de [-1,1] com a opcao de dar clip
+    no dado de entrada em relacao ao desvio padrao
 
-	Args:
-		dataset: 
-		labels: 
-		label: Qual a label que quer setar como verdadeira
-		label: realiza clip do dado multiplicando esse valor pelo desvio padrao
-		max_height: Porcentagem maxima da imagem que a altura do o retangulo de cutoff pode ter
-		min_height: Porcentagem minima da imagem que a altura do o retangulo de cutoff pode ter
-		max_width: Porcentagem maxima da imagem que a largura do o retangulo de cutoff pode ter
-		min_width: Porcentagem minima da imagem que a largura do o retangulo de cutoff pode ter
-		crop_type: Local onde quer fazer o cut off, temos as opções:
-			'bottom': Defaut. Faz o cut off na região inferior da imagem
-			'top': Faz o cut off na região superior da imagem
-			'middle': Faz o cut off na região central da imagem
-			
-	Retorno:
-		stack: dado normalizado
-	"""
-	dataset_size = len(dataset)
-	new_dataset = np.zeros_like(dataset)
-	new_labels = np.zeros_like(labels)
-		
-	new_labels[:, label] = 1.0
-		
-	mask = np.ones_like(dataset)
+    Args:
+        dataset: 
+        labels: 
+        label: Qual a label que quer setar como verdadeira
+        label: realiza clip do dado multiplicando esse valor pelo desvio padrao
+        max_height: Porcentagem maxima da imagem que a altura do o retangulo de cutoff pode ter
+        min_height: Porcentagem minima da imagem que a altura do o retangulo de cutoff pode ter
+        max_width: Porcentagem maxima da imagem que a largura do o retangulo de cutoff pode ter
+        min_width: Porcentagem minima da imagem que a largura do o retangulo de cutoff pode ter
+        crop_type: Local onde quer fazer o cut off, temos as opções:
+            'bottom': Defaut. Faz o cut off na região inferior da imagem
+            'top': Faz o cut off na região superior da imagem
+            'middle': Faz o cut off na região central da imagem
+            
+    Retorno:
+        stack: dado normalizado
+    """
+    dataset_size = len(dataset)
+    new_dataset = np.zeros_like(dataset)
+    new_labels = np.zeros_like(labels)
+        
+    new_labels[:, label] = 1.0
+        
+    mask = np.ones_like(dataset)
    
-	for i in range(len(mask)):
-		height = random.randint(int(dataset.shape[1] * min_height), int(dataset.shape[1] * max_height))
-		width = random.randint(int(dataset.shape[2] * min_width), int(dataset.shape[2] * max_width))		
-	
-		left = (dataset.shape[2] - width)/2
-		right = left + width 
-	
-		if crop_type == 'bottom':
-			bottom = dataset.shape[2]	
-			top = bottom - height
-		elif crop_type == 'top':
-			bottom = height
-			top = 0
-		elif crop_type == 'middle':
-			middle_data = int((dataset.shape[2])/2)
-			height = int(height/2)
-			
-			bottom = middle_data + height
-			top = middle_data - height
-			
-		mask[i, top:bottom, left:right] = 0
+    for i in range(len(mask)):
+        height = random.randint(int(dataset.shape[1] * min_height), int(dataset.shape[1] * max_height))
+        width = random.randint(int(dataset.shape[2] * min_width), int(dataset.shape[2] * max_width))        
+    
+        left = (dataset.shape[2] - width)/2
+        right = left + width 
+    
+        if crop_type == 'bottom':
+            bottom = dataset.shape[2]    
+            top = bottom - height
+        elif crop_type == 'top':
+            bottom = height
+            top = 0
+        elif crop_type == 'middle':
+            middle_data = int((dataset.shape[2])/2)
+            height = int(height/2)
+            
+            bottom = middle_data + height
+            top = middle_data - height
+            
+        mask[i, top:bottom, left:right] = 0
 
-	mask = dataset * mask
+    mask = dataset * mask
 
-	new_dataset = np.concatenate((dataset, mask), axis=0)
-	new_labels = np.concatenate((labels, new_labels), axis=0)
-		
-	return new_dataset, new_labels		
-	
+    new_dataset = np.concatenate((dataset, mask), axis=0)
+    new_labels = np.concatenate((labels, new_labels), axis=0)
+        
+    return new_dataset, new_labels        
+    
 def flip_dataset(dataset, labels):
-	print("Espelhamento das amostras flip")
-	dataset_size = dataset.shape[0]
-	new_dataset = np.zeros_like(dataset)
-	new_labels = np.zeros_like(labels)
-		
-	
-	for i in range(dataset_size):
-		new_dataset[i] = np.flip(dataset[i], 1)
-		new_labels[i] = labels[i]
-	
-	return new_dataset, new_labels
+    print("Espelhamento das amostras flip")
+    dataset_size = dataset.shape[0]
+    new_dataset = np.zeros_like(dataset)
+    new_labels = np.zeros_like(labels)
+        
+    
+    for i in range(dataset_size):
+        new_dataset[i] = np.flip(dataset[i], 1)
+        new_labels[i] = labels[i]
+    
+    return new_dataset, new_labels
 
 
 def negative_dataset(dataset, labels):
-	print("Espelhamento das amostras flip")
-	
-	dataset_size = len(dataset)
-	new_dataset = np.zeros_like(dataset)
-	new_labels = np.zeros_like(labels)
-		
-	new_labels = labels
-	
-	new_dataset = -1 * dataset
-		  
-	return new_dataset, new_labels
+    print("Espelhamento das amostras flip")
+    
+    dataset_size = len(dataset)
+    new_dataset = np.zeros_like(dataset)
+    new_labels = np.zeros_like(labels)
+        
+    new_labels = labels
+    
+    new_dataset = -1 * dataset
+          
+    return new_dataset, new_labels
 
 def clip_seismic_image(seismic_image, clip_percent=1):
-	seismic_image_clip = np.clip(seismic_image, seismic_image.min() * clip_percent, seismic_image.max() * clip_percent)
-	return seismic_image_clip
+    seismic_image_clip = np.clip(seismic_image, seismic_image.min() * clip_percent, seismic_image.max() * clip_percent)
+    return seismic_image_clip
 
 def generate_samples(stack, window_size, picks_coord, label=0, num_classes=2, verbose=True):
 	"""Extrai as amostras rotuladas do empilhamento.
@@ -426,7 +425,7 @@ def generate_samples_zoom(stack, window_size, picks_coord, label, num_classes=2,
 	"""
 	half_size = window_size // 2 # Divisão inteira
 	dataset_size = len(picks_coord)
-	zoom_size = len(zoom_list)	
+	zoom_size = len(zoom_list)    
 	dataset = np.zeros((zoom_size*dataset_size, window_size, window_size))
 	labels = np.zeros((zoom_size*dataset_size, num_classes), dtype=np.float32)
 	# Transforma o label no formato one-hot
@@ -448,7 +447,7 @@ def generate_samples_zoom(stack, window_size, picks_coord, label, num_classes=2,
 			tmin = trace_index - half_size_zoom
 			stack_cmin = max(0, tmin)
 			stack_cmax = min(tmin + window_size_zoom, stack.shape[1])
-			
+            
 			zoom = float(window_size)/float(window_size_zoom)
 			data = ndimage.zoom(stack[stack_rmin:stack_rmax, stack_cmin:stack_cmax],zoom, order=0, mode='nearest')
 			dataset[j, 0:data.shape[0], 0:data.shape[1]] = data
@@ -851,8 +850,8 @@ def load_pickle(pickle_file):
 	Retorno:
 		Dicionário com pares { nome do dado : conteúdo }
 	"""
-
-	#sys.setdefaultencoding('utf8')
+    #reload(sys)
+    #sys.setdefaultencoding('utf8')
 	with open(pickle_file, 'rb') as f:
 		data_dic = pickle.load(f)
 	print('Dados carregados de', pickle_file)

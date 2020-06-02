@@ -13,7 +13,7 @@ class CountTime(Callback):
 			first_two = True,
 			val_init_time = 0.0,
 			first_valid = True):
-	
+
 		self.count = count
 		self.final_time = final_time
 		self.init_time = init_time
@@ -23,37 +23,24 @@ class CountTime(Callback):
 		self.first_valid = first_valid
 
 	def on_train_batch_begin(self, batch, logs=None):
-		if self.count == 11:
+		if self.count > 1:
 			self.final_time = time.time() - self.init_time
-			print('\n10 steps training: {}s'.format(self.final_time))
-			print('\nReal time: {}'.format(time.time()))
-			self.count = 1
-
-		if self.count == 1:
-			self.init_time = time.time()
-
-		if self.first_two: 
-			if self.count > 1:
-				print('\nStep {} : {}s'.format(self.count-1, time.time()-self.init_time_per_step))
-				if self.count > 2:
-					self.first_two = False
-			self.init_time_per_step = time.time()				
-
+                        print('\n{} step training time: {}s'.format(self.count-1, self.final_time))
+                self.init_time = time.time()
 		self.count = self.count + 1
 
 	def on_epoch_begin(self, epoch, logs=None):
 		self.first_two = True
 		self.count = 1
-			
 
 	def on_epoch_end(self, epoch, logs=None):
-		self.final_time = time.time() - self.init_time
-		print('\n{} steps training: {}s'.format(self.count-1, self.final_time))
-
-		validation_time = time.time() - self.val_init_time
-		print("Validation time: {}".format(validation_time))
-		print('\nReal time: {}'.format(time.time()))
+                end_time = time.time()
+		validation_time = end_time - self.val_init_time
+		print("Validation time: {}s".format(validation_time))
+		print('\nReal time: {}s'.format(end_time))
 		self.first_valid = True
+		self.first_two = True
+		self.count = 1
 
 
 
@@ -73,6 +60,8 @@ class CountTime(Callback):
 		"""
 
 		if self.first_valid:
+                        self.final_time = time.time() - self.init_time
+                        print('\n{} step training time: {}s'.format(self.count-1, self.final_time))
 
 			self.val_init_time = time.time()
 			self.first_valid = False
@@ -81,20 +70,19 @@ class IterTime(Callback):
 	def __init__(self,
 		count = 0,
 		final_time = 0.0,
-		init_time = 0.0
+		init_time = 0.0,
 		):
-	
+
 		self.count = count
 		self.final_time = final_time
 		self.init_time = init_time
-
-	def on_train_batch_begin(self, batch, logs=None):
+	def on_batch_begin(self, batch, logs=None):
 		if self.count > 0:
 			self.final_time = time.time() - self.init_time
 			print('\n{} step training time: {}s'.format(self.count, self.final_time))
 			print('\nReal time: {}'.format(time.time()))
 
-		self.init_time = time.time()		
+		self.init_time = time.time()
 
 		self.count = self.count + 1
 
@@ -108,7 +96,7 @@ class EpochTime(Callback):
 
 	def on_epoch_begin(self, epoch, logs=None):
 		print('\nReal time: {}'.format(time.time()))
-		self.init_time = time.time()		
+		self.init_time = time.time()
 
 
 	def on_epoch_end(self, epoch, logs=None):

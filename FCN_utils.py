@@ -1,14 +1,12 @@
-# -*- coding: utf-8 -*-
-
 import keras
 from keras.models import Model, Sequential
 from keras.layers import Dense, Activation, Dropout, Conv2D, MaxPooling2D, Flatten, Input
-from keras.callbacks import ModelCheckpoint, EarlyStopping, Callback
+from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.utils import multi_gpu_model
 from keras import optimizers, regularizers
 import tensorflow
 from custom_callback import *
-
+import time
 
 def FCN_Lenet5(num_labels, keep_prob=1.0, weightsPath=None, img_shape=None):
    #Define o tamanho da entrada da rede
@@ -61,12 +59,13 @@ def run_training(dataset,
                  train_size=None,
                  target_size=None,
                  validation_data=None): 
+    
     init_time = time.time()
-    
     img_shape = (dataset.shape[1], dataset.shape[2], dataset.shape[3])
+
     
-    #run_options = tensorflow.RunOptions(trace_level=tensorflow.RunOptions.FULL_TRACE)
-    #run_metadata= tensorflow.RunMetadata()
+    run_options = tensorflow.RunOptions(trace_level=tensorflow.RunOptions.FULL_TRACE)
+    run_metadata= tensorflow.RunMetadata()
    
     #Tamanho do resample
     valid_size = min(dataset.shape[0] - train_size, batch_size)
@@ -75,12 +74,12 @@ def run_training(dataset,
     valid_data = dataset[train_size:]
     valid_labels = labels[train_size:]
     
-    # Uso do meu callback para pegar o tempo por iteração
+    
     iter_time = CountTime()
     epoch_time = EpochTime()
     new_model = FCN_Lenet5(num_labels=num_labels, keep_prob=keep_prob, weightsPath=weightsPath, img_shape=img_shape)
     sgd = optimizers.SGD(lr=learning_rate, decay=decay_rate, momentum=momentum, nesterov=False)
-    if num_gpus == 1 or num_gpus == 0:
+    if num_gpus == 1:
         new_model.compile(optimizer=sgd,
                     loss='binary_crossentropy',
                     metrics=['accuracy'])
@@ -106,14 +105,14 @@ def run_training(dataset,
 
     if weightsPath is None:
         print("Training ...")
-        init_final_time = time.time() - init_time
-        print("Tempo de inicializacao:", init_final_time)
         #checkpointer = ModelCheckpoint(weigths_file, monitor='val_loss', verbose=1, save_best_only=True, save_weights_only=False, mode='min', period=1)
         early_stopping = EarlyStopping(monitor='val_acc', min_delta=0.001, patience=5, verbose=0, mode='auto', baseline=0.9000, restore_best_weights=False)
-        if num_gpus == 1 or num_gpus == 0:
-            history = new_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[epoch_time, iter_time])
+        if num_gpus == 1:
+            print("Tempo de inicializacao: ", time.time() - init_time)
+            history = new_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[early_stopping, iter_time, epoch_time])
         else:
-            history = parallel_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[epoch_time, iter_time])
+            print("Tempo de inicializacao: ", time.time() - init_time)
+            history = parallel_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[early_stopping, iter_time, epoch_time])
     
         print("Modelo salvo:" + save_file)
         new_model.save(save_file, overwrite=True)
