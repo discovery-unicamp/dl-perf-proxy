@@ -1,0 +1,400 @@
+/usr/bin/python 03_FCN_trainer_sm.py --batch-size 2048 --epochs 5 --file-output out.txt --num-gpus 16
+Dados carregados de /opt/ml/input/data/train/train/train_SolimoesTacutu_64x64.pickle
+ - train_labels
+ - train_dataset
+Conjunto de treinamento: (40512, 64, 64)
+
+Dados carregados de /opt/ml/input/data/train/validation/valid_SolimoesTacutu_64x64.pickle
+ - valid_labels
+ - valid_dataset
+Conjunto de validacao: (212, 64, 64)
+Nenhuma borda adicionada
+Novo formato do dado: (40512, 64, 64, 1)
+Nenhuma borda adicionada
+Novo formato do dado: (212, 64, 64, 1)
+Informacoes gerais:
+ - modelo: /opt/ml/model/FCN_9_SolimoesTacutu_64x64.ckpt
+ - Conjunto de treinamento:
+    - Total: 40512
+ - Conjunto de validacao:
+ - Tamanho do batch: 2048
+ - Numero de epocas: 5
+ - Taxa de aprendizagem inicial: 0.1
+ - Taxa de decaimento: 0.01
+ - GPUs solicitadas: 16
+Model: "model_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 64, 64, 1)         0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 60, 60, 20)        520       
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 30, 30, 20)        0         
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 26, 26, 50)        25050     
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 13, 13, 50)        0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 1, 1, 500)         4225500   
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 1, 1, 500)         0         
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 1, 1, 2)           1002      
+=================================================================
+Total params: 4,252,072
+Trainable params: 4,252,072
+Non-trainable params: 0
+_________________________________________________________________
+Training ...
+('Tempo de inicializacao: ', 7.8729448318481445)
+Train on 40512 samples, validate on 212 samples
+Epoch 1/5
+
+Real time: 1590168257.69
+
+ 2048/40512 [>.............................] - ETA: 6:50 - loss: 0.7475 - accuracy: 0.6362
+1 step training time: 21.8815398216s
+
+ 4096/40512 [==>...........................] - ETA: 3:16 - loss: 0.7338 - accuracy: 0.6897
+2 step training time: 0.205836057663s
+
+ 6144/40512 [===>..........................] - ETA: 2:04 - loss: 0.7245 - accuracy: 0.7048
+3 step training time: 0.204979896545s
+
+ 8192/40512 [=====>........................] - ETA: 1:28 - loss: 0.7013 - accuracy: 0.7152
+4 step training time: 0.206161022186s
+
+10240/40512 [======>.......................] - ETA: 1:07 - loss: 0.6838 - accuracy: 0.7233
+5 step training time: 0.204461812973s
+
+12288/40512 [========>.....................] - ETA: 52s - loss: 0.6695 - accuracy: 0.7300 
+6 step training time: 0.204688072205s
+
+14336/40512 [=========>....................] - ETA: 42s - loss: 0.6584 - accuracy: 0.7344
+7 step training time: 0.204433917999s
+
+16384/40512 [===========>..................] - ETA: 34s - loss: 0.6543 - accuracy: 0.7346
+8 step training time: 0.206999063492s
+
+18432/40512 [============>.................] - ETA: 28s - loss: 0.6480 - accuracy: 0.7366
+9 step training time: 0.205436944962s
+
+20480/40512 [==============>...............] - ETA: 23s - loss: 0.6432 - accuracy: 0.7390
+10 step training time: 0.205543041229s
+
+22528/40512 [===============>..............] - ETA: 19s - loss: 0.6359 - accuracy: 0.7428
+11 step training time: 0.206000089645s
+
+24576/40512 [=================>............] - ETA: 15s - loss: 0.6319 - accuracy: 0.7448
+12 step training time: 0.205962181091s
+
+26624/40512 [==================>...........] - ETA: 12s - loss: 0.6267 - accuracy: 0.7471
+13 step training time: 0.204092025757s
+
+28672/40512 [====================>.........] - ETA: 10s - loss: 0.6235 - accuracy: 0.7474
+14 step training time: 0.205756902695s
+
+30720/40512 [=====================>........] - ETA: 7s - loss: 0.6204 - accuracy: 0.7488 
+15 step training time: 0.203797101974s
+
+32768/40512 [=======================>......] - ETA: 5s - loss: 0.6165 - accuracy: 0.7502
+16 step training time: 0.206480979919s
+
+34816/40512 [========================>.....] - ETA: 4s - loss: 0.6143 - accuracy: 0.7500
+17 step training time: 0.204885005951s
+
+36864/40512 [==========================>...] - ETA: 2s - loss: 0.6123 - accuracy: 0.7501
+18 step training time: 0.205599069595s
+
+38912/40512 [===========================>..] - ETA: 1s - loss: 0.6090 - accuracy: 0.7509
+19 step training time: 0.199928045273s
+
+20 step training time: 0.574911117554s
+
+40512/40512 [==============================] - 27s 660us/step - loss: 0.6055 - accuracy: 0.7524 - val_loss: 0.5568 - val_accuracy: 0.7500
+Validation time: 0.57049202919s
+
+Real time: 1590168284.44s
+
+Epoch time: 26.7454471588s
+Epoch 2/5
+
+Real time: 1590168284.44
+
+ 2048/40512 [>.............................] - ETA: 3s - loss: 0.5357 - accuracy: 0.7700
+1 step training time: 0.20437002182s
+
+ 4096/40512 [==>...........................] - ETA: 3s - loss: 0.5339 - accuracy: 0.7683
+2 step training time: 0.208428859711s
+
+ 6144/40512 [===>..........................] - ETA: 3s - loss: 0.5254 - accuracy: 0.7729
+3 step training time: 0.203918218613s
+
+ 8192/40512 [=====>........................] - ETA: 3s - loss: 0.5329 - accuracy: 0.7675
+4 step training time: 0.204787969589s
+
+10240/40512 [======>.......................] - ETA: 3s - loss: 0.5269 - accuracy: 0.7711
+5 step training time: 0.204793930054s
+
+12288/40512 [========>.....................] - ETA: 2s - loss: 0.5261 - accuracy: 0.7732
+6 step training time: 0.208981990814s
+
+14336/40512 [=========>....................] - ETA: 2s - loss: 0.5259 - accuracy: 0.7752
+7 step training time: 0.2045109272s
+
+16384/40512 [===========>..................] - ETA: 2s - loss: 0.5254 - accuracy: 0.7749
+8 step training time: 0.203444004059s
+
+18432/40512 [============>.................] - ETA: 2s - loss: 0.5238 - accuracy: 0.7747
+9 step training time: 0.205495119095s
+
+20480/40512 [==============>...............] - ETA: 2s - loss: 0.5220 - accuracy: 0.7760
+10 step training time: 0.208321809769s
+
+22528/40512 [===============>..............] - ETA: 1s - loss: 0.5193 - accuracy: 0.7783
+11 step training time: 0.204385995865s
+
+24576/40512 [=================>............] - ETA: 1s - loss: 0.5168 - accuracy: 0.7806
+12 step training time: 0.203494787216s
+
+26624/40512 [==================>...........] - ETA: 1s - loss: 0.5136 - accuracy: 0.7824
+13 step training time: 0.204964160919s
+
+28672/40512 [====================>.........] - ETA: 1s - loss: 0.5094 - accuracy: 0.7842
+14 step training time: 0.20813202858s
+
+30720/40512 [=====================>........] - ETA: 0s - loss: 0.5080 - accuracy: 0.7838
+15 step training time: 0.204643011093s
+
+32768/40512 [=======================>......] - ETA: 0s - loss: 0.5067 - accuracy: 0.7846
+16 step training time: 0.203557014465s
+
+34816/40512 [========================>.....] - ETA: 0s - loss: 0.5049 - accuracy: 0.7853
+17 step training time: 0.204648017883s
+
+36864/40512 [==========================>...] - ETA: 0s - loss: 0.5025 - accuracy: 0.7867
+18 step training time: 0.207529783249s
+
+38912/40512 [===========================>..] - ETA: 0s - loss: 0.4997 - accuracy: 0.7887
+19 step training time: 0.199171066284s
+
+20 step training time: 0.138878107071s
+
+40512/40512 [==============================] - 4s 101us/step - loss: 0.4985 - accuracy: 0.7893 - val_loss: 0.4075 - val_accuracy: 0.8538
+Validation time: 0.0409939289093s
+
+Real time: 1590168288.54s
+
+Epoch time: 4.10480904579s
+Epoch 3/5
+
+Real time: 1590168288.54
+
+ 2048/40512 [>.............................] - ETA: 3s - loss: 0.4485 - accuracy: 0.8237
+1 step training time: 0.20564699173s
+
+ 4096/40512 [==>...........................] - ETA: 3s - loss: 0.4389 - accuracy: 0.8237
+2 step training time: 0.20464015007s
+
+ 6144/40512 [===>..........................] - ETA: 3s - loss: 0.4335 - accuracy: 0.8285
+3 step training time: 0.20643901825s
+
+ 8192/40512 [=====>........................] - ETA: 3s - loss: 0.4326 - accuracy: 0.8300
+4 step training time: 0.203763008118s
+
+10240/40512 [======>.......................] - ETA: 3s - loss: 0.4288 - accuracy: 0.8335
+5 step training time: 0.205552101135s
+
+12288/40512 [========>.....................] - ETA: 2s - loss: 0.4322 - accuracy: 0.8308
+6 step training time: 0.204330921173s
+
+14336/40512 [=========>....................] - ETA: 2s - loss: 0.4306 - accuracy: 0.8319
+7 step training time: 0.20525598526s
+
+16384/40512 [===========>..................] - ETA: 2s - loss: 0.4283 - accuracy: 0.8333
+8 step training time: 0.206232070923s
+
+18432/40512 [============>.................] - ETA: 2s - loss: 0.4255 - accuracy: 0.8347
+9 step training time: 0.207399129868s
+
+20480/40512 [==============>...............] - ETA: 2s - loss: 0.4238 - accuracy: 0.8359
+10 step training time: 0.205394983292s
+
+22528/40512 [===============>..............] - ETA: 1s - loss: 0.4220 - accuracy: 0.8367
+11 step training time: 0.206881999969s
+
+24576/40512 [=================>............] - ETA: 1s - loss: 0.4201 - accuracy: 0.8377
+12 step training time: 0.205492973328s
+
+26624/40512 [==================>...........] - ETA: 1s - loss: 0.4199 - accuracy: 0.8371
+13 step training time: 0.207235097885s
+
+28672/40512 [====================>.........] - ETA: 1s - loss: 0.4170 - accuracy: 0.8390
+14 step training time: 0.205796003342s
+
+30720/40512 [=====================>........] - ETA: 0s - loss: 0.4151 - accuracy: 0.8396
+15 step training time: 0.205282926559s
+
+32768/40512 [=======================>......] - ETA: 0s - loss: 0.4131 - accuracy: 0.8401
+16 step training time: 0.205286026001s
+
+34816/40512 [========================>.....] - ETA: 0s - loss: 0.4096 - accuracy: 0.8425
+17 step training time: 0.20641708374s
+
+36864/40512 [==========================>...] - ETA: 0s - loss: 0.4074 - accuracy: 0.8439
+18 step training time: 0.206408023834s
+
+38912/40512 [===========================>..] - ETA: 0s - loss: 0.4050 - accuracy: 0.8446
+19 step training time: 0.200627088547s
+
+20 step training time: 0.134970903397s
+
+40512/40512 [==============================] - 4s 101us/step - loss: 0.4037 - accuracy: 0.8450 - val_loss: 0.3097 - val_accuracy: 0.9057
+Validation time: 0.0411732196808s
+
+Real time: 1590168292.65s
+
+Epoch time: 4.10703396797s
+Epoch 4/5
+
+Real time: 1590168292.65
+
+ 2048/40512 [>.............................] - ETA: 3s - loss: 0.3597 - accuracy: 0.8594
+1 step training time: 0.204097032547s
+
+ 4096/40512 [==>...........................] - ETA: 3s - loss: 0.3557 - accuracy: 0.8696
+2 step training time: 0.203202962875s
+
+ 6144/40512 [===>..........................] - ETA: 3s - loss: 0.3619 - accuracy: 0.8630
+3 step training time: 0.205428123474s
+
+ 8192/40512 [=====>........................] - ETA: 3s - loss: 0.3601 - accuracy: 0.8644
+4 step training time: 0.20866894722s
+
+10240/40512 [======>.......................] - ETA: 3s - loss: 0.3550 - accuracy: 0.8672
+5 step training time: 0.20458316803s
+
+12288/40512 [========>.....................] - ETA: 2s - loss: 0.3541 - accuracy: 0.8679
+6 step training time: 0.204950809479s
+
+14336/40512 [=========>....................] - ETA: 2s - loss: 0.3538 - accuracy: 0.8681
+7 step training time: 0.204012870789s
+
+16384/40512 [===========>..................] - ETA: 2s - loss: 0.3542 - accuracy: 0.8677
+8 step training time: 0.207468986511s
+
+18432/40512 [============>.................] - ETA: 2s - loss: 0.3537 - accuracy: 0.8685
+9 step training time: 0.204134941101s
+
+20480/40512 [==============>...............] - ETA: 2s - loss: 0.3533 - accuracy: 0.8687
+10 step training time: 0.204451084137s
+
+22528/40512 [===============>..............] - ETA: 1s - loss: 0.3518 - accuracy: 0.8703
+11 step training time: 0.205059051514s
+
+24576/40512 [=================>............] - ETA: 1s - loss: 0.3519 - accuracy: 0.8702
+12 step training time: 0.208492994308s
+
+26624/40512 [==================>...........] - ETA: 1s - loss: 0.3495 - accuracy: 0.8714
+13 step training time: 0.204082012177s
+
+28672/40512 [====================>.........] - ETA: 1s - loss: 0.3488 - accuracy: 0.8723
+14 step training time: 0.205235958099s
+
+30720/40512 [=====================>........] - ETA: 0s - loss: 0.3484 - accuracy: 0.8724
+15 step training time: 0.204279899597s
+
+32768/40512 [=======================>......] - ETA: 0s - loss: 0.3467 - accuracy: 0.8738
+16 step training time: 0.206393957138s
+
+34816/40512 [========================>.....] - ETA: 0s - loss: 0.3445 - accuracy: 0.8751
+17 step training time: 0.203747034073s
+
+36864/40512 [==========================>...] - ETA: 0s - loss: 0.3432 - accuracy: 0.8757
+18 step training time: 0.204329967499s
+
+38912/40512 [===========================>..] - ETA: 0s - loss: 0.3428 - accuracy: 0.8758
+19 step training time: 0.199404001236s
+
+20 step training time: 0.135507106781s
+
+40512/40512 [==============================] - 4s 101us/step - loss: 0.3417 - accuracy: 0.8762 - val_loss: 0.2644 - val_accuracy: 0.9245
+Validation time: 0.0411148071289s
+
+Real time: 1590168296.75s
+
+Epoch time: 4.0957698822s
+Epoch 5/5
+
+Real time: 1590168296.75
+
+ 2048/40512 [>.............................] - ETA: 3s - loss: 0.3252 - accuracy: 0.8774
+1 step training time: 0.204830884933s
+
+ 4096/40512 [==>...........................] - ETA: 3s - loss: 0.3160 - accuracy: 0.8853
+2 step training time: 0.206201076508s
+
+ 6144/40512 [===>..........................] - ETA: 3s - loss: 0.3093 - accuracy: 0.8901
+3 step training time: 0.206953048706s
+
+ 8192/40512 [=====>........................] - ETA: 3s - loss: 0.3083 - accuracy: 0.8945
+4 step training time: 0.205146074295s
+
+10240/40512 [======>.......................] - ETA: 3s - loss: 0.3085 - accuracy: 0.8953
+5 step training time: 0.206218004227s
+
+12288/40512 [========>.....................] - ETA: 2s - loss: 0.3103 - accuracy: 0.8949
+6 step training time: 0.204991817474s
+
+14336/40512 [=========>....................] - ETA: 2s - loss: 0.3091 - accuracy: 0.8959
+7 step training time: 0.206506967545s
+
+16384/40512 [===========>..................] - ETA: 2s - loss: 0.3104 - accuracy: 0.8944
+8 step training time: 0.205796957016s
+
+18432/40512 [============>.................] - ETA: 2s - loss: 0.3098 - accuracy: 0.8940
+9 step training time: 0.204610109329s
+
+20480/40512 [==============>...............] - ETA: 2s - loss: 0.3092 - accuracy: 0.8938
+10 step training time: 0.205118894577s
+
+22528/40512 [===============>..............] - ETA: 1s - loss: 0.3091 - accuracy: 0.8944
+11 step training time: 0.207023143768s
+
+24576/40512 [=================>............] - ETA: 1s - loss: 0.3098 - accuracy: 0.8937
+12 step training time: 0.20462679863s
+
+26624/40512 [==================>...........] - ETA: 1s - loss: 0.3079 - accuracy: 0.8946
+13 step training time: 0.203689098358s
+
+28672/40512 [====================>.........] - ETA: 1s - loss: 0.3066 - accuracy: 0.8948
+14 step training time: 0.205312013626s
+
+30720/40512 [=====================>........] - ETA: 0s - loss: 0.3061 - accuracy: 0.8951
+15 step training time: 0.206133127213s
+
+32768/40512 [=======================>......] - ETA: 0s - loss: 0.3054 - accuracy: 0.8960
+16 step training time: 0.203752040863s
+
+34816/40512 [========================>.....] - ETA: 0s - loss: 0.3041 - accuracy: 0.8968
+17 step training time: 0.205082893372s
+
+36864/40512 [==========================>...] - ETA: 0s - loss: 0.3037 - accuracy: 0.8965
+18 step training time: 0.204487085342s
+
+38912/40512 [===========================>..] - ETA: 0s - loss: 0.3040 - accuracy: 0.8968
+19 step training time: 0.201704025269s
+
+20 step training time: 0.137609958649s
+
+40512/40512 [==============================] - 4s 101us/step - loss: 0.3037 - accuracy: 0.8974 - val_loss: 0.2304 - val_accuracy: 0.9387
+Validation time: 0.0407922267914s
+
+Real time: 1590168300.85s
+
+Epoch time: 4.10335087776s
+Modelo salvo:/opt/ml/model/FCN_9_SolimoesTacutu_64x64.ckpt
+Duracao do treinamento:  53.8144519329
+
+Training complete.
