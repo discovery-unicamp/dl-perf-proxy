@@ -17,7 +17,7 @@ Para a construção da imagem e sua transferência para um ECR, seguimos o que e
 ```
 logs
 ├── p2 				
-│   ├── result-p2-1-1024-e0.txt # result-{identificação do tipo da instância}-{número de gpus}-{batch size}-e0.ttxt
+│   ├── result-p2-1-1024-e0.txt # result-{identificação do tipo da instância}-{número de gpus}-{batch size}-e0.txt
 │   ├── result-p2-1-2048-e0.txt
 │   ├── result-p2-1-256-e0.txt
 │   ├── result-p2-1-512-e0.txt
