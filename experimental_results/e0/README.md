@@ -3,7 +3,7 @@ Rodamos um training job no SageMaker para cada instância e batch size. Dentre o
 
 ## Execução
 
-Para a construção da imagem usamos o comando `docker build -t {Nome da imagem} --rm .`, como está descrito no [README principal](https://github.com/lmcad-unicamp/cloud-ML/tree/sagemaker-image#docker-build). Depois subimos a imgem para um ECR para podemos usá-la no SageMaker, com o bucket que armazena os dados de treinamento e validação sendo usado em um canal de entrada chamado `train`, utilizando os hiperparâmetros:
+Para a construção da imagem e sua transferência para um ECR, seguimos o que está descrito no [README principal](https://github.com/lmcad-unicamp/cloud-ML/tree/sagemaker-image#ap%C3%B3s-a-cria%C3%A7%C3%A3o-do-programa). Depois subimos a imgem para um ECR para podemos usá-la no SageMaker, com o bucket que armazena os dados de treinamento e validação sendo usado em um canal de entrada chamado `train`, utilizando os hiperparâmetros:
 ```json
 {
 	"batch-size": "256",
