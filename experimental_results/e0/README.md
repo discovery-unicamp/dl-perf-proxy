@@ -9,7 +9,7 @@ Para a construção da imagem e sua transferência para um ECR, seguimos o que e
 	"batch-size": "256",
 	"epochs": "5",
 	"num-gpus": "1",
-	"file-output": "nome.txt"
+	"file-output": "output.txt"
 }
 ```
 
