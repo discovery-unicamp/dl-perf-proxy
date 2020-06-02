@@ -16,10 +16,9 @@ Não é necessária a instalação do cuda no host, mas precisaremos do driver.<
 ## Criando o Dockerfile
 
 ```Dockerfile
-FROM floydhub/tensorflow:1.12-gpu.cuda9cudnn7-py2_aws.39
+FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
 ```
 A imagem usada já vem com o cuda e outras dependências para o uso de GPU.
-Mais sobre ela pode ser lido aqui: https://hub.docker.com/u/floydhub.
 ```Dockerfile
 # set the working directory
 RUN ["mkdir", "/opt/program/"]
@@ -27,6 +26,7 @@ WORKDIR "/opt/program"
 ```
 De acordo com o padrão, o código deve estar em `/opt/program` (primeira referência). </br>
 ```Dockerfile
+RUN apt-get update && apt-get install -y python python-pip
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y update && apt-get install -y --no-install-recommends python-tk git
 ```
