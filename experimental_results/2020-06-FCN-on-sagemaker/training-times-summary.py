@@ -6,8 +6,44 @@ import sys
 
 def main():
 
-    all_times = parse_input_log()
-    print(json.dumps(all_times,indent=4))
+    time_data = json.load(sys.stdin)
+    
+    #json.load(fp, *, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
+    sum_of_epochs_time = 0.0
+    sum_of_validations_time = 0.0
+    n_epochs = len(time_data["epochs"])
+    sum_of_steps_time = 0.0
+    n_steps = 0
+    
+    for ek, ev in time_data["epochs"].items():
+        v_time = ev["validation_time"]
+        e_time = ev["epoch_time"]
+        sum_of_epochs_time += e_time
+        sum_of_validations_time += v_time
+        for ik, iv in ev["steps"].items():
+            sum_of_steps_time += iv
+            n_steps += 1
+    
+    total_time = time_data["total_training"]
+    init_time = time_data["init"]
+    print("Total training time: {}".format(total_time))
+    print("Initialization time: {}".format(init_time))
+    print(" - {:.2f} % of the total training time.".format(100*init_time/total_time))
+    print("Epochs")
+    print("  Number of epochs: {}".format(n_epochs))
+    print("  Total time spent on epochs: {}".format(sum_of_epochs_time))
+    print("    - {:.2f} % of the total training time.".format(100*sum_of_epochs_time/total_time))
+    print("  Average epoch time: {}".format(sum_of_epochs_time/n_epochs))
+    print("Validations")
+    print("  Total time spent on validations: {}".format(sum_of_validations_time))
+    print("    - {:.2f} % of the total training time.".format(100*sum_of_validations_time/total_time))
+    print("  Average validation time: {}".format(sum_of_validations_time/n_epochs))
+    print("Steps")
+    print("  Total time spent on steps: {}".format(sum_of_steps_time))
+    print("    - {:.2f} % of the total training time.".format(100*sum_of_steps_time/total_time))
+    print("  Average step time: {}".format(sum_of_steps_time/n_steps))
+    
+    #print(json.dumps(time_data,indent=4))
 
 # Parse the a log file from stdin and returns a tuple with five values:
 # 1- the initialization time (-1.0 in case it was not matched on the log file)
@@ -22,7 +58,6 @@ def parse_input_log():
     epochs = {}
     steps = {}
     step_pm=re.compile(r'\d+ step training time: \d+(\.\d+)?s')
-    last_step_pm=re.compile(r'\d+ steps training: \d+(\.\d+)?s')
     validation_pm=re.compile(r'Validation time: \d+(\.\d+)?')
     epoch_pm=re.compile(r'Epoch time: \d+(\.\d+)?s')
     init_pm=re.compile(r'\(\'Tempo de inicializacao: \', \d+(\.\d+)?\)')
@@ -42,14 +77,6 @@ def parse_input_log():
                 step_i = int(sline[0])
                 step_time = float(sline[4][:-1])
                 #print("step,{},{},{}".format(epoch_id,step_i,step_time))
-                if epoch_id not in epochs: epochs[epoch_id] = {}
-                if "steps" not in epochs[epoch_id] : epochs[epoch_id]["steps"] = {}
-                epochs[epoch_id]["steps"][step_i] = step_time
-            res=last_step_pm.search(line)
-            if res != None:
-                sline = line.split()
-                step_i = int(sline[0])
-                step_time = float(sline[3][:-1])
                 if epoch_id not in epochs: epochs[epoch_id] = {}
                 if "steps" not in epochs[epoch_id] : epochs[epoch_id]["steps"] = {}
                 epochs[epoch_id]["steps"][step_i] = step_time
