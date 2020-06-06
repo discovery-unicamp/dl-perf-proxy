@@ -92,11 +92,11 @@ def parse_input_log():
                 if first_rt == 0.0: first_rt = real_time
                 last_rt_delta = real_time-last_rt
                 if last_rt > 0.0: rt_deltas.append(last_rt_delta)
-                #if last_rt > 0.0: print("rt delta,{}".format(last_rt_delta))
                 last_rt = real_time
 
     all_times = {"init": init_time,
                  "total_training": dt_time,
+                 "largest_real_time_delta": last_rt-first_rt,
                  "epochs": epochs}
     return all_times
         
