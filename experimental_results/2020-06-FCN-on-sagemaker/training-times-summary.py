@@ -7,8 +7,6 @@ import statistics
 def main():
 
     time_data = json.load(sys.stdin)
-    
-    #json.load(fp, *, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
     sum_of_epochs_time = 0.0
     sum_of_validations_time = 0.0
     n_epochs = len(time_data["epochs"])
