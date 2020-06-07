@@ -12,9 +12,10 @@ for jfile in execution-times/*/*/*.json; do
     EXP=`basename "${jfile}" .json`
     VMTYPE=`echo "${OUTDIR}" | cut -d/ -f2`
     BS=`echo "${OUTDIR}" | cut -d/ -f3`
-    OUTFILE="${OUTDIR}/${EXP}.pdf"
+    OUTFILE="${OUTDIR}/${EXP}-step_times_per_epoch.pdf"
     echo "Processing $jfile => ${OUTFILE}"
     python3 ./plot-step_times_per_epoch.py -t "${VMTYPE} / ${BS} / ${EXP}" -o "${OUTFILE}" < "${jfile}" || \
 	fail "Error when generating ${OUTFILE}"
 done
     
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=all-step_times_per_epoch.pdf execution-times/*/*/*-step_times_per_epoch.pdf
