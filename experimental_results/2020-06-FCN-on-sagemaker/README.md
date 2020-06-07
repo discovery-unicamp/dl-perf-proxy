@@ -166,3 +166,13 @@ execution-times/
         ├── e0.json
         └── e0.summary
 ```
+
+
+
+# plot-step_times_per_epoch.py
+Este script lê da entrada padrão um arquivo no formato JSON produzido pelo script ``parse-exec-times.py`` e gera um gráfico com os tempos de execução. O formato do arquivo de saída é definido pelo sufixo do nome do arquivo.
+
+A opção -t pode ser usada para ajusatar o título do gráfico.
+
+# plot-charts.sh
+Este script percorre os arquivos json armazenados em ``execution-times/*/*/*.json`` e, para cada arquivo, chama scripts para gerar gráficos.
