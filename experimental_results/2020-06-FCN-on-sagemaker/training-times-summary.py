@@ -55,18 +55,18 @@ def main():
         for ik, iv in ev["steps"].items():
             if iv > 1.2 * avg_step_time:
                 print ("    - Epoch({}) Step({}) Time({:.3f}) - {:.2f} times larger than average".format(ek,ik,iv,iv/avg_step_time))
-    print("Beta: {:.2f} %".format(100*(init_time+sum_of_validations_time+steps_times[0])/sum_of_steps_time))
-    print("  - Initialization + Validations + 1st step time = {:.6f}".format(init_time+sum_of_validations_time+steps_times[0]))
+    print("Beta: {:.2f} %".format(100*(sum_of_validations_time+steps_times[0])/(sum_of_steps_time-steps_times[0])))
+    print("  - Validations + 1st step time = {:.6f}".format(sum_of_validations_time+steps_times[0]))
     print("  - Remaining steps time = {:.6f}".format(sum_of_steps_time-steps_times[0]))
     print("T Mi Iavg prediction errors")
     if len(steps_times) >= 2:
         print("  - Step 2 of epoch 1: {:.6f} - Error: {:.2f} %".format(steps_times[1],abs(100*(steps_times[1]-TMiIavg)/TMiIavg)))
         if len(steps_times) >= 5:
-            avg_steps_2_6 = statistics.mean(steps_times[1:5])
+            avg_steps_2_6 = statistics.mean(steps_times[1:6])
             print("  - Avg steps 2-6: {:.6f} - Error: {:.2f} %".format(avg_steps_2_6,abs(100*(avg_steps_2_6-TMiIavg)/TMiIavg)))
             if len(steps_times) >= 10:
-                avg_steps_2_10 = statistics.mean(steps_times[1:9])
-                print("  - Avg steps 2-10: {:.6f} - Error: {:.2f} %".format(avg_steps_2_10,abs(100*(avg_steps_2_10-TMiIavg)/TMiIavg)))
+                avg_steps_2_11 = statistics.mean(steps_times[1:11])
+                print("  - Avg steps 2-11: {:.6f} - Error: {:.2f} %".format(avg_steps_2_11,abs(100*(avg_steps_2_11-TMiIavg)/TMiIavg)))
 
 if __name__ == "__main__":
     main()
