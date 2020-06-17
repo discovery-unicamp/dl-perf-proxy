@@ -112,7 +112,7 @@ def parse_input_log():
     all_times = {"init": init_time,
                  "total_training": dt_time,
                  "largest_real_time_delta": last_rt-first_rt,
-                 "time_of_fit": fit_time,
+                 "fit_time": fit_time,
                  "write_model_time": write_model_time,
                  "epochs": epochs}
     return all_times
