@@ -109,14 +109,20 @@ def run_training(dataset,
         early_stopping = EarlyStopping(monitor='val_acc', min_delta=0.001, patience=5, verbose=0, mode='auto', baseline=0.9000, restore_best_weights=False)
         if num_gpus == 1:
             print("Tempo de inicializacao: ", time.time() - init_time)
+            fit_time_init = time.time()
             history = new_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[early_stopping, iter_time, epoch_time])
+            print("Tempo do fit: "+str(time.time() - fit_time_init))
         else:
-            print("Tempo de inicializacao: ", time.time() - init_time)
+            print("Tempo de inicializacao: ", (time.time() - init_time))
+            fit_time_init = time.time()
             history = parallel_model.fit(train_data, train_labels, epochs=num_steps, batch_size=batch_size, steps_per_epoch=steps_per_epoch, validation_data=validation_data, callbacks=[early_stopping, iter_time, epoch_time])
+            print("Tempo do fit: "+str(time.time() - fit_time_init))
     
+        saving_time_init = time.time()
         print("Modelo salvo:" + save_file)
         new_model.save(save_file, overwrite=True)
-
+        print("Tempo levado para o modelo ser salvo: "+str(time.time() - saving_time_init))
+       
         #from tensorflow.python.client import timeline
         #tl = timeline.Timeline(run_metadata.step_stats)
         #ctf = tl.generate_chrome_trace_format()

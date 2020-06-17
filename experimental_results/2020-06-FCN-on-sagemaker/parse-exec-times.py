@@ -28,11 +28,15 @@ def parse_input_log():
     init_pm=re.compile(r'\(\'Tempo de inicializacao: \', \d+(\.\d+)?\)')
     rt_pm=re.compile(r'Real time: \d+(\.\d+)?')
     dt_pm=re.compile(r'Duracao do treinamento: +\d+(\.\d+)?')
+    fit_time_pm=re.compile(r'Tempo do fit: \d+(\.\d+)?')
+    write_model_time_pm=re.compile(r'Tempo levado para o modelo ser salvo: \d+(\.\d+)?')
     first_rt = 0.0
     last_rt = 0.0
     epoch_id=1
     init_time = -1.0
     dt_time = -1.0
+    fit_time = -1.0
+    write_model_time = -1.0
 
     for line in sys.stdin:
             # Parse steps times
@@ -76,12 +80,23 @@ def parse_input_log():
                 sline = line.split()
                 init_time = float(sline[4][:-1])
                 #print("init,{}".format(init_time))
-            # Parse "duracao do treinamento
+            # Parse "duracao do treinamento"
             res=dt_pm.search(line)
             if res != None:
                 sline = line.split()
                 dt_time = float(sline[3])
                 #print("training duration,{}".format(dt_time))
+            # Parse fit time 
+            res = fit_time_pm.search(line)
+            if res != None:
+                sline = line.split()
+                fit_time = float(sline[-1])
+            # Parse time to write model
+            res = write_model_time_pm.search(line) 
+            if res != None:
+                sline = line.split()
+                write_model_time = float(sline[-1])
+
             # Parse real times
             res=rt_pm.search(line)
             if res != None:
@@ -97,6 +112,8 @@ def parse_input_log():
     all_times = {"init": init_time,
                  "total_training": dt_time,
                  "largest_real_time_delta": last_rt-first_rt,
+                 "time_of_fit": fit_time,
+                 "write_model_time": write_model_time,
                  "epochs": epochs}
     return all_times
         
