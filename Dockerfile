@@ -28,8 +28,8 @@ COPY "train" .
 RUN chmod +x train
 #ADD pic .
 # install environment dependencies
-# ADD "fcn/" "/opt/ml/input/data/train"
-# COPY "hyperparameters.json" "/opt/ml/input/config/"
+#ADD "fcn/" "/opt/ml/input/data/train"
+#COPY "hyperparameters.json" "/opt/ml/input/config/"
 
 COPY "custom_callback.py" .
 COPY "app.py" .
