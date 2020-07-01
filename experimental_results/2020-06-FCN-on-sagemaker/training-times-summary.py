@@ -26,6 +26,10 @@ def main():
 
     total_time = time_data["total_training"]
     init_time = time_data["init"]
+    fit_time = time_data["fit_time"]
+    model_save_time = time_data["write_model_time"]
+    print("Model save time: {:.6f}".format(model_save_time))
+    print("Fit function time: {:.6f}".format(fit_time))
     print("Total training time: {:.6f}".format(total_time))
     print("Largest real time delta: {:.6f}".format(time_data["largest_real_time_delta"]))
     print(" - {:.2f} % of the total training time.".format(100*time_data["largest_real_time_delta"]/total_time))
