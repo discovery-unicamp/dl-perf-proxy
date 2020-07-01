@@ -93,6 +93,10 @@ else:
 
 training_time = time.time() - init_time
 print("Duracao do treinamento:", training_time)
-score = model.evaluate(x_test, y_test, verbose=0)
+if num_gpus == 1 or num_gpus == 0:
+    score = model.evaluate(x_test, y_test, verbose=0)
+else:
+    score = new_model.evaluate(x_test, y_test, verbose=0)
+
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])

@@ -1,5 +1,5 @@
-FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
-RUN apt-get update && apt-get install -y python3.6 python3-pip
+FROM tensorflow/tensorflow:1.14.0-gpu-py3 
+#RUN apt-get update && apt-get install -y python3.6 python3-pip
 
 # set the working directory
 RUN ["mkdir", "/opt/program/"]
@@ -26,7 +26,7 @@ RUN ["mkdir", "/opt/ml/input/data/train"]
 ENV PATH="/opt/program:${PATH}"
 COPY "train" .
 RUN chmod +x train
-#ADD pic .
+# ADD pic .
 # install environment dependencies
 #COPY "hyperparameters.json" "/opt/ml/input/config/"
 
