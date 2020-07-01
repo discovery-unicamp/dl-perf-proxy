@@ -23,21 +23,29 @@ class CountTime(Callback):
 		self.first_valid = first_valid
 
 	def on_train_batch_begin(self, batch, logs=None):
+                on_train_batch_begin_time = time.time()
+                print('\non_train_batch_begin: {:6f}s'.format(on_train_batch_begin_time))
 		if self.count > 1:
-			self.final_time = time.time() - self.init_time
-                        print('\n{} step training time: {}s'.format(self.count-1, self.final_time))
-                self.init_time = time.time()
+			self.final_time = on_train_batch_begin_time - self.init_time
+                        print('\n{} step training time: {:6f}s'.format(self.count-1, self.final_time))
+                self.init_time = on_train_batch_begin_time
 		self.count = self.count + 1
+	def on_train_batch_end(self, batch, logs=None):
+                on_train_batch_end_time = time.time()
+                print('\non_train_batch_end: {:6f}s'.format(on_train_batch_end_time))
 
 	def on_epoch_begin(self, epoch, logs=None):
+                on_epoch_begin_time = time.time()
+                print('\non_epoch_begin: {:6f}s'.format(on_epoch_begin_time))
 		self.first_two = True
 		self.count = 1
 
 	def on_epoch_end(self, epoch, logs=None):
                 end_time = time.time()
+                print('\non_epoch_end: {:6f}s'.format(end_time))
 		validation_time = end_time - self.val_init_time
-		print("Validation time: {}s".format(validation_time))
-		print('\nReal time: {}s'.format(end_time))
+                print("\nValidation time: {:6f}s".format(validation_time))
+                print('\nReal time: {:6f}s'.format(end_time))
 		self.first_valid = True
 		self.first_two = True
 		self.count = 1
@@ -60,8 +68,10 @@ class CountTime(Callback):
 		"""
 
 		if self.first_valid:
-                        self.final_time = time.time() - self.init_time
-                        print('\n{} step training time: {}s'.format(self.count-1, self.final_time))
+                        on_test_batch_begin_time = time.time()
+                        print('\non_test_batch_begin: {:6f}s'.format(on_test_batch_begin_time))
+                        self.final_time = on_test_batch_begin_time - self.init_time
+                        print('\n{} step training time: {:6f}s'.format(self.count-1, self.final_time))
 
 			self.val_init_time = time.time()
 			self.first_valid = False
