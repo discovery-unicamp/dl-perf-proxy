@@ -19,9 +19,9 @@ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=all-accuracy_vs_execution
 
 # Read log files from logs directory, extract execution times and organize them on execution-times/VMTYPE/BS/EXP.json
 for bs in 256 512 1024 2048; do
-    echo "Processing batch system $bs"
-    python3 ./plot-epoch_accuracy_vs_execution_time.py execution-times/p*/${bs}/*.json -o "accuracy_vs_execution_time-bs_${bs}.pdf"
-    python3 ./plot-epoch_accuracy_vs_execution_time.py --ignore_first_iteration execution-times/p*/${bs}/*.json -o "accuracy_vs_execution_time-skip_first_step-bs_${bs}.pdf"
+    echo "Processing batch size $bs"
+    python3 ./plot-epoch_accuracy_vs_execution_time.py execution-times/*/${bs}/*.json -o "accuracy_vs_execution_time-bs_${bs}.pdf"
+    python3 ./plot-epoch_accuracy_vs_execution_time.py --ignore_first_iteration execution-times/*/${bs}/*.json -o "accuracy_vs_execution_time-skip_first_step-bs_${bs}.pdf"
 done
 
 gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=all-accuracy_vs_execution_time-bs.pdf accuracy_vs_execution_time-bs_*.pdf
