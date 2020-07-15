@@ -23,7 +23,7 @@ for logf in logs/result-*-*-e*.txt; do
 		OUTDIR="execution-times/${VMTYPE}/${BS}/"
 		mkdir -p "${OUTDIR}"
 		echo " - Extracting times from ${logf}"
-		python3 ./parse-exec-times.py < "${logf}" > "${OUTDIR}/${EXP}.json" || \
+		python3 ./parse-exec-times.py -cs "${VMTYPE}" -bs "${BS}" < "${logf}" > "${OUTDIR}/${EXP}.json" || \
 		    fail "Error when parsing log ${logf}"
 		echo " - Summarizing times from ${OUTDIR}/${EXP}.json"
 		python3 ./training-times-summary.py < "${OUTDIR}/${EXP}.json" > "${OUTDIR}/${EXP}.summary" || \

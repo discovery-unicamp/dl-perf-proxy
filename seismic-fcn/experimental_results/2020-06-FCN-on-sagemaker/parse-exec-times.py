@@ -6,7 +6,17 @@ import sys
 
 def main():
 
+    parser = argparse.ArgumentParser()
+    
+    parser.add_argument('-cs', type=str, dest='computing_system', help="Name of the computing system used to train the model.", required=True)
+    parser.add_argument('-bs', type=str, dest='batch_size', help="Batch size used for trainning.", required=True)
+    args = parser.parse_args()
+    
     all_times = parse_input_log()
+
+    all_times["computing_system"] = args.computing_system
+    all_times["batch_size"] = args.batch_size
+    
     print(json.dumps(all_times,indent=4))
 
 # Parse the a log file from stdin and returns a tuple with five values:
@@ -30,6 +40,7 @@ def parse_input_log():
     dt_pm=re.compile(r'Duracao do treinamento: +\d+(\.\d+)?')
     fit_time_pm=re.compile(r'Tempo do fit: \d+(\.\d+)?')
     write_model_time_pm=re.compile(r'Tempo levado para o modelo ser salvo: \d+(\.\d+)?')
+    val_acc_pm=re.compile(r'.*step.*loss.*acc.*val_loss.*val_acc.*')
     first_rt = 0.0
     last_rt = 0.0
     epoch_id=1
@@ -65,6 +76,13 @@ def parse_input_log():
                 #print("validation,{},{}".format(epoch_id,validation_time))
                 if epoch_id not in epochs: epochs[epoch_id] = {}
                 epochs[epoch_id]["validation_time"] = validation_time
+            # Parse validation accuracy
+            res=val_acc_pm.search(line)
+            if res != None:
+                sline = line.split()
+                validation_acc = float(sline[-1])
+                if epoch_id not in epochs: epochs[epoch_id] = {}
+                epochs[epoch_id]["validation_accuracy"] = validation_acc
             # Parse epochs times
             res=epoch_pm.search(line)
             if res != None:
