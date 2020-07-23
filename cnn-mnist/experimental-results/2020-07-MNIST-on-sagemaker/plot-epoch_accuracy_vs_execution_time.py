@@ -88,7 +88,11 @@ def idx_to_color(i):
         'm', #	magenta
         'y', #	yellow
         'k', #	black
-        'w'] #	white
+        'beige', # beige
+        'grey', #  grey 
+        'fuchsia', # fuchsia
+        'plum' # plum
+        ]
     return colors[i % len(colors)]
 
 
