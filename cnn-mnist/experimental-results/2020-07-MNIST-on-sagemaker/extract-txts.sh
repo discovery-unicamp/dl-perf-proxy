@@ -42,6 +42,22 @@ for batch in 256 512 1024 2048;
 	do aws s3 sync s3://fcncloudml/mnist-g4dn12xlarge-gpu4-b$batch-e2/ .; 
 	a="$(tar -ztf output/model.tar.gz '*.txt')";
 	tar -xf output/model.tar.gz $a;
-	mv $a $LOGS_DIR/result-g4dn-4-$batch-e2.txt;
-	echo $LOGS_DIR/result-g4dn-4-$batch-e2.txt;
+	mv $a $LOGS_DIR/result-g4dn12xlarge-4-$batch-e2.txt;
+	echo $LOGS_DIR/result-g4dn12xlarge-4-$batch-e2.txt;
 done;
+# g4dn.xlarge - 2048 - fix
+aws s3 sync s3://fcncloudml/mnist-g4dnxlarge-gpu1-b2048-e2-fix/ .; 
+a="$(tar -ztf output/model.tar.gz '*.txt')";
+tar -xf output/model.tar.gz $a;
+mv $a $LOGS_DIR/result-g4dn-1-2048-e1.txt;
+echo $LOGS_DIR/result-g4dn-1-2048-e1.txt;
+# g4dn.12xlarge - 256 - fix
+aws s3 sync s3://fcncloudml/mnist-g4dn12xlarge-gpu4-b256-e2-fix/ .;
+a="$(tar -ztf output/model.tar.gz '*.txt')";
+tar -xf output/model.tar.gz $a;
+mv $a $LOGS_DIR/result-g4dn12xlarge-4-256-e1.txt;
+echo $LOGS_DIR/result-g4dn12xlarge-4-256-e1.txt;
+
+## END
+
+rm -r output/
