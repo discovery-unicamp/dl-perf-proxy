@@ -28,7 +28,7 @@ COPY "train" .
 RUN chmod +x train
 # ADD pic .
 # install environment dependencies
-COPY "hyperparameters.json" "/opt/ml/input/config/"
+#COPY "hyperparameters.json" "/opt/ml/input/config/"
 
 COPY "custom_callback.py" .
 COPY "cifar.py" .
