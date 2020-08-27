@@ -44,12 +44,17 @@ training_script = 'cifar.py'
 
 
 # Execute your training algorithm.
-def _run(cmd):
+def _run(cmd,output='log.txt'):
     """Invokes your training algorithm."""
     print(' '.join(cmd))
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=os.environ,universal_newlines=True)
     stdout, stderr = process.communicate()
-    print(sub("\x08", "", stdout))
+    message = str(stdout)[2:-1].replace("\\n","\n")
+    if output:
+        with open("/opt/ml/model/"+output, "w") as f:
+            f.write(message)
+    else:
+        print(message)
 
     return_code = process.poll()
     if return_code:
@@ -78,13 +83,16 @@ if __name__ == '__main__':
         # https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo.html#your-algorithms-training-algo-running-container
         with open(param_path, 'r') as tc:
             training_params = json.load(tc)
+        output = 'log.txt'
+        if 'output' in training_params:
+            output = training_params.pop("output")
 
         python_executable = sys.executable
         cmd_args = _hyperparameters_to_cmd_args(training_params)
         python_executable = 'python3'
         train_cmd = [python_executable, training_script] + list(map(str,cmd_args))
 
-        _run(train_cmd)
+        _run(train_cmd,output)
         print('Training complete.')
 
         # A zero exit code causes the job to be marked a Succeeded.
