@@ -1,0 +1,84 @@
+{
+    "TrainingJobName": "resnet50-g4dn2xlarge-gpu1-b2048-e0",
+    "TrainingJobArn": "arn:aws:sagemaker:us-east-1:245983579475:training-job/resnet50-g4dn2xlarge-gpu1-b2048-e0",
+    "ModelArtifacts": {
+        "S3ModelArtifacts": "s3://fcncloudml/resnet50-g4dn2xlarge-gpu1-b2048-e0/output/model.tar.gz"
+    },
+    "TrainingJobStatus": "Completed",
+    "SecondaryStatus": "Completed",
+    "HyperParameters": {
+        "batch-size": "2048",
+        "epochs": "5"
+    },
+    "AlgorithmSpecification": {
+        "TrainingImage": "245983579475.dkr.ecr.us-east-1.amazonaws.com/resnet50-cifar",
+        "TrainingInputMode": "File",
+        "EnableSageMakerMetricsTimeSeries": false
+    },
+    "RoleArn": "arn:aws:iam::245983579475:role/service-role/AmazonSageMaker-ExecutionRole-20180829T145526",
+    "InputDataConfig": [],
+    "OutputDataConfig": {
+        "KmsKeyId": "",
+        "S3OutputPath": "s3://fcncloudml/"
+    },
+    "ResourceConfig": {
+        "InstanceType": "ml.g4dn.2xlarge",
+        "InstanceCount": 1,
+        "VolumeSizeInGB": 32
+    },
+    "StoppingCondition": {
+        "MaxRuntimeInSeconds": 86400
+    },
+    "CreationTime": "2020-08-26 23:18:43.356000-03:00",
+    "TrainingStartTime": "2020-08-26 23:21:21.732000-03:00",
+    "TrainingEndTime": "2020-08-26 23:25:36.100000-03:00",
+    "LastModifiedTime": "2020-08-26 23:25:36.100000-03:00",
+    "SecondaryStatusTransitions": [
+        {
+            "Status": "Starting",
+            "StartTime": "2020-08-26 23:18:43.356000-03:00",
+            "EndTime": "2020-08-26 23:21:21.732000-03:00",
+            "StatusMessage": "Preparing the instances for training"
+        },
+        {
+            "Status": "Downloading",
+            "StartTime": "2020-08-26 23:21:21.732000-03:00",
+            "EndTime": "2020-08-26 23:21:33.822000-03:00",
+            "StatusMessage": "Downloading input data"
+        },
+        {
+            "Status": "Training",
+            "StartTime": "2020-08-26 23:21:33.822000-03:00",
+            "EndTime": "2020-08-26 23:25:30.175000-03:00",
+            "StatusMessage": "Training image download completed. Training in progress."
+        },
+        {
+            "Status": "Uploading",
+            "StartTime": "2020-08-26 23:25:30.175000-03:00",
+            "EndTime": "2020-08-26 23:25:36.100000-03:00",
+            "StatusMessage": "Uploading generated training model"
+        },
+        {
+            "Status": "Completed",
+            "StartTime": "2020-08-26 23:25:36.100000-03:00",
+            "EndTime": "2020-08-26 23:25:36.100000-03:00",
+            "StatusMessage": "Training job completed"
+        }
+    ],
+    "EnableNetworkIsolation": false,
+    "EnableInterContainerTrafficEncryption": false,
+    "EnableManagedSpotTraining": false,
+    "TrainingTimeInSeconds": 255,
+    "BillableTimeInSeconds": 255,
+    "ResponseMetadata": {
+        "RequestId": "c42314e3-f9ce-4cde-b90b-70627d6c6c65",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+            "x-amzn-requestid": "c42314e3-f9ce-4cde-b90b-70627d6c6c65",
+            "content-type": "application/x-amz-json-1.1",
+            "content-length": "2039",
+            "date": "Tue, 01 Sep 2020 18:29:52 GMT"
+        },
+        "RetryAttempts": 0
+    }
+}
