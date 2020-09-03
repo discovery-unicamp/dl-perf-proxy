@@ -19,7 +19,7 @@ with open(yaml_filepath,'r') as yaml_file:
     yaml_doc = yaml_file.read()
     for tj_name in yaml_to_tj_names(yaml_doc):
         print(tj_name)
-        client.download_file("fcncloudml", "resnet50-p2-gpu8-b256-e0/output/model.tar.gz", "./model.tar.gz")
+        client.download_file("fcncloudml", f"{tj_name}/output/model.tar.gz", "./model.tar.gz")
 
         tar = tarfile.open("./model.tar.gz", "r:gz")
 
