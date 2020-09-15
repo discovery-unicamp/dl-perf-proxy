@@ -12,8 +12,12 @@ def format_name_logs(name, instance, gpu, batch, number, error=False):
 
 def tj_name_to_tuple(tj_name):
     tj_name = tj_name.replace("-real", "")
-    pattern = re.compile(r"([\w\d]+)-([\w\d]+)-gpu([\d+])-b([\d]+)-e([\d]+)")
-    groups = pattern.match(tj_name).groups()
+    pattern = re.compile(r"([\w\d]+)-([\w\d]+)-gpu(\d+)-b([\d]+)-e([\d]+)")
+    if pattern.match(tj_name) != None:
+        groups = pattern.match(tj_name).groups()
+    else:
+        print(tj_name)
+        return []
     return list(groups)
 
 def yaml_to_tj_names(document):

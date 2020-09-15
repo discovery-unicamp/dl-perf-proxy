@@ -33,14 +33,14 @@ def parse_input_log():
     steps = {}
     step_pm=re.compile(r'\d+ step training time: \d+(\.\d+)?s')
     last_step_pm=re.compile(r'\d+ steps training: \d+(\.\d+)?s')
-    validation_pm=re.compile(r'Validation time: \d+(\.\d+)?')
+    validation_pm=re.compile(r'Validation time: \d+(\.\d+)?s')
     epoch_pm=re.compile(r'Epoch time: \d+(\.\d+)?s')
     init_pm=re.compile(r'\(\'Tempo de inicializacao: \', \d+(\.\d+)?\)')
     rt_pm=re.compile(r'Real time: \d+(\.\d+)?')
     dt_pm=re.compile(r'Tempo do fit: +\d+(\.\d+)?')
     fit_time_pm=re.compile(r'Tempo do fit: \d+(\.\d+)?')
     write_model_time_pm=re.compile(r'Tempo levado para o modelo ser salvo: \d+(\.\d+)?')
-    val_acc_pm=re.compile(r'.*step.*loss.*acc.*val_loss.*val_acc.*')
+    val_acc_pm=re.compile(r'loss: \d+[.]\d+ - accuracy: \d+[.]\d+ - val_loss: \d+[.]\d+ - val_accuracy: \d+[.]\d+')
     first_rt = 0.0
     last_rt = 0.0
     epoch_id=1
@@ -81,8 +81,10 @@ def parse_input_log():
             if res != None:
                 sline = line.split()
                 validation_acc = float(sline[-1])
+                
                 if epoch_id not in epochs: epochs[epoch_id] = {}
                 epochs[epoch_id]["validation_accuracy"] = validation_acc
+                epoch_id = epoch_id + 1
             # Parse epochs times
             res=epoch_pm.search(line)
             if res != None:
@@ -91,7 +93,6 @@ def parse_input_log():
                 #print("epoch,{},{}".format(epoch_id,epoch_time))
                 if epoch_id not in epochs: epochs[epoch_id] = {}
                 epochs[epoch_id]["epoch_time"] = epoch_time
-                epoch_id = epoch_id + 1
             # Parse initialization time
             res=init_pm.search(line)
             if res != None:

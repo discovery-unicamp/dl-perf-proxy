@@ -15,7 +15,11 @@ def main():
     steps_times = []
     
     for ek, ev in time_data["epochs"].items():
-        v_time = ev["validation_time"]
+        if 'validation_time' in ev:
+            v_time = ev["validation_time"]
+        else:
+            print(ev) 
+            sys.exit(0)
         e_time = ev["epoch_time"]
         sum_of_epochs_time += e_time
         sum_of_validations_time += v_time
