@@ -14,6 +14,8 @@ def main():
     n_steps = 0
     steps_times = []
     
+    first_epoch = True
+    sum_of_epochs_skipping_first = 0
     for ek, ev in time_data["epochs"].items():
         if 'validation_time' in ev:
             v_time = ev["validation_time"]
@@ -23,10 +25,14 @@ def main():
         e_time = ev["epoch_time"]
         sum_of_epochs_time += e_time
         sum_of_validations_time += v_time
+        if not first_epoch:
+            sum_of_epochs_skipping_first += e_time
+        first_epoch = False
         for ik, iv in ev["steps"].items():
             steps_times.append(iv)
             sum_of_steps_time += iv
             n_steps += 1
+    first_epoch_time = time_data["epochs"]["1"]["epoch_time"]
 
     total_time = time_data["total_training"]
     init_time = time_data["init"]
@@ -41,9 +47,11 @@ def main():
     print(" - {:.2f} % of the total training time.".format(100*init_time/total_time))
     print("Epochs")
     print("  Number of epochs: {:.6f}".format(n_epochs))
+    print("  Time spent of first epoch: {:.6f}".format(first_epoch_time))
     print("  Total time spent on epochs: {:.6f}".format(sum_of_epochs_time))
     print("    - {:.2f} % of the total training time.".format(100*sum_of_epochs_time/total_time))
     print("  Average epoch time: {:.6f}".format(sum_of_epochs_time/n_epochs))
+    print("  Average epoch time (skipping first epoch): {:.6f}".format(sum_of_epochs_skipping_first/(n_epochs-1)))
     print("Validations")
     print("  Total time spent on validations: {:.6f}".format(sum_of_validations_time))
     print("    - {:.2f} % of the total training time.".format(100*sum_of_validations_time/total_time))
