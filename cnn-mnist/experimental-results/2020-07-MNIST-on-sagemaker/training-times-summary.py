@@ -14,15 +14,24 @@ def main():
     n_steps = 0
     steps_times = []
     
+    first_epoch = True
+    sum_of_epochs_skipping_first = 0
     for ek, ev in time_data["epochs"].items():
-        v_time = ev["validation_time"]
+        if 'validation_time' in ev:
+            v_time = ev["validation_time"]
+        else:
+            sys.exit(0)
         e_time = ev["epoch_time"]
         sum_of_epochs_time += e_time
         sum_of_validations_time += v_time
+        if not first_epoch:
+            sum_of_epochs_skipping_first += e_time
+        first_epoch = False
         for ik, iv in ev["steps"].items():
             steps_times.append(iv)
             sum_of_steps_time += iv
             n_steps += 1
+    first_epoch_time = time_data["epochs"]["1"]["epoch_time"]
 
     total_time = time_data["total_training"]
     init_time = time_data["init"]
@@ -37,9 +46,11 @@ def main():
     print(" - {:.2f} % of the total training time.".format(100*init_time/total_time))
     print("Epochs")
     print("  Number of epochs: {:.6f}".format(n_epochs))
+    print("  Time spent of first epoch: {:.6f}".format(first_epoch_time))
     print("  Total time spent on epochs: {:.6f}".format(sum_of_epochs_time))
     print("    - {:.2f} % of the total training time.".format(100*sum_of_epochs_time/total_time))
     print("  Average epoch time: {:.6f}".format(sum_of_epochs_time/n_epochs))
+    print("  Average epoch time (skipping first epoch): {:.6f}".format(sum_of_epochs_skipping_first/(n_epochs-1)))
     print("Validations")
     print("  Total time spent on validations: {:.6f}".format(sum_of_validations_time))
     print("    - {:.2f} % of the total training time.".format(100*sum_of_validations_time/total_time))
@@ -53,6 +64,7 @@ def main():
     print("  First step time: {:.6f}".format(steps_times[0]))
     print("  Average step time: {:.6f}".format(avg_step_time))
     TMiIavg=(sum_of_steps_time-steps_times[0])/(n_steps-1)
+    print("  Time spent on steps (without first step): {:.6f}".format(sum_of_steps_time-steps_times[0]))
     print("  T Mi Iavg: {:.6f}".format(TMiIavg))
     print("  Outstanding step times: > 1.2x the average time")
     for ek, ev in time_data["epochs"].items():
@@ -64,13 +76,13 @@ def main():
     print("  - Remaining steps time = {:.6f}".format(sum_of_steps_time-steps_times[0]))
     print("T Mi Iavg prediction errors")
     if len(steps_times) >= 2:
-        print("  - Step 2 of epoch 1: {:.6f} - Error: {:.2f} %".format(steps_times[1],abs(100*(steps_times[1]-TMiIavg)/TMiIavg)))
+        print("  - Step 2 of epoch 1: {:.6f} - Estimated time: {:.6f} - Error: {:.2f} %".format(steps_times[1],steps_times[1]*(n_steps-1), abs(100*(steps_times[1]-TMiIavg)/TMiIavg)))
         if len(steps_times) >= 5:
             avg_steps_2_6 = statistics.mean(steps_times[1:6])
-            print("  - Avg steps 2-6: {:.6f} - Error: {:.2f} %".format(avg_steps_2_6,abs(100*(avg_steps_2_6-TMiIavg)/TMiIavg)))
+            print("  - Avg steps 2-6: {:.6f} - Estimated time: {:.6f} - Error: {:.2f} %".format(avg_steps_2_6,avg_steps_2_6 * (n_steps-1), abs(100*(avg_steps_2_6-TMiIavg)/TMiIavg)))
             if len(steps_times) >= 10:
                 avg_steps_2_11 = statistics.mean(steps_times[1:11])
-                print("  - Avg steps 2-11: {:.6f} - Error: {:.2f} %".format(avg_steps_2_11,abs(100*(avg_steps_2_11-TMiIavg)/TMiIavg)))
+                print("  - Avg steps 2-11: {:.6f} - Estimated time: {:.6f} - Error: {:.2f} %".format(avg_steps_2_11,avg_steps_2_11*(n_steps-1),abs(100*(avg_steps_2_11-TMiIavg)/TMiIavg)))
 
 if __name__ == "__main__":
     main()
