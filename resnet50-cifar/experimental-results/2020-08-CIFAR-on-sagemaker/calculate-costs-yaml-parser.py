@@ -1,3 +1,4 @@
+import sys
 import yaml
 import re
 import argparse
@@ -15,17 +16,26 @@ print(args.filename)
 with open(args.filename, 'r') as f:
     yaml_read = yaml.safe_load(f.read())
 
+global_atts = dict()
+
+if "global" in yaml_read:
+    for key in yaml_read["global"]:
+        global_atts[key] = yaml_read["global"][key]
+    del yaml_read["global"]
+
 for yaml_list_key in yaml_read:
     print(yaml_list_key)
-    yaml_list = yaml_read[yaml_list_key]
-    target_pattern = yaml_list["target-pattern"]
-    batch_pattern = yaml_list["batch-pattern"]
-    instance_pattern = yaml_list["instance-pattern"]
-    operation = yaml_list.get("operation", None)
-    target_dir = yaml_list["target-dir"]
-    is_markdown = yaml_list.get("is_markdown", False)
-
-
+    try:
+        yaml_list = yaml_read[yaml_list_key]
+        target_pattern = yaml_list.get("target-pattern", global_atts.get("target-pattern", None))
+        batch_pattern = yaml_list.get("batch-pattern", global_atts["batch-pattern"])
+        instance_pattern = yaml_list.get("instance-pattern", global_atts["instance-pattern"])
+        operation = yaml_list.get("operation", global_atts.get("operation", None))
+        target_dir = yaml_list.get("target-dir", global_atts["target-dir"])
+        is_markdown = yaml_list.get("is_markdown", global_atts.get("is_markdown",False))
+    except KeyError:
+        print("Key was found neither in global nor in {}".format(yaml_list_key))
+        sys.exit(1)
     calculate_costs.costs = calculate_costs.initial_costs.copy()
     calculate_costs.make_operation_costs(operation, calculate_costs.costs)
 
@@ -43,7 +53,7 @@ for yaml_list_key in yaml_read:
         table = []
         for batch in sorted(list(bests.keys()),key=int):
             table.append(list(map(lambda x: (re.findall(instance_pattern,x[0])[0] ,x[1]) , bests[batch])))
-            table[-1].sort(key=lambda x: x[0])
+            table[-1].sort(key=lambda x:( x[0].split('-')[0],int(x[0].split('-')[1]) ))
         
         for i,_ in enumerate(table[0]):
             print(f"|{table[0][i][0]}", end='|')
@@ -55,13 +65,12 @@ for yaml_list_key in yaml_read:
         table = []
         for batch in sorted(list(bests.keys()),key=int):
             table.append(list(map(lambda x: (re.findall(instance_pattern,x[0])[0] ,x[1]) , bests[batch])))
-            table[-1].sort(key=lambda x: x[0])
+            table[-1].sort(key=lambda x:( x[0].split('-')[0],int(x[0].split('-')[1]) ))
         
         for i,_ in enumerate(table[0]):
             print(f"{table[0][i][0]}", end=',')
             print(','.join([("%f"%(l[i][1])) for l in table]) )
 
-    print(sum([sum([k[1] for k in bests[x]]) for x in bests]) * 3)
 
     
 

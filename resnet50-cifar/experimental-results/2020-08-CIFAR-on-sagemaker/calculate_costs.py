@@ -1,5 +1,6 @@
 import re
 import os
+import glob
 import sys
 
 initial_costs = {
@@ -38,8 +39,8 @@ def reset_costs():
 
 def get_pricing(metric, directory, instance_metric=r'', costs=costs):
     prices = {}
-    for i in os.listdir(directory):
-        with open(os.path.join(directory,i),'r') as f: 
+    for i in glob.glob(directory):
+        with open(i) as f:
             file_read = f.read()    
             instance = re.findall(instance_metric, i)
 
@@ -73,7 +74,7 @@ def get_best_instances_for_batch(prices, batch_metric):
         else: 
             print("batch metric not working")
             print("founded:", batch)
-            print("used:", i)
+            print("used:", instance)
             print("metric:", batch_metric)
             sys.exit(1)
         if batch in prices_ord:

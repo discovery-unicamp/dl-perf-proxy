@@ -4,7 +4,6 @@ import boto3
 import tarfile
 import os
 
-
 parser = argparse.ArgumentParser()
 
 parser.add_argument("filename", help="path of yaml file", type=str)
