@@ -4,7 +4,9 @@ function fail()
     exit 1
 }
 
-# Use -> get-log-by-stream-name.sh {Log stream name} > {Output file}
+# WARNING: Log stream name =!= Training job name, for the Log stream name go to the TrainingJob page and open CloudWatch registers
+# Use -> get-log.sh {Log stream name} > {Output file}
+# To salve the log automatically use get-log.sh match {log stream name}
 
 if [[ $(echo "$1") == "match" ]]
 then
