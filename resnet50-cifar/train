@@ -49,10 +49,11 @@ def _run(cmd,output='log.txt'):
     print(' '.join(cmd))
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=os.environ,universal_newlines=True)
     stdout, stderr = process.communicate()
-    message = str(stdout)[2:-1].replace("\\n","\n")
+    message = stdout.decode('utf-8')
     if output:
         with open("/opt/ml/model/"+output, "w") as f:
             f.write(message)
+        print(message)
     else:
         print(message)
 

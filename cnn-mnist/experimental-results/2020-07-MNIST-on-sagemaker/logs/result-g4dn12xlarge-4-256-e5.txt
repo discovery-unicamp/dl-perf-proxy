@@ -1,0 +1,7387 @@
+python3 mnist_cnn.py --batch-size 256 --num-gpus 4 --epochs 5
+Downloading data from https://s3.amazonaws.com/img-datasets/mnist.npz
+
+    8192/11490434 [..............................] - ETA: 1s
+ 2613248/11490434 [=====>........................] - ETA: 0s
+11026432/11490434 [===========================>..] - ETA: 0s
+11493376/11490434 [==============================] - 0s 0us/step
+x_train shape: (60000, 28, 28, 1)
+60000 train samples
+10000 test samples
+Initialization time 4.076222896575928
+Train on 60000 samples, validate on 10000 samples
+Epoch 1/5
+
+on_epoch_begin: 1615775559.277232s
+
+Real time: 1615775559.277243
+
+on_train_batch_begin: 1615775559.278907s
+
+  256/60000 [..............................] - ETA: 28:03 - loss: 2.3235 - accuracy: 0.0977
+on_train_batch_end: 1615775566.492640s
+
+on_train_batch_begin: 1615775566.493108s
+
+1 step training time: 7.214201s
+
+on_train_batch_end: 1615775566.504968s
+
+on_train_batch_begin: 1615775566.505402s
+
+2 step training time: 0.012294s
+
+on_train_batch_end: 1615775566.517023s
+
+on_train_batch_begin: 1615775566.517421s
+
+3 step training time: 0.012019s
+
+on_train_batch_end: 1615775566.528831s
+
+on_train_batch_begin: 1615775566.529222s
+
+4 step training time: 0.011800s
+
+on_train_batch_end: 1615775566.540947s
+
+on_train_batch_begin: 1615775566.541331s
+
+5 step training time: 0.012109s
+
+ 1536/60000 [..............................] - ETA: 4:36 - loss: 2.0404 - accuracy: 0.3405 
+on_train_batch_end: 1615775566.552790s
+
+on_train_batch_begin: 1615775566.553180s
+
+6 step training time: 0.011849s
+
+on_train_batch_end: 1615775566.564284s
+
+on_train_batch_begin: 1615775566.564673s
+
+7 step training time: 0.011492s
+
+on_train_batch_end: 1615775566.576249s
+
+on_train_batch_begin: 1615775566.576625s
+
+8 step training time: 0.011952s
+
+on_train_batch_end: 1615775566.587637s
+
+on_train_batch_begin: 1615775566.588015s
+
+9 step training time: 0.011390s
+
+on_train_batch_end: 1615775566.599512s
+
+on_train_batch_begin: 1615775566.599898s
+
+10 step training time: 0.011882s
+
+ 2816/60000 [>.............................] - ETA: 2:28 - loss: 1.8064 - accuracy: 0.4208
+on_train_batch_end: 1615775566.611244s
+
+on_train_batch_begin: 1615775566.611604s
+
+11 step training time: 0.011707s
+
+on_train_batch_end: 1615775566.622759s
+
+on_train_batch_begin: 1615775566.623147s
+
+12 step training time: 0.011542s
+
+on_train_batch_end: 1615775566.634523s
+
+on_train_batch_begin: 1615775566.634902s
+
+13 step training time: 0.011755s
+
+on_train_batch_end: 1615775566.646414s
+
+on_train_batch_begin: 1615775566.646813s
+
+14 step training time: 0.011911s
+
+on_train_batch_end: 1615775566.658086s
+
+on_train_batch_begin: 1615775566.658466s
+
+15 step training time: 0.011653s
+
+ 4096/60000 [=>............................] - ETA: 1:40 - loss: 1.6059 - accuracy: 0.4829
+on_train_batch_end: 1615775566.669940s
+
+on_train_batch_begin: 1615775566.670306s
+
+16 step training time: 0.011840s
+
+on_train_batch_end: 1615775566.681497s
+
+on_train_batch_begin: 1615775566.681885s
+
+17 step training time: 0.011579s
+
+on_train_batch_end: 1615775566.693251s
+
+on_train_batch_begin: 1615775566.693628s
+
+18 step training time: 0.011744s
+
+on_train_batch_end: 1615775566.704765s
+
+on_train_batch_begin: 1615775566.705141s
+
+19 step training time: 0.011513s
+
+on_train_batch_end: 1615775566.716417s
+
+on_train_batch_begin: 1615775566.716795s
+
+20 step training time: 0.011655s
+
+ 5376/60000 [=>............................] - ETA: 1:15 - loss: 1.4234 - accuracy: 0.5411
+on_train_batch_end: 1615775566.728365s
+
+on_train_batch_begin: 1615775566.728743s
+
+21 step training time: 0.011948s
+
+on_train_batch_end: 1615775566.740136s
+
+on_train_batch_begin: 1615775566.740500s
+
+22 step training time: 0.011757s
+
+on_train_batch_end: 1615775566.751724s
+
+on_train_batch_begin: 1615775566.752129s
+
+23 step training time: 0.011629s
+
+on_train_batch_end: 1615775566.763402s
+
+on_train_batch_begin: 1615775566.763777s
+
+24 step training time: 0.011648s
+
+on_train_batch_end: 1615775566.775327s
+
+on_train_batch_begin: 1615775566.775716s
+
+25 step training time: 0.011939s
+
+ 6656/60000 [==>...........................] - ETA: 1:00 - loss: 1.3095 - accuracy: 0.5816
+on_train_batch_end: 1615775566.787339s
+
+on_train_batch_begin: 1615775566.787722s
+
+26 step training time: 0.012006s
+
+on_train_batch_end: 1615775566.799213s
+
+on_train_batch_begin: 1615775566.799598s
+
+27 step training time: 0.011876s
+
+on_train_batch_end: 1615775566.810932s
+
+on_train_batch_begin: 1615775566.811325s
+
+28 step training time: 0.011727s
+
+on_train_batch_end: 1615775566.822791s
+
+on_train_batch_begin: 1615775566.823178s
+
+29 step training time: 0.011853s
+
+on_train_batch_end: 1615775566.834376s
+
+on_train_batch_begin: 1615775566.834803s
+
+30 step training time: 0.011625s
+
+ 7936/60000 [==>...........................] - ETA: 49s - loss: 1.1937 - accuracy: 0.6190 
+on_train_batch_end: 1615775566.846309s
+
+on_train_batch_begin: 1615775566.846703s
+
+31 step training time: 0.011900s
+
+on_train_batch_end: 1615775566.858105s
+
+on_train_batch_begin: 1615775566.858478s
+
+32 step training time: 0.011775s
+
+on_train_batch_end: 1615775566.869639s
+
+on_train_batch_begin: 1615775566.870008s
+
+33 step training time: 0.011530s
+
+on_train_batch_end: 1615775566.881463s
+
+on_train_batch_begin: 1615775566.881831s
+
+34 step training time: 0.011823s
+
+on_train_batch_end: 1615775566.893307s
+
+on_train_batch_begin: 1615775566.893682s
+
+35 step training time: 0.011851s
+
+ 9216/60000 [===>..........................] - ETA: 42s - loss: 1.1080 - accuracy: 0.6482
+on_train_batch_end: 1615775566.905060s
+
+on_train_batch_begin: 1615775566.905431s
+
+36 step training time: 0.011749s
+
+on_train_batch_end: 1615775566.916651s
+
+on_train_batch_begin: 1615775566.917016s
+
+37 step training time: 0.011585s
+
+on_train_batch_end: 1615775566.928464s
+
+on_train_batch_begin: 1615775566.928836s
+
+38 step training time: 0.011821s
+
+on_train_batch_end: 1615775566.940094s
+
+on_train_batch_begin: 1615775566.940465s
+
+39 step training time: 0.011628s
+
+on_train_batch_end: 1615775566.951720s
+
+on_train_batch_begin: 1615775566.952131s
+
+40 step training time: 0.011666s
+
+10496/60000 [====>.........................] - ETA: 36s - loss: 1.0407 - accuracy: 0.6700
+on_train_batch_end: 1615775566.963526s
+
+on_train_batch_begin: 1615775566.963901s
+
+41 step training time: 0.011770s
+
+on_train_batch_end: 1615775566.975245s
+
+on_train_batch_begin: 1615775566.975618s
+
+42 step training time: 0.011718s
+
+on_train_batch_end: 1615775566.986673s
+
+on_train_batch_begin: 1615775566.987043s
+
+43 step training time: 0.011424s
+
+on_train_batch_end: 1615775566.998214s
+
+on_train_batch_begin: 1615775566.998609s
+
+44 step training time: 0.011567s
+
+on_train_batch_end: 1615775567.009663s
+
+on_train_batch_begin: 1615775567.010035s
+
+45 step training time: 0.011426s
+
+11776/60000 [====>.........................] - ETA: 31s - loss: 0.9728 - accuracy: 0.6929
+on_train_batch_end: 1615775567.021438s
+
+on_train_batch_begin: 1615775567.021807s
+
+46 step training time: 0.011772s
+
+on_train_batch_end: 1615775567.033009s
+
+on_train_batch_begin: 1615775567.033397s
+
+47 step training time: 0.011590s
+
+on_train_batch_end: 1615775567.044823s
+
+on_train_batch_begin: 1615775567.045200s
+
+48 step training time: 0.011803s
+
+on_train_batch_end: 1615775567.056352s
+
+on_train_batch_begin: 1615775567.056726s
+
+49 step training time: 0.011526s
+
+on_train_batch_end: 1615775567.068327s
+
+on_train_batch_begin: 1615775567.068688s
+
+50 step training time: 0.011962s
+
+13056/60000 [=====>........................] - ETA: 28s - loss: 0.9148 - accuracy: 0.7119
+on_train_batch_end: 1615775567.080227s
+
+on_train_batch_begin: 1615775567.080589s
+
+51 step training time: 0.011901s
+
+on_train_batch_end: 1615775567.091963s
+
+on_train_batch_begin: 1615775567.092334s
+
+52 step training time: 0.011745s
+
+on_train_batch_end: 1615775567.103575s
+
+on_train_batch_begin: 1615775567.103946s
+
+53 step training time: 0.011612s
+
+on_train_batch_end: 1615775567.115319s
+
+on_train_batch_begin: 1615775567.115690s
+
+54 step training time: 0.011744s
+
+on_train_batch_end: 1615775567.127048s
+
+on_train_batch_begin: 1615775567.127417s
+
+55 step training time: 0.011727s
+
+14336/60000 [======>.......................] - ETA: 25s - loss: 0.8696 - accuracy: 0.7269
+on_train_batch_end: 1615775567.139376s
+
+on_train_batch_begin: 1615775567.139744s
+
+56 step training time: 0.012327s
+
+on_train_batch_end: 1615775567.151226s
+
+on_train_batch_begin: 1615775567.151591s
+
+57 step training time: 0.011847s
+
+on_train_batch_end: 1615775567.163074s
+
+on_train_batch_begin: 1615775567.163456s
+
+58 step training time: 0.011865s
+
+on_train_batch_end: 1615775567.174347s
+
+on_train_batch_begin: 1615775567.174736s
+
+59 step training time: 0.011279s
+
+on_train_batch_end: 1615775567.186388s
+
+on_train_batch_begin: 1615775567.186770s
+
+60 step training time: 0.012035s
+
+15616/60000 [======>.......................] - ETA: 22s - loss: 0.8260 - accuracy: 0.7408
+on_train_batch_end: 1615775567.198242s
+
+on_train_batch_begin: 1615775567.198619s
+
+61 step training time: 0.011848s
+
+on_train_batch_end: 1615775567.209693s
+
+on_train_batch_begin: 1615775567.210059s
+
+62 step training time: 0.011441s
+
+on_train_batch_end: 1615775567.221163s
+
+on_train_batch_begin: 1615775567.221524s
+
+63 step training time: 0.011465s
+
+on_train_batch_end: 1615775567.232602s
+
+on_train_batch_begin: 1615775567.232979s
+
+64 step training time: 0.011454s
+
+on_train_batch_end: 1615775567.244233s
+
+on_train_batch_begin: 1615775567.244600s
+
+65 step training time: 0.011621s
+
+16896/60000 [=======>......................] - ETA: 20s - loss: 0.7902 - accuracy: 0.7526
+on_train_batch_end: 1615775567.255950s
+
+on_train_batch_begin: 1615775567.256311s
+
+66 step training time: 0.011711s
+
+on_train_batch_end: 1615775567.267358s
+
+on_train_batch_begin: 1615775567.267725s
+
+67 step training time: 0.011414s
+
+on_train_batch_end: 1615775567.278569s
+
+on_train_batch_begin: 1615775567.278948s
+
+68 step training time: 0.011222s
+
+on_train_batch_end: 1615775567.290029s
+
+on_train_batch_begin: 1615775567.290401s
+
+69 step training time: 0.011453s
+
+on_train_batch_end: 1615775567.301662s
+
+on_train_batch_begin: 1615775567.302075s
+
+70 step training time: 0.011674s
+
+18176/60000 [========>.....................] - ETA: 18s - loss: 0.7559 - accuracy: 0.7637
+on_train_batch_end: 1615775567.313461s
+
+on_train_batch_begin: 1615775567.313822s
+
+71 step training time: 0.011747s
+
+on_train_batch_end: 1615775567.324953s
+
+on_train_batch_begin: 1615775567.325325s
+
+72 step training time: 0.011503s
+
+on_train_batch_end: 1615775567.336370s
+
+on_train_batch_begin: 1615775567.336737s
+
+73 step training time: 0.011411s
+
+on_train_batch_end: 1615775567.347851s
+
+on_train_batch_begin: 1615775567.348220s
+
+74 step training time: 0.011483s
+
+on_train_batch_end: 1615775567.359594s
+
+on_train_batch_begin: 1615775567.359959s
+
+75 step training time: 0.011739s
+
+19456/60000 [========>.....................] - ETA: 16s - loss: 0.7268 - accuracy: 0.7734
+on_train_batch_end: 1615775567.371431s
+
+on_train_batch_begin: 1615775567.371803s
+
+76 step training time: 0.011844s
+
+on_train_batch_end: 1615775567.383060s
+
+on_train_batch_begin: 1615775567.383444s
+
+77 step training time: 0.011641s
+
+on_train_batch_end: 1615775567.394502s
+
+on_train_batch_begin: 1615775567.394871s
+
+78 step training time: 0.011427s
+
+on_train_batch_end: 1615775567.405968s
+
+on_train_batch_begin: 1615775567.406333s
+
+79 step training time: 0.011462s
+
+on_train_batch_end: 1615775567.417581s
+
+on_train_batch_begin: 1615775567.417951s
+
+80 step training time: 0.011618s
+
+20736/60000 [=========>....................] - ETA: 15s - loss: 0.7006 - accuracy: 0.7822
+on_train_batch_end: 1615775567.429572s
+
+on_train_batch_begin: 1615775567.429929s
+
+81 step training time: 0.011979s
+
+on_train_batch_end: 1615775567.441636s
+
+on_train_batch_begin: 1615775567.442046s
+
+82 step training time: 0.012116s
+
+on_train_batch_end: 1615775567.453412s
+
+on_train_batch_begin: 1615775567.453777s
+
+83 step training time: 0.011731s
+
+on_train_batch_end: 1615775567.464978s
+
+on_train_batch_begin: 1615775567.465349s
+
+84 step training time: 0.011572s
+
+on_train_batch_end: 1615775567.476824s
+
+on_train_batch_begin: 1615775567.477193s
+
+85 step training time: 0.011844s
+
+22016/60000 [==========>...................] - ETA: 14s - loss: 0.6773 - accuracy: 0.7894
+on_train_batch_end: 1615775567.488426s
+
+on_train_batch_begin: 1615775567.488787s
+
+86 step training time: 0.011594s
+
+on_train_batch_end: 1615775567.499887s
+
+on_train_batch_begin: 1615775567.500252s
+
+87 step training time: 0.011466s
+
+on_train_batch_end: 1615775567.511514s
+
+on_train_batch_begin: 1615775567.511896s
+
+88 step training time: 0.011644s
+
+on_train_batch_end: 1615775567.523041s
+
+on_train_batch_begin: 1615775567.523424s
+
+89 step training time: 0.011527s
+
+on_train_batch_end: 1615775567.534791s
+
+on_train_batch_begin: 1615775567.535164s
+
+90 step training time: 0.011740s
+
+23296/60000 [==========>...................] - ETA: 13s - loss: 0.6551 - accuracy: 0.7967
+on_train_batch_end: 1615775567.546710s
+
+on_train_batch_begin: 1615775567.547070s
+
+91 step training time: 0.011906s
+
+on_train_batch_end: 1615775567.558584s
+
+on_train_batch_begin: 1615775567.558957s
+
+92 step training time: 0.011888s
+
+on_train_batch_end: 1615775567.570163s
+
+on_train_batch_begin: 1615775567.570545s
+
+93 step training time: 0.011587s
+
+on_train_batch_end: 1615775567.581555s
+
+on_train_batch_begin: 1615775567.581954s
+
+94 step training time: 0.011409s
+
+on_train_batch_end: 1615775567.592926s
+
+on_train_batch_begin: 1615775567.593310s
+
+95 step training time: 0.011356s
+
+24576/60000 [===========>..................] - ETA: 12s - loss: 0.6354 - accuracy: 0.8034
+on_train_batch_end: 1615775567.604394s
+
+on_train_batch_begin: 1615775567.604761s
+
+96 step training time: 0.011452s
+
+on_train_batch_end: 1615775567.616177s
+
+on_train_batch_begin: 1615775567.616541s
+
+97 step training time: 0.011779s
+
+on_train_batch_end: 1615775567.627620s
+
+on_train_batch_begin: 1615775567.627986s
+
+98 step training time: 0.011445s
+
+on_train_batch_end: 1615775567.639341s
+
+on_train_batch_begin: 1615775567.639708s
+
+99 step training time: 0.011722s
+
+on_train_batch_end: 1615775567.650850s
+
+on_train_batch_begin: 1615775567.651226s
+
+100 step training time: 0.011518s
+
+25856/60000 [===========>..................] - ETA: 11s - loss: 0.6144 - accuracy: 0.8105
+on_train_batch_end: 1615775567.662293s
+
+on_train_batch_begin: 1615775567.662677s
+
+101 step training time: 0.011451s
+
+on_train_batch_end: 1615775567.673803s
+
+on_train_batch_begin: 1615775567.674169s
+
+102 step training time: 0.011492s
+
+on_train_batch_end: 1615775567.685177s
+
+on_train_batch_begin: 1615775567.685550s
+
+103 step training time: 0.011381s
+
+on_train_batch_end: 1615775567.697033s
+
+on_train_batch_begin: 1615775567.697401s
+
+104 step training time: 0.011851s
+
+on_train_batch_end: 1615775567.708349s
+
+on_train_batch_begin: 1615775567.708721s
+
+105 step training time: 0.011320s
+
+27136/60000 [============>.................] - ETA: 10s - loss: 0.5965 - accuracy: 0.8160
+on_train_batch_end: 1615775567.720130s
+
+on_train_batch_begin: 1615775567.720514s
+
+106 step training time: 0.011793s
+
+on_train_batch_end: 1615775567.731728s
+
+on_train_batch_begin: 1615775567.732139s
+
+107 step training time: 0.011626s
+
+on_train_batch_end: 1615775567.743858s
+
+on_train_batch_begin: 1615775567.744227s
+
+108 step training time: 0.012088s
+
+on_train_batch_end: 1615775567.755237s
+
+on_train_batch_begin: 1615775567.755608s
+
+109 step training time: 0.011381s
+
+on_train_batch_end: 1615775567.766746s
+
+on_train_batch_begin: 1615775567.767122s
+
+110 step training time: 0.011514s
+
+28416/60000 [=============>................] - ETA: 9s - loss: 0.5810 - accuracy: 0.8206 
+on_train_batch_end: 1615775567.778376s
+
+on_train_batch_begin: 1615775567.778754s
+
+111 step training time: 0.011632s
+
+on_train_batch_end: 1615775567.790670s
+
+on_train_batch_begin: 1615775567.791040s
+
+112 step training time: 0.012286s
+
+on_train_batch_end: 1615775567.802295s
+
+on_train_batch_begin: 1615775567.802691s
+
+113 step training time: 0.011650s
+
+on_train_batch_end: 1615775567.813921s
+
+on_train_batch_begin: 1615775567.814289s
+
+114 step training time: 0.011598s
+
+on_train_batch_end: 1615775567.825449s
+
+on_train_batch_begin: 1615775567.825814s
+
+115 step training time: 0.011525s
+
+29696/60000 [=============>................] - ETA: 8s - loss: 0.5659 - accuracy: 0.8252
+on_train_batch_end: 1615775567.837242s
+
+on_train_batch_begin: 1615775567.837614s
+
+116 step training time: 0.011799s
+
+on_train_batch_end: 1615775567.848990s
+
+on_train_batch_begin: 1615775567.849357s
+
+117 step training time: 0.011744s
+
+on_train_batch_end: 1615775567.860657s
+
+on_train_batch_begin: 1615775567.861029s
+
+118 step training time: 0.011672s
+
+on_train_batch_end: 1615775567.872303s
+
+on_train_batch_begin: 1615775567.872678s
+
+119 step training time: 0.011649s
+
+on_train_batch_end: 1615775567.884108s
+
+on_train_batch_begin: 1615775567.884496s
+
+120 step training time: 0.011818s
+
+30976/60000 [==============>...............] - ETA: 8s - loss: 0.5527 - accuracy: 0.8294
+on_train_batch_end: 1615775567.895786s
+
+on_train_batch_begin: 1615775567.896138s
+
+121 step training time: 0.011642s
+
+on_train_batch_end: 1615775567.907471s
+
+on_train_batch_begin: 1615775567.907842s
+
+122 step training time: 0.011704s
+
+on_train_batch_end: 1615775567.919381s
+
+on_train_batch_begin: 1615775567.919749s
+
+123 step training time: 0.011906s
+
+on_train_batch_end: 1615775567.931220s
+
+on_train_batch_begin: 1615775567.931589s
+
+124 step training time: 0.011840s
+
+on_train_batch_end: 1615775567.942760s
+
+on_train_batch_begin: 1615775567.943141s
+
+125 step training time: 0.011553s
+
+32256/60000 [===============>..............] - ETA: 7s - loss: 0.5402 - accuracy: 0.8334
+on_train_batch_end: 1615775567.954520s
+
+on_train_batch_begin: 1615775567.954880s
+
+126 step training time: 0.011738s
+
+on_train_batch_end: 1615775567.966127s
+
+on_train_batch_begin: 1615775567.966517s
+
+127 step training time: 0.011638s
+
+on_train_batch_end: 1615775567.977872s
+
+on_train_batch_begin: 1615775567.978244s
+
+128 step training time: 0.011727s
+
+on_train_batch_end: 1615775567.989548s
+
+on_train_batch_begin: 1615775567.989919s
+
+129 step training time: 0.011675s
+
+on_train_batch_end: 1615775568.001300s
+
+on_train_batch_begin: 1615775568.001668s
+
+130 step training time: 0.011749s
+
+33536/60000 [===============>..............] - ETA: 6s - loss: 0.5285 - accuracy: 0.8372
+on_train_batch_end: 1615775568.012837s
+
+on_train_batch_begin: 1615775568.013205s
+
+131 step training time: 0.011537s
+
+on_train_batch_end: 1615775568.024793s
+
+on_train_batch_begin: 1615775568.025158s
+
+132 step training time: 0.011954s
+
+on_train_batch_end: 1615775568.036238s
+
+on_train_batch_begin: 1615775568.036610s
+
+133 step training time: 0.011452s
+
+on_train_batch_end: 1615775568.047693s
+
+on_train_batch_begin: 1615775568.048061s
+
+134 step training time: 0.011451s
+
+on_train_batch_end: 1615775568.059541s
+
+on_train_batch_begin: 1615775568.059915s
+
+135 step training time: 0.011854s
+
+34816/60000 [================>.............] - ETA: 6s - loss: 0.5161 - accuracy: 0.8411
+on_train_batch_end: 1615775568.071523s
+
+on_train_batch_begin: 1615775568.071890s
+
+136 step training time: 0.011975s
+
+on_train_batch_end: 1615775568.082888s
+
+on_train_batch_begin: 1615775568.083276s
+
+137 step training time: 0.011386s
+
+on_train_batch_end: 1615775568.094567s
+
+on_train_batch_begin: 1615775568.094939s
+
+138 step training time: 0.011663s
+
+on_train_batch_end: 1615775568.106319s
+
+on_train_batch_begin: 1615775568.106715s
+
+139 step training time: 0.011775s
+
+on_train_batch_end: 1615775568.118642s
+
+on_train_batch_begin: 1615775568.119017s
+
+140 step training time: 0.012302s
+
+36096/60000 [=================>............] - ETA: 5s - loss: 0.5050 - accuracy: 0.8449
+on_train_batch_end: 1615775568.130531s
+
+on_train_batch_begin: 1615775568.130881s
+
+141 step training time: 0.011864s
+
+on_train_batch_end: 1615775568.142127s
+
+on_train_batch_begin: 1615775568.142522s
+
+142 step training time: 0.011642s
+
+on_train_batch_end: 1615775568.153779s
+
+on_train_batch_begin: 1615775568.154148s
+
+143 step training time: 0.011625s
+
+on_train_batch_end: 1615775568.165445s
+
+on_train_batch_begin: 1615775568.165821s
+
+144 step training time: 0.011673s
+
+on_train_batch_end: 1615775568.177101s
+
+on_train_batch_begin: 1615775568.177469s
+
+145 step training time: 0.011648s
+
+37376/60000 [=================>............] - ETA: 5s - loss: 0.4934 - accuracy: 0.8484
+on_train_batch_end: 1615775568.188868s
+
+on_train_batch_begin: 1615775568.189218s
+
+146 step training time: 0.011749s
+
+on_train_batch_end: 1615775568.200275s
+
+on_train_batch_begin: 1615775568.200628s
+
+147 step training time: 0.011411s
+
+on_train_batch_end: 1615775568.211720s
+
+on_train_batch_begin: 1615775568.212135s
+
+148 step training time: 0.011507s
+
+on_train_batch_end: 1615775568.223053s
+
+on_train_batch_begin: 1615775568.223437s
+
+149 step training time: 0.011302s
+
+on_train_batch_end: 1615775568.234884s
+
+on_train_batch_begin: 1615775568.235254s
+
+150 step training time: 0.011817s
+
+38656/60000 [==================>...........] - ETA: 4s - loss: 0.4838 - accuracy: 0.8515
+on_train_batch_end: 1615775568.246656s
+
+on_train_batch_begin: 1615775568.247005s
+
+151 step training time: 0.011751s
+
+on_train_batch_end: 1615775568.258153s
+
+on_train_batch_begin: 1615775568.258545s
+
+152 step training time: 0.011539s
+
+on_train_batch_end: 1615775568.269580s
+
+on_train_batch_begin: 1615775568.269924s
+
+153 step training time: 0.011379s
+
+on_train_batch_end: 1615775568.281117s
+
+on_train_batch_begin: 1615775568.281490s
+
+154 step training time: 0.011566s
+
+on_train_batch_end: 1615775568.292779s
+
+on_train_batch_begin: 1615775568.293168s
+
+155 step training time: 0.011678s
+
+39936/60000 [==================>...........] - ETA: 4s - loss: 0.4743 - accuracy: 0.8545
+on_train_batch_end: 1615775568.304569s
+
+on_train_batch_begin: 1615775568.304920s
+
+156 step training time: 0.011752s
+
+on_train_batch_end: 1615775568.316093s
+
+on_train_batch_begin: 1615775568.316476s
+
+157 step training time: 0.011556s
+
+on_train_batch_end: 1615775568.327664s
+
+on_train_batch_begin: 1615775568.328048s
+
+158 step training time: 0.011572s
+
+on_train_batch_end: 1615775568.339471s
+
+on_train_batch_begin: 1615775568.339836s
+
+159 step training time: 0.011787s
+
+on_train_batch_end: 1615775568.350651s
+
+on_train_batch_begin: 1615775568.351021s
+
+160 step training time: 0.011185s
+
+41216/60000 [===================>..........] - ETA: 4s - loss: 0.4658 - accuracy: 0.8571
+on_train_batch_end: 1615775568.362153s
+
+on_train_batch_begin: 1615775568.362521s
+
+161 step training time: 0.011500s
+
+on_train_batch_end: 1615775568.374394s
+
+on_train_batch_begin: 1615775568.374772s
+
+162 step training time: 0.012251s
+
+on_train_batch_end: 1615775568.385862s
+
+on_train_batch_begin: 1615775568.386224s
+
+163 step training time: 0.011452s
+
+on_train_batch_end: 1615775568.397439s
+
+on_train_batch_begin: 1615775568.397804s
+
+164 step training time: 0.011580s
+
+on_train_batch_end: 1615775568.409465s
+
+on_train_batch_begin: 1615775568.409830s
+
+165 step training time: 0.012026s
+
+42496/60000 [====================>.........] - ETA: 3s - loss: 0.4573 - accuracy: 0.8599
+on_train_batch_end: 1615775568.421087s
+
+on_train_batch_begin: 1615775568.421432s
+
+166 step training time: 0.011603s
+
+on_train_batch_end: 1615775568.432589s
+
+on_train_batch_begin: 1615775568.432953s
+
+167 step training time: 0.011521s
+
+on_train_batch_end: 1615775568.444347s
+
+on_train_batch_begin: 1615775568.444708s
+
+168 step training time: 0.011754s
+
+on_train_batch_end: 1615775568.455418s
+
+on_train_batch_begin: 1615775568.455773s
+
+169 step training time: 0.011065s
+
+on_train_batch_end: 1615775568.466902s
+
+on_train_batch_begin: 1615775568.467266s
+
+170 step training time: 0.011493s
+
+43776/60000 [====================>.........] - ETA: 3s - loss: 0.4477 - accuracy: 0.8630
+on_train_batch_end: 1615775568.479100s
+
+on_train_batch_begin: 1615775568.479443s
+
+171 step training time: 0.012177s
+
+on_train_batch_end: 1615775568.490639s
+
+on_train_batch_begin: 1615775568.490994s
+
+172 step training time: 0.011551s
+
+on_train_batch_end: 1615775568.502165s
+
+on_train_batch_begin: 1615775568.502545s
+
+173 step training time: 0.011551s
+
+on_train_batch_end: 1615775568.513795s
+
+on_train_batch_begin: 1615775568.514144s
+
+174 step training time: 0.011599s
+
+on_train_batch_end: 1615775568.525664s
+
+on_train_batch_begin: 1615775568.526021s
+
+175 step training time: 0.011878s
+
+45056/60000 [=====================>........] - ETA: 3s - loss: 0.4401 - accuracy: 0.8655
+on_train_batch_end: 1615775568.537408s
+
+on_train_batch_begin: 1615775568.537753s
+
+176 step training time: 0.011732s
+
+on_train_batch_end: 1615775568.548891s
+
+on_train_batch_begin: 1615775568.549252s
+
+177 step training time: 0.011499s
+
+on_train_batch_end: 1615775568.560395s
+
+on_train_batch_begin: 1615775568.560754s
+
+178 step training time: 0.011502s
+
+on_train_batch_end: 1615775568.571892s
+
+on_train_batch_begin: 1615775568.572270s
+
+179 step training time: 0.011516s
+
+on_train_batch_end: 1615775568.583563s
+
+on_train_batch_begin: 1615775568.583923s
+
+180 step training time: 0.011652s
+
+46336/60000 [======================>.......] - ETA: 2s - loss: 0.4316 - accuracy: 0.8681
+on_train_batch_end: 1615775568.595152s
+
+on_train_batch_begin: 1615775568.595498s
+
+181 step training time: 0.011575s
+
+on_train_batch_end: 1615775568.606824s
+
+on_train_batch_begin: 1615775568.607182s
+
+182 step training time: 0.011684s
+
+on_train_batch_end: 1615775568.619023s
+
+on_train_batch_begin: 1615775568.619380s
+
+183 step training time: 0.012198s
+
+on_train_batch_end: 1615775568.630850s
+
+on_train_batch_begin: 1615775568.631212s
+
+184 step training time: 0.011832s
+
+on_train_batch_end: 1615775568.642308s
+
+on_train_batch_begin: 1615775568.642697s
+
+185 step training time: 0.011485s
+
+47616/60000 [======================>.......] - ETA: 2s - loss: 0.4242 - accuracy: 0.8704
+on_train_batch_end: 1615775568.654184s
+
+on_train_batch_begin: 1615775568.654548s
+
+186 step training time: 0.011851s
+
+on_train_batch_end: 1615775568.665691s
+
+on_train_batch_begin: 1615775568.666058s
+
+187 step training time: 0.011510s
+
+on_train_batch_end: 1615775568.677561s
+
+on_train_batch_begin: 1615775568.677926s
+
+188 step training time: 0.011868s
+
+on_train_batch_end: 1615775568.689297s
+
+on_train_batch_begin: 1615775568.689665s
+
+189 step training time: 0.011739s
+
+on_train_batch_end: 1615775568.701321s
+
+on_train_batch_begin: 1615775568.701694s
+
+190 step training time: 0.012028s
+
+48896/60000 [=======================>......] - ETA: 2s - loss: 0.4167 - accuracy: 0.8728
+on_train_batch_end: 1615775568.713428s
+
+on_train_batch_begin: 1615775568.713778s
+
+191 step training time: 0.012084s
+
+on_train_batch_end: 1615775568.725107s
+
+on_train_batch_begin: 1615775568.725506s
+
+192 step training time: 0.011728s
+
+on_train_batch_end: 1615775568.736696s
+
+on_train_batch_begin: 1615775568.737060s
+
+193 step training time: 0.011554s
+
+on_train_batch_end: 1615775568.748725s
+
+on_train_batch_begin: 1615775568.749092s
+
+194 step training time: 0.012033s
+
+on_train_batch_end: 1615775568.760933s
+
+on_train_batch_begin: 1615775568.761294s
+
+195 step training time: 0.012202s
+
+50176/60000 [========================>.....] - ETA: 1s - loss: 0.4098 - accuracy: 0.8749
+on_train_batch_end: 1615775568.772677s
+
+on_train_batch_begin: 1615775568.773042s
+
+196 step training time: 0.011747s
+
+on_train_batch_end: 1615775568.784044s
+
+on_train_batch_begin: 1615775568.784404s
+
+197 step training time: 0.011362s
+
+on_train_batch_end: 1615775568.795529s
+
+on_train_batch_begin: 1615775568.795901s
+
+198 step training time: 0.011497s
+
+on_train_batch_end: 1615775568.806848s
+
+on_train_batch_begin: 1615775568.807211s
+
+199 step training time: 0.011310s
+
+on_train_batch_end: 1615775568.818444s
+
+on_train_batch_begin: 1615775568.818822s
+
+200 step training time: 0.011611s
+
+51456/60000 [========================>.....] - ETA: 1s - loss: 0.4039 - accuracy: 0.8768
+on_train_batch_end: 1615775568.830006s
+
+on_train_batch_begin: 1615775568.830357s
+
+201 step training time: 0.011534s
+
+on_train_batch_end: 1615775568.841888s
+
+on_train_batch_begin: 1615775568.842285s
+
+202 step training time: 0.011928s
+
+on_train_batch_end: 1615775568.853397s
+
+on_train_batch_begin: 1615775568.853765s
+
+203 step training time: 0.011481s
+
+on_train_batch_end: 1615775568.864681s
+
+on_train_batch_begin: 1615775568.865049s
+
+204 step training time: 0.011283s
+
+on_train_batch_end: 1615775568.876287s
+
+on_train_batch_begin: 1615775568.876651s
+
+205 step training time: 0.011602s
+
+52736/60000 [=========================>....] - ETA: 1s - loss: 0.3978 - accuracy: 0.8786
+on_train_batch_end: 1615775568.887859s
+
+on_train_batch_begin: 1615775568.888204s
+
+206 step training time: 0.011553s
+
+on_train_batch_end: 1615775568.899035s
+
+on_train_batch_begin: 1615775568.899398s
+
+207 step training time: 0.011195s
+
+on_train_batch_end: 1615775568.910719s
+
+on_train_batch_begin: 1615775568.911091s
+
+208 step training time: 0.011693s
+
+on_train_batch_end: 1615775568.922192s
+
+on_train_batch_begin: 1615775568.922583s
+
+209 step training time: 0.011492s
+
+on_train_batch_end: 1615775568.933717s
+
+on_train_batch_begin: 1615775568.934089s
+
+210 step training time: 0.011506s
+
+54016/60000 [==========================>...] - ETA: 1s - loss: 0.3919 - accuracy: 0.8805
+on_train_batch_end: 1615775568.945396s
+
+on_train_batch_begin: 1615775568.945739s
+
+211 step training time: 0.011650s
+
+on_train_batch_end: 1615775568.956753s
+
+on_train_batch_begin: 1615775568.957120s
+
+212 step training time: 0.011381s
+
+on_train_batch_end: 1615775568.968441s
+
+on_train_batch_begin: 1615775568.968805s
+
+213 step training time: 0.011684s
+
+on_train_batch_end: 1615775568.979952s
+
+on_train_batch_begin: 1615775568.980322s
+
+214 step training time: 0.011517s
+
+on_train_batch_end: 1615775568.991477s
+
+on_train_batch_begin: 1615775568.991845s
+
+215 step training time: 0.011523s
+
+55296/60000 [==========================>...] - ETA: 0s - loss: 0.3863 - accuracy: 0.8822
+on_train_batch_end: 1615775569.003132s
+
+on_train_batch_begin: 1615775569.003479s
+
+216 step training time: 0.011634s
+
+on_train_batch_end: 1615775569.014584s
+
+on_train_batch_begin: 1615775569.014940s
+
+217 step training time: 0.011460s
+
+on_train_batch_end: 1615775569.026306s
+
+on_train_batch_begin: 1615775569.026688s
+
+218 step training time: 0.011749s
+
+on_train_batch_end: 1615775569.037787s
+
+on_train_batch_begin: 1615775569.038157s
+
+219 step training time: 0.011468s
+
+on_train_batch_end: 1615775569.049602s
+
+on_train_batch_begin: 1615775569.049961s
+
+220 step training time: 0.011804s
+
+56576/60000 [===========================>..] - ETA: 0s - loss: 0.3812 - accuracy: 0.8838
+on_train_batch_end: 1615775569.061059s
+
+on_train_batch_begin: 1615775569.061406s
+
+221 step training time: 0.011446s
+
+on_train_batch_end: 1615775569.072456s
+
+on_train_batch_begin: 1615775569.072834s
+
+222 step training time: 0.011428s
+
+on_train_batch_end: 1615775569.084092s
+
+on_train_batch_begin: 1615775569.084454s
+
+223 step training time: 0.011620s
+
+on_train_batch_end: 1615775569.095587s
+
+on_train_batch_begin: 1615775569.095954s
+
+224 step training time: 0.011500s
+
+on_train_batch_end: 1615775569.107579s
+
+on_train_batch_begin: 1615775569.107949s
+
+225 step training time: 0.011994s
+
+57856/60000 [===========================>..] - ETA: 0s - loss: 0.3763 - accuracy: 0.8854
+on_train_batch_end: 1615775569.119632s
+
+on_train_batch_begin: 1615775569.119987s
+
+226 step training time: 0.012038s
+
+on_train_batch_end: 1615775569.131219s
+
+on_train_batch_begin: 1615775569.131589s
+
+227 step training time: 0.011602s
+
+on_train_batch_end: 1615775569.142729s
+
+on_train_batch_begin: 1615775569.143108s
+
+228 step training time: 0.011519s
+
+on_train_batch_end: 1615775569.154324s
+
+on_train_batch_begin: 1615775569.154718s
+
+229 step training time: 0.011609s
+
+on_train_batch_end: 1615775569.165738s
+
+on_train_batch_begin: 1615775569.166105s
+
+230 step training time: 0.011387s
+
+59136/60000 [============================>.] - ETA: 0s - loss: 0.3710 - accuracy: 0.8870
+on_train_batch_end: 1615775569.177348s
+
+on_train_batch_begin: 1615775569.177692s
+
+231 step training time: 0.011587s
+
+on_train_batch_end: 1615775569.188868s
+
+on_train_batch_begin: 1615775569.189238s
+
+232 step training time: 0.011546s
+
+on_train_batch_end: 1615775569.200536s
+
+on_train_batch_begin: 1615775569.200908s
+
+233 step training time: 0.011670s
+
+on_train_batch_end: 1615775569.212117s
+
+on_train_batch_begin: 1615775569.212353s
+
+234 step training time: 0.011445s
+
+on_train_batch_end: 1615775569.232697s
+
+on_test_batch_begin: 1615775569.233918s
+
+235 step training time: 0.021565s
+
+60000/60000 [==============================] - 10s 172us/step - loss: 0.3678 - accuracy: 0.8881 - val_loss: 0.0770 - val_accuracy: 0.9779
+
+on_epoch_end: 1615775569.582588s
+
+Validation time: 0.348659s
+
+Real time: 1615775569.582588s
+
+Epoch time: 10.305355072021484s
+Epoch 2/5
+
+on_epoch_begin: 1615775569.583360s
+
+Real time: 1615775569.5833673
+
+on_train_batch_begin: 1615775569.584980s
+
+  256/60000 [..............................] - ETA: 3s - loss: 0.1412 - accuracy: 0.9453
+on_train_batch_end: 1615775569.596343s
+
+on_train_batch_begin: 1615775569.596708s
+
+1 step training time: 0.011728s
+
+on_train_batch_end: 1615775569.607912s
+
+on_train_batch_begin: 1615775569.608283s
+
+2 step training time: 0.011575s
+
+on_train_batch_end: 1615775569.619872s
+
+on_train_batch_begin: 1615775569.620244s
+
+3 step training time: 0.011961s
+
+on_train_batch_end: 1615775569.631793s
+
+on_train_batch_begin: 1615775569.632195s
+
+4 step training time: 0.011951s
+
+on_train_batch_end: 1615775569.643479s
+
+on_train_batch_begin: 1615775569.643850s
+
+5 step training time: 0.011656s
+
+ 1536/60000 [..............................] - ETA: 2s - loss: 0.1241 - accuracy: 0.9609
+on_train_batch_end: 1615775569.654902s
+
+on_train_batch_begin: 1615775569.655254s
+
+6 step training time: 0.011404s
+
+on_train_batch_end: 1615775569.665941s
+
+on_train_batch_begin: 1615775569.666318s
+
+7 step training time: 0.011064s
+
+on_train_batch_end: 1615775569.677678s
+
+on_train_batch_begin: 1615775569.678045s
+
+8 step training time: 0.011727s
+
+on_train_batch_end: 1615775569.689153s
+
+on_train_batch_begin: 1615775569.689527s
+
+9 step training time: 0.011482s
+
+on_train_batch_end: 1615775569.700815s
+
+on_train_batch_begin: 1615775569.701194s
+
+10 step training time: 0.011667s
+
+ 2816/60000 [>.............................] - ETA: 2s - loss: 0.1338 - accuracy: 0.9606
+on_train_batch_end: 1615775569.712308s
+
+on_train_batch_begin: 1615775569.712666s
+
+11 step training time: 0.011472s
+
+on_train_batch_end: 1615775569.723886s
+
+on_train_batch_begin: 1615775569.724253s
+
+12 step training time: 0.011587s
+
+on_train_batch_end: 1615775569.735498s
+
+on_train_batch_begin: 1615775569.735890s
+
+13 step training time: 0.011637s
+
+on_train_batch_end: 1615775569.747226s
+
+on_train_batch_begin: 1615775569.747599s
+
+14 step training time: 0.011709s
+
+on_train_batch_end: 1615775569.758647s
+
+on_train_batch_begin: 1615775569.759022s
+
+15 step training time: 0.011422s
+
+ 4096/60000 [=>............................] - ETA: 2s - loss: 0.1306 - accuracy: 0.9617
+on_train_batch_end: 1615775569.770632s
+
+on_train_batch_begin: 1615775569.771000s
+
+16 step training time: 0.011979s
+
+on_train_batch_end: 1615775569.782186s
+
+on_train_batch_begin: 1615775569.782573s
+
+17 step training time: 0.011572s
+
+on_train_batch_end: 1615775569.793929s
+
+on_train_batch_begin: 1615775569.794318s
+
+18 step training time: 0.011746s
+
+on_train_batch_end: 1615775569.805504s
+
+on_train_batch_begin: 1615775569.805876s
+
+19 step training time: 0.011557s
+
+on_train_batch_end: 1615775569.816988s
+
+on_train_batch_begin: 1615775569.817350s
+
+20 step training time: 0.011474s
+
+ 5376/60000 [=>............................] - ETA: 2s - loss: 0.1273 - accuracy: 0.9632
+on_train_batch_end: 1615775569.828756s
+
+on_train_batch_begin: 1615775569.829108s
+
+21 step training time: 0.011759s
+
+on_train_batch_end: 1615775569.840374s
+
+on_train_batch_begin: 1615775569.840745s
+
+22 step training time: 0.011637s
+
+on_train_batch_end: 1615775569.851828s
+
+on_train_batch_begin: 1615775569.852229s
+
+23 step training time: 0.011484s
+
+on_train_batch_end: 1615775569.863481s
+
+on_train_batch_begin: 1615775569.863848s
+
+24 step training time: 0.011619s
+
+on_train_batch_end: 1615775569.875094s
+
+on_train_batch_begin: 1615775569.875471s
+
+25 step training time: 0.011623s
+
+ 6656/60000 [==>...........................] - ETA: 2s - loss: 0.1284 - accuracy: 0.9629
+on_train_batch_end: 1615775569.886951s
+
+on_train_batch_begin: 1615775569.887303s
+
+26 step training time: 0.011832s
+
+on_train_batch_end: 1615775569.898568s
+
+on_train_batch_begin: 1615775569.898942s
+
+27 step training time: 0.011638s
+
+on_train_batch_end: 1615775569.910559s
+
+on_train_batch_begin: 1615775569.910927s
+
+28 step training time: 0.011985s
+
+on_train_batch_end: 1615775569.922364s
+
+on_train_batch_begin: 1615775569.922761s
+
+29 step training time: 0.011834s
+
+on_train_batch_end: 1615775569.933994s
+
+on_train_batch_begin: 1615775569.934361s
+
+30 step training time: 0.011600s
+
+ 7936/60000 [==>...........................] - ETA: 2s - loss: 0.1290 - accuracy: 0.9619
+on_train_batch_end: 1615775569.945653s
+
+on_train_batch_begin: 1615775569.946010s
+
+31 step training time: 0.011649s
+
+on_train_batch_end: 1615775569.957365s
+
+on_train_batch_begin: 1615775569.957741s
+
+32 step training time: 0.011730s
+
+on_train_batch_end: 1615775569.969087s
+
+on_train_batch_begin: 1615775569.969456s
+
+33 step training time: 0.011716s
+
+on_train_batch_end: 1615775569.980610s
+
+on_train_batch_begin: 1615775569.980986s
+
+34 step training time: 0.011530s
+
+on_train_batch_end: 1615775569.992292s
+
+on_train_batch_begin: 1615775569.992662s
+
+35 step training time: 0.011676s
+
+ 9216/60000 [===>..........................] - ETA: 2s - loss: 0.1280 - accuracy: 0.9621
+on_train_batch_end: 1615775570.004029s
+
+on_train_batch_begin: 1615775570.004377s
+
+36 step training time: 0.011715s
+
+on_train_batch_end: 1615775570.015523s
+
+on_train_batch_begin: 1615775570.015891s
+
+37 step training time: 0.011514s
+
+on_train_batch_end: 1615775570.027449s
+
+on_train_batch_begin: 1615775570.027842s
+
+38 step training time: 0.011951s
+
+on_train_batch_end: 1615775570.039101s
+
+on_train_batch_begin: 1615775570.039468s
+
+39 step training time: 0.011626s
+
+on_train_batch_end: 1615775570.050815s
+
+on_train_batch_begin: 1615775570.051186s
+
+40 step training time: 0.011718s
+
+10496/60000 [====>.........................] - ETA: 2s - loss: 0.1291 - accuracy: 0.9616
+on_train_batch_end: 1615775570.062586s
+
+on_train_batch_begin: 1615775570.062943s
+
+41 step training time: 0.011757s
+
+on_train_batch_end: 1615775570.074254s
+
+on_train_batch_begin: 1615775570.074648s
+
+42 step training time: 0.011705s
+
+on_train_batch_end: 1615775570.085960s
+
+on_train_batch_begin: 1615775570.086326s
+
+43 step training time: 0.011678s
+
+on_train_batch_end: 1615775570.097745s
+
+on_train_batch_begin: 1615775570.098104s
+
+44 step training time: 0.011778s
+
+on_train_batch_end: 1615775570.109543s
+
+on_train_batch_begin: 1615775570.109910s
+
+45 step training time: 0.011806s
+
+11776/60000 [====>.........................] - ETA: 2s - loss: 0.1260 - accuracy: 0.9624
+on_train_batch_end: 1615775570.121275s
+
+on_train_batch_begin: 1615775570.121633s
+
+46 step training time: 0.011723s
+
+on_train_batch_end: 1615775570.133036s
+
+on_train_batch_begin: 1615775570.133408s
+
+47 step training time: 0.011775s
+
+on_train_batch_end: 1615775570.144537s
+
+on_train_batch_begin: 1615775570.144906s
+
+48 step training time: 0.011498s
+
+on_train_batch_end: 1615775570.156001s
+
+on_train_batch_begin: 1615775570.156363s
+
+49 step training time: 0.011457s
+
+on_train_batch_end: 1615775570.167478s
+
+on_train_batch_begin: 1615775570.167845s
+
+50 step training time: 0.011482s
+
+13056/60000 [=====>........................] - ETA: 2s - loss: 0.1251 - accuracy: 0.9628
+on_train_batch_end: 1615775570.178957s
+
+on_train_batch_begin: 1615775570.179310s
+
+51 step training time: 0.011465s
+
+on_train_batch_end: 1615775570.190838s
+
+on_train_batch_begin: 1615775570.191210s
+
+52 step training time: 0.011900s
+
+on_train_batch_end: 1615775570.202331s
+
+on_train_batch_begin: 1615775570.202727s
+
+53 step training time: 0.011517s
+
+on_train_batch_end: 1615775570.213858s
+
+on_train_batch_begin: 1615775570.214220s
+
+54 step training time: 0.011493s
+
+on_train_batch_end: 1615775570.225312s
+
+on_train_batch_begin: 1615775570.225683s
+
+55 step training time: 0.011463s
+
+14336/60000 [======>.......................] - ETA: 2s - loss: 0.1237 - accuracy: 0.9633
+on_train_batch_end: 1615775570.237415s
+
+on_train_batch_begin: 1615775570.237770s
+
+56 step training time: 0.012087s
+
+on_train_batch_end: 1615775570.249096s
+
+on_train_batch_begin: 1615775570.249467s
+
+57 step training time: 0.011697s
+
+on_train_batch_end: 1615775570.260762s
+
+on_train_batch_begin: 1615775570.261134s
+
+58 step training time: 0.011667s
+
+on_train_batch_end: 1615775570.272341s
+
+on_train_batch_begin: 1615775570.272708s
+
+59 step training time: 0.011574s
+
+on_train_batch_end: 1615775570.283825s
+
+on_train_batch_begin: 1615775570.284194s
+
+60 step training time: 0.011487s
+
+15616/60000 [======>.......................] - ETA: 2s - loss: 0.1233 - accuracy: 0.9630
+on_train_batch_end: 1615775570.295460s
+
+on_train_batch_begin: 1615775570.295805s
+
+61 step training time: 0.011611s
+
+on_train_batch_end: 1615775570.307242s
+
+on_train_batch_begin: 1615775570.307614s
+
+62 step training time: 0.011809s
+
+on_train_batch_end: 1615775570.318769s
+
+on_train_batch_begin: 1615775570.319154s
+
+63 step training time: 0.011541s
+
+on_train_batch_end: 1615775570.330435s
+
+on_train_batch_begin: 1615775570.330823s
+
+64 step training time: 0.011669s
+
+on_train_batch_end: 1615775570.341916s
+
+on_train_batch_begin: 1615775570.342291s
+
+65 step training time: 0.011468s
+
+16896/60000 [=======>......................] - ETA: 1s - loss: 0.1211 - accuracy: 0.9638
+on_train_batch_end: 1615775570.353422s
+
+on_train_batch_begin: 1615775570.353803s
+
+66 step training time: 0.011511s
+
+on_train_batch_end: 1615775570.364809s
+
+on_train_batch_begin: 1615775570.365182s
+
+67 step training time: 0.011380s
+
+on_train_batch_end: 1615775570.376401s
+
+on_train_batch_begin: 1615775570.376764s
+
+68 step training time: 0.011582s
+
+on_train_batch_end: 1615775570.387841s
+
+on_train_batch_begin: 1615775570.388201s
+
+69 step training time: 0.011437s
+
+on_train_batch_end: 1615775570.399741s
+
+on_train_batch_begin: 1615775570.400106s
+
+70 step training time: 0.011905s
+
+18176/60000 [========>.....................] - ETA: 1s - loss: 0.1207 - accuracy: 0.9640
+on_train_batch_end: 1615775570.411324s
+
+on_train_batch_begin: 1615775570.411668s
+
+71 step training time: 0.011563s
+
+on_train_batch_end: 1615775570.422725s
+
+on_train_batch_begin: 1615775570.423116s
+
+72 step training time: 0.011448s
+
+on_train_batch_end: 1615775570.434442s
+
+on_train_batch_begin: 1615775570.434831s
+
+73 step training time: 0.011714s
+
+on_train_batch_end: 1615775570.445995s
+
+on_train_batch_begin: 1615775570.446367s
+
+74 step training time: 0.011536s
+
+on_train_batch_end: 1615775570.457595s
+
+on_train_batch_begin: 1615775570.457958s
+
+75 step training time: 0.011591s
+
+19456/60000 [========>.....................] - ETA: 1s - loss: 0.1205 - accuracy: 0.9638
+on_train_batch_end: 1615775570.469503s
+
+on_train_batch_begin: 1615775570.469854s
+
+76 step training time: 0.011896s
+
+on_train_batch_end: 1615775570.481071s
+
+on_train_batch_begin: 1615775570.481436s
+
+77 step training time: 0.011582s
+
+on_train_batch_end: 1615775570.492581s
+
+on_train_batch_begin: 1615775570.492958s
+
+78 step training time: 0.011521s
+
+on_train_batch_end: 1615775570.503896s
+
+on_train_batch_begin: 1615775570.504265s
+
+79 step training time: 0.011307s
+
+on_train_batch_end: 1615775570.515319s
+
+on_train_batch_begin: 1615775570.515687s
+
+80 step training time: 0.011422s
+
+20736/60000 [=========>....................] - ETA: 1s - loss: 0.1189 - accuracy: 0.9642
+on_train_batch_end: 1615775570.527227s
+
+on_train_batch_begin: 1615775570.527579s
+
+81 step training time: 0.011892s
+
+on_train_batch_end: 1615775570.538870s
+
+on_train_batch_begin: 1615775570.539263s
+
+82 step training time: 0.011684s
+
+on_train_batch_end: 1615775570.550859s
+
+on_train_batch_begin: 1615775570.551229s
+
+83 step training time: 0.011966s
+
+on_train_batch_end: 1615775570.562500s
+
+on_train_batch_begin: 1615775570.562874s
+
+84 step training time: 0.011645s
+
+on_train_batch_end: 1615775570.574150s
+
+on_train_batch_begin: 1615775570.574532s
+
+85 step training time: 0.011659s
+
+22016/60000 [==========>...................] - ETA: 1s - loss: 0.1193 - accuracy: 0.9643
+on_train_batch_end: 1615775570.585715s
+
+on_train_batch_begin: 1615775570.586059s
+
+86 step training time: 0.011527s
+
+on_train_batch_end: 1615775570.597178s
+
+on_train_batch_begin: 1615775570.597544s
+
+87 step training time: 0.011485s
+
+on_train_batch_end: 1615775570.608916s
+
+on_train_batch_begin: 1615775570.609281s
+
+88 step training time: 0.011737s
+
+on_train_batch_end: 1615775570.620416s
+
+on_train_batch_begin: 1615775570.620784s
+
+89 step training time: 0.011503s
+
+on_train_batch_end: 1615775570.632039s
+
+on_train_batch_begin: 1615775570.632406s
+
+90 step training time: 0.011623s
+
+23296/60000 [==========>...................] - ETA: 1s - loss: 0.1184 - accuracy: 0.9645
+on_train_batch_end: 1615775570.643488s
+
+on_train_batch_begin: 1615775570.643840s
+
+91 step training time: 0.011434s
+
+on_train_batch_end: 1615775570.654835s
+
+on_train_batch_begin: 1615775570.655200s
+
+92 step training time: 0.011361s
+
+on_train_batch_end: 1615775570.665788s
+
+on_train_batch_begin: 1615775570.666147s
+
+93 step training time: 0.010947s
+
+on_train_batch_end: 1615775570.677300s
+
+on_train_batch_begin: 1615775570.677660s
+
+94 step training time: 0.011513s
+
+on_train_batch_end: 1615775570.688989s
+
+on_train_batch_begin: 1615775570.689354s
+
+95 step training time: 0.011694s
+
+24576/60000 [===========>..................] - ETA: 1s - loss: 0.1168 - accuracy: 0.9651
+on_train_batch_end: 1615775570.700832s
+
+on_train_batch_begin: 1615775570.701192s
+
+96 step training time: 0.011838s
+
+on_train_batch_end: 1615775570.712347s
+
+on_train_batch_begin: 1615775570.712720s
+
+97 step training time: 0.011528s
+
+on_train_batch_end: 1615775570.723757s
+
+on_train_batch_begin: 1615775570.724119s
+
+98 step training time: 0.011399s
+
+on_train_batch_end: 1615775570.735362s
+
+on_train_batch_begin: 1615775570.735722s
+
+99 step training time: 0.011603s
+
+on_train_batch_end: 1615775570.746864s
+
+on_train_batch_begin: 1615775570.747229s
+
+100 step training time: 0.011507s
+
+25856/60000 [===========>..................] - ETA: 1s - loss: 0.1161 - accuracy: 0.9655
+on_train_batch_end: 1615775570.758698s
+
+on_train_batch_begin: 1615775570.759067s
+
+101 step training time: 0.011837s
+
+on_train_batch_end: 1615775570.770301s
+
+on_train_batch_begin: 1615775570.770694s
+
+102 step training time: 0.011627s
+
+on_train_batch_end: 1615775570.782037s
+
+on_train_batch_begin: 1615775570.782408s
+
+103 step training time: 0.011714s
+
+on_train_batch_end: 1615775570.793550s
+
+on_train_batch_begin: 1615775570.793918s
+
+104 step training time: 0.011510s
+
+on_train_batch_end: 1615775570.805169s
+
+on_train_batch_begin: 1615775570.805533s
+
+105 step training time: 0.011614s
+
+27136/60000 [============>.................] - ETA: 1s - loss: 0.1159 - accuracy: 0.9656
+on_train_batch_end: 1615775570.816727s
+
+on_train_batch_begin: 1615775570.817080s
+
+106 step training time: 0.011547s
+
+on_train_batch_end: 1615775570.828515s
+
+on_train_batch_begin: 1615775570.828879s
+
+107 step training time: 0.011799s
+
+on_train_batch_end: 1615775570.839962s
+
+on_train_batch_begin: 1615775570.840354s
+
+108 step training time: 0.011475s
+
+on_train_batch_end: 1615775570.851604s
+
+on_train_batch_begin: 1615775570.852001s
+
+109 step training time: 0.011647s
+
+on_train_batch_end: 1615775570.863102s
+
+on_train_batch_begin: 1615775570.863470s
+
+110 step training time: 0.011469s
+
+28416/60000 [=============>................] - ETA: 1s - loss: 0.1165 - accuracy: 0.9652
+on_train_batch_end: 1615775570.874642s
+
+on_train_batch_begin: 1615775570.874990s
+
+111 step training time: 0.011520s
+
+on_train_batch_end: 1615775570.886134s
+
+on_train_batch_begin: 1615775570.886513s
+
+112 step training time: 0.011523s
+
+on_train_batch_end: 1615775570.897574s
+
+on_train_batch_begin: 1615775570.897944s
+
+113 step training time: 0.011431s
+
+on_train_batch_end: 1615775570.909144s
+
+on_train_batch_begin: 1615775570.909510s
+
+114 step training time: 0.011566s
+
+on_train_batch_end: 1615775570.920771s
+
+on_train_batch_begin: 1615775570.921140s
+
+115 step training time: 0.011630s
+
+29696/60000 [=============>................] - ETA: 1s - loss: 0.1152 - accuracy: 0.9657
+on_train_batch_end: 1615775570.932440s
+
+on_train_batch_begin: 1615775570.932797s
+
+116 step training time: 0.011657s
+
+on_train_batch_end: 1615775570.943850s
+
+on_train_batch_begin: 1615775570.944216s
+
+117 step training time: 0.011419s
+
+on_train_batch_end: 1615775570.955234s
+
+on_train_batch_begin: 1615775570.955602s
+
+118 step training time: 0.011386s
+
+on_train_batch_end: 1615775570.966868s
+
+on_train_batch_begin: 1615775570.967232s
+
+119 step training time: 0.011631s
+
+on_train_batch_end: 1615775570.978650s
+
+on_train_batch_begin: 1615775570.979022s
+
+120 step training time: 0.011789s
+
+30976/60000 [==============>...............] - ETA: 1s - loss: 0.1144 - accuracy: 0.9659
+on_train_batch_end: 1615775570.990246s
+
+on_train_batch_begin: 1615775570.990615s
+
+121 step training time: 0.011594s
+
+on_train_batch_end: 1615775571.002053s
+
+on_train_batch_begin: 1615775571.002421s
+
+122 step training time: 0.011806s
+
+on_train_batch_end: 1615775571.012982s
+
+on_train_batch_begin: 1615775571.013355s
+
+123 step training time: 0.010934s
+
+on_train_batch_end: 1615775571.024547s
+
+on_train_batch_begin: 1615775571.024916s
+
+124 step training time: 0.011561s
+
+on_train_batch_end: 1615775571.036029s
+
+on_train_batch_begin: 1615775571.036387s
+
+125 step training time: 0.011471s
+
+32256/60000 [===============>..............] - ETA: 1s - loss: 0.1138 - accuracy: 0.9659
+on_train_batch_end: 1615775571.047699s
+
+on_train_batch_begin: 1615775571.048059s
+
+126 step training time: 0.011673s
+
+on_train_batch_end: 1615775571.059520s
+
+on_train_batch_begin: 1615775571.059886s
+
+127 step training time: 0.011827s
+
+on_train_batch_end: 1615775571.071119s
+
+on_train_batch_begin: 1615775571.071486s
+
+128 step training time: 0.011600s
+
+on_train_batch_end: 1615775571.082647s
+
+on_train_batch_begin: 1615775571.083009s
+
+129 step training time: 0.011524s
+
+on_train_batch_end: 1615775571.094192s
+
+on_train_batch_begin: 1615775571.094577s
+
+130 step training time: 0.011567s
+
+33536/60000 [===============>..............] - ETA: 1s - loss: 0.1135 - accuracy: 0.9662
+on_train_batch_end: 1615775571.105953s
+
+on_train_batch_begin: 1615775571.106300s
+
+131 step training time: 0.011723s
+
+on_train_batch_end: 1615775571.117483s
+
+on_train_batch_begin: 1615775571.117848s
+
+132 step training time: 0.011549s
+
+on_train_batch_end: 1615775571.128981s
+
+on_train_batch_begin: 1615775571.129335s
+
+133 step training time: 0.011487s
+
+on_train_batch_end: 1615775571.140558s
+
+on_train_batch_begin: 1615775571.140932s
+
+134 step training time: 0.011597s
+
+on_train_batch_end: 1615775571.152002s
+
+on_train_batch_begin: 1615775571.152377s
+
+135 step training time: 0.011445s
+
+34816/60000 [================>.............] - ETA: 1s - loss: 0.1134 - accuracy: 0.9662
+on_train_batch_end: 1615775571.163592s
+
+on_train_batch_begin: 1615775571.163948s
+
+136 step training time: 0.011571s
+
+on_train_batch_end: 1615775571.175283s
+
+on_train_batch_begin: 1615775571.175643s
+
+137 step training time: 0.011695s
+
+on_train_batch_end: 1615775571.186932s
+
+on_train_batch_begin: 1615775571.187303s
+
+138 step training time: 0.011660s
+
+on_train_batch_end: 1615775571.198189s
+
+on_train_batch_begin: 1615775571.198581s
+
+139 step training time: 0.011279s
+
+on_train_batch_end: 1615775571.209912s
+
+on_train_batch_begin: 1615775571.210282s
+
+140 step training time: 0.011701s
+
+36096/60000 [=================>............] - ETA: 1s - loss: 0.1131 - accuracy: 0.9662
+on_train_batch_end: 1615775571.221592s
+
+on_train_batch_begin: 1615775571.221968s
+
+141 step training time: 0.011686s
+
+on_train_batch_end: 1615775571.233195s
+
+on_train_batch_begin: 1615775571.233565s
+
+142 step training time: 0.011597s
+
+on_train_batch_end: 1615775571.244635s
+
+on_train_batch_begin: 1615775571.245003s
+
+143 step training time: 0.011438s
+
+on_train_batch_end: 1615775571.256191s
+
+on_train_batch_begin: 1615775571.256559s
+
+144 step training time: 0.011556s
+
+on_train_batch_end: 1615775571.267885s
+
+on_train_batch_begin: 1615775571.268254s
+
+145 step training time: 0.011695s
+
+37376/60000 [=================>............] - ETA: 1s - loss: 0.1131 - accuracy: 0.9664
+on_train_batch_end: 1615775571.279614s
+
+on_train_batch_begin: 1615775571.279971s
+
+146 step training time: 0.011717s
+
+on_train_batch_end: 1615775571.291330s
+
+on_train_batch_begin: 1615775571.291693s
+
+147 step training time: 0.011722s
+
+on_train_batch_end: 1615775571.302672s
+
+on_train_batch_begin: 1615775571.303040s
+
+148 step training time: 0.011347s
+
+on_train_batch_end: 1615775571.314134s
+
+on_train_batch_begin: 1615775571.314507s
+
+149 step training time: 0.011467s
+
+on_train_batch_end: 1615775571.325749s
+
+on_train_batch_begin: 1615775571.326117s
+
+150 step training time: 0.011610s
+
+38656/60000 [==================>...........] - ETA: 0s - loss: 0.1132 - accuracy: 0.9664
+on_train_batch_end: 1615775571.337420s
+
+on_train_batch_begin: 1615775571.337765s
+
+151 step training time: 0.011649s
+
+on_train_batch_end: 1615775571.349039s
+
+on_train_batch_begin: 1615775571.349406s
+
+152 step training time: 0.011640s
+
+on_train_batch_end: 1615775571.360545s
+
+on_train_batch_begin: 1615775571.360915s
+
+153 step training time: 0.011510s
+
+on_train_batch_end: 1615775571.372185s
+
+on_train_batch_begin: 1615775571.372564s
+
+154 step training time: 0.011649s
+
+on_train_batch_end: 1615775571.383826s
+
+on_train_batch_begin: 1615775571.384185s
+
+155 step training time: 0.011621s
+
+39936/60000 [==================>...........] - ETA: 0s - loss: 0.1130 - accuracy: 0.9663
+on_train_batch_end: 1615775571.395464s
+
+on_train_batch_begin: 1615775571.395822s
+
+156 step training time: 0.011638s
+
+on_train_batch_end: 1615775571.407061s
+
+on_train_batch_begin: 1615775571.407427s
+
+157 step training time: 0.011604s
+
+on_train_batch_end: 1615775571.419514s
+
+on_train_batch_begin: 1615775571.419885s
+
+158 step training time: 0.012459s
+
+on_train_batch_end: 1615775571.431064s
+
+on_train_batch_begin: 1615775571.431431s
+
+159 step training time: 0.011545s
+
+on_train_batch_end: 1615775571.442723s
+
+on_train_batch_begin: 1615775571.443112s
+
+160 step training time: 0.011682s
+
+41216/60000 [===================>..........] - ETA: 0s - loss: 0.1122 - accuracy: 0.9666
+on_train_batch_end: 1615775571.454479s
+
+on_train_batch_begin: 1615775571.454860s
+
+161 step training time: 0.011748s
+
+on_train_batch_end: 1615775571.466222s
+
+on_train_batch_begin: 1615775571.466623s
+
+162 step training time: 0.011763s
+
+on_train_batch_end: 1615775571.477678s
+
+on_train_batch_begin: 1615775571.478043s
+
+163 step training time: 0.011420s
+
+on_train_batch_end: 1615775571.489296s
+
+on_train_batch_begin: 1615775571.489663s
+
+164 step training time: 0.011620s
+
+on_train_batch_end: 1615775571.501139s
+
+on_train_batch_begin: 1615775571.501500s
+
+165 step training time: 0.011837s
+
+42496/60000 [====================>.........] - ETA: 0s - loss: 0.1117 - accuracy: 0.9668
+on_train_batch_end: 1615775571.512807s
+
+on_train_batch_begin: 1615775571.513174s
+
+166 step training time: 0.011674s
+
+on_train_batch_end: 1615775571.524269s
+
+on_train_batch_begin: 1615775571.524632s
+
+167 step training time: 0.011458s
+
+on_train_batch_end: 1615775571.536498s
+
+on_train_batch_begin: 1615775571.536873s
+
+168 step training time: 0.012241s
+
+on_train_batch_end: 1615775571.548157s
+
+on_train_batch_begin: 1615775571.548522s
+
+169 step training time: 0.011649s
+
+on_train_batch_end: 1615775571.560204s
+
+on_train_batch_begin: 1615775571.560576s
+
+170 step training time: 0.012054s
+
+43776/60000 [====================>.........] - ETA: 0s - loss: 0.1121 - accuracy: 0.9666
+on_train_batch_end: 1615775571.572024s
+
+on_train_batch_begin: 1615775571.572381s
+
+171 step training time: 0.011805s
+
+on_train_batch_end: 1615775571.583775s
+
+on_train_batch_begin: 1615775571.584146s
+
+172 step training time: 0.011764s
+
+on_train_batch_end: 1615775571.595387s
+
+on_train_batch_begin: 1615775571.595752s
+
+173 step training time: 0.011607s
+
+on_train_batch_end: 1615775571.606966s
+
+on_train_batch_begin: 1615775571.607337s
+
+174 step training time: 0.011585s
+
+on_train_batch_end: 1615775571.618540s
+
+on_train_batch_begin: 1615775571.618903s
+
+175 step training time: 0.011566s
+
+45056/60000 [=====================>........] - ETA: 0s - loss: 0.1117 - accuracy: 0.9666
+on_train_batch_end: 1615775571.630584s
+
+on_train_batch_begin: 1615775571.630933s
+
+176 step training time: 0.012030s
+
+on_train_batch_end: 1615775571.642273s
+
+on_train_batch_begin: 1615775571.642670s
+
+177 step training time: 0.011737s
+
+on_train_batch_end: 1615775571.653876s
+
+on_train_batch_begin: 1615775571.654246s
+
+178 step training time: 0.011576s
+
+on_train_batch_end: 1615775571.665484s
+
+on_train_batch_begin: 1615775571.665844s
+
+179 step training time: 0.011597s
+
+on_train_batch_end: 1615775571.677240s
+
+on_train_batch_begin: 1615775571.677610s
+
+180 step training time: 0.011767s
+
+46336/60000 [======================>.......] - ETA: 0s - loss: 0.1110 - accuracy: 0.9668
+on_train_batch_end: 1615775571.688905s
+
+on_train_batch_begin: 1615775571.689254s
+
+181 step training time: 0.011643s
+
+on_train_batch_end: 1615775571.700525s
+
+on_train_batch_begin: 1615775571.700889s
+
+182 step training time: 0.011635s
+
+on_train_batch_end: 1615775571.711651s
+
+on_train_batch_begin: 1615775571.712042s
+
+183 step training time: 0.011153s
+
+on_train_batch_end: 1615775571.723357s
+
+on_train_batch_begin: 1615775571.723726s
+
+184 step training time: 0.011684s
+
+on_train_batch_end: 1615775571.734823s
+
+on_train_batch_begin: 1615775571.735191s
+
+185 step training time: 0.011465s
+
+47616/60000 [======================>.......] - ETA: 0s - loss: 0.1106 - accuracy: 0.9670
+on_train_batch_end: 1615775571.747591s
+
+on_train_batch_begin: 1615775571.748006s
+
+186 step training time: 0.012815s
+
+on_train_batch_end: 1615775571.758933s
+
+on_train_batch_begin: 1615775571.759301s
+
+187 step training time: 0.011296s
+
+on_train_batch_end: 1615775571.770436s
+
+on_train_batch_begin: 1615775571.770854s
+
+188 step training time: 0.011553s
+
+on_train_batch_end: 1615775571.782236s
+
+on_train_batch_begin: 1615775571.782629s
+
+189 step training time: 0.011775s
+
+on_train_batch_end: 1615775571.793937s
+
+on_train_batch_begin: 1615775571.794306s
+
+190 step training time: 0.011677s
+
+48896/60000 [=======================>......] - ETA: 0s - loss: 0.1094 - accuracy: 0.9672
+on_train_batch_end: 1615775571.805475s
+
+on_train_batch_begin: 1615775571.805820s
+
+191 step training time: 0.011513s
+
+on_train_batch_end: 1615775571.817264s
+
+on_train_batch_begin: 1615775571.817629s
+
+192 step training time: 0.011809s
+
+on_train_batch_end: 1615775571.828610s
+
+on_train_batch_begin: 1615775571.828971s
+
+193 step training time: 0.011342s
+
+on_train_batch_end: 1615775571.840141s
+
+on_train_batch_begin: 1615775571.840504s
+
+194 step training time: 0.011533s
+
+on_train_batch_end: 1615775571.851702s
+
+on_train_batch_begin: 1615775571.852115s
+
+195 step training time: 0.011611s
+
+50176/60000 [========================>.....] - ETA: 0s - loss: 0.1097 - accuracy: 0.9672
+on_train_batch_end: 1615775571.863582s
+
+on_train_batch_begin: 1615775571.863949s
+
+196 step training time: 0.011834s
+
+on_train_batch_end: 1615775571.875144s
+
+on_train_batch_begin: 1615775571.875535s
+
+197 step training time: 0.011586s
+
+on_train_batch_end: 1615775571.886991s
+
+on_train_batch_begin: 1615775571.887357s
+
+198 step training time: 0.011822s
+
+on_train_batch_end: 1615775571.898517s
+
+on_train_batch_begin: 1615775571.898907s
+
+199 step training time: 0.011550s
+
+on_train_batch_end: 1615775571.910189s
+
+on_train_batch_begin: 1615775571.910639s
+
+200 step training time: 0.011732s
+
+51456/60000 [========================>.....] - ETA: 0s - loss: 0.1089 - accuracy: 0.9673
+on_train_batch_end: 1615775571.922091s
+
+on_train_batch_begin: 1615775571.922461s
+
+201 step training time: 0.011822s
+
+on_train_batch_end: 1615775571.933630s
+
+on_train_batch_begin: 1615775571.934006s
+
+202 step training time: 0.011545s
+
+on_train_batch_end: 1615775571.945581s
+
+on_train_batch_begin: 1615775571.945958s
+
+203 step training time: 0.011952s
+
+on_train_batch_end: 1615775571.957212s
+
+on_train_batch_begin: 1615775571.957580s
+
+204 step training time: 0.011622s
+
+on_train_batch_end: 1615775571.968848s
+
+on_train_batch_begin: 1615775571.969214s
+
+205 step training time: 0.011634s
+
+52736/60000 [=========================>....] - ETA: 0s - loss: 0.1089 - accuracy: 0.9673
+on_train_batch_end: 1615775571.980445s
+
+on_train_batch_begin: 1615775571.980798s
+
+206 step training time: 0.011585s
+
+on_train_batch_end: 1615775571.991987s
+
+on_train_batch_begin: 1615775571.992358s
+
+207 step training time: 0.011560s
+
+on_train_batch_end: 1615775572.003545s
+
+on_train_batch_begin: 1615775572.003914s
+
+208 step training time: 0.011556s
+
+on_train_batch_end: 1615775572.015134s
+
+on_train_batch_begin: 1615775572.015514s
+
+209 step training time: 0.011600s
+
+on_train_batch_end: 1615775572.026683s
+
+on_train_batch_begin: 1615775572.027055s
+
+210 step training time: 0.011541s
+
+54016/60000 [==========================>...] - ETA: 0s - loss: 0.1089 - accuracy: 0.9673
+on_train_batch_end: 1615775572.038281s
+
+on_train_batch_begin: 1615775572.038655s
+
+211 step training time: 0.011600s
+
+on_train_batch_end: 1615775572.050286s
+
+on_train_batch_begin: 1615775572.050678s
+
+212 step training time: 0.012023s
+
+on_train_batch_end: 1615775572.061923s
+
+on_train_batch_begin: 1615775572.062301s
+
+213 step training time: 0.011622s
+
+on_train_batch_end: 1615775572.073421s
+
+on_train_batch_begin: 1615775572.073797s
+
+214 step training time: 0.011496s
+
+on_train_batch_end: 1615775572.085009s
+
+on_train_batch_begin: 1615775572.085376s
+
+215 step training time: 0.011579s
+
+55296/60000 [==========================>...] - ETA: 0s - loss: 0.1086 - accuracy: 0.9675
+on_train_batch_end: 1615775572.096808s
+
+on_train_batch_begin: 1615775572.097168s
+
+216 step training time: 0.011792s
+
+on_train_batch_end: 1615775572.108256s
+
+on_train_batch_begin: 1615775572.108628s
+
+217 step training time: 0.011459s
+
+on_train_batch_end: 1615775572.120156s
+
+on_train_batch_begin: 1615775572.120529s
+
+218 step training time: 0.011902s
+
+on_train_batch_end: 1615775572.131492s
+
+on_train_batch_begin: 1615775572.131872s
+
+219 step training time: 0.011343s
+
+on_train_batch_end: 1615775572.143044s
+
+on_train_batch_begin: 1615775572.143437s
+
+220 step training time: 0.011565s
+
+56576/60000 [===========================>..] - ETA: 0s - loss: 0.1091 - accuracy: 0.9673
+on_train_batch_end: 1615775572.154804s
+
+on_train_batch_begin: 1615775572.155162s
+
+221 step training time: 0.011724s
+
+on_train_batch_end: 1615775572.166373s
+
+on_train_batch_begin: 1615775572.166771s
+
+222 step training time: 0.011609s
+
+on_train_batch_end: 1615775572.177977s
+
+on_train_batch_begin: 1615775572.178342s
+
+223 step training time: 0.011571s
+
+on_train_batch_end: 1615775572.189601s
+
+on_train_batch_begin: 1615775572.189977s
+
+224 step training time: 0.011635s
+
+on_train_batch_end: 1615775572.201296s
+
+on_train_batch_begin: 1615775572.201664s
+
+225 step training time: 0.011687s
+
+57856/60000 [===========================>..] - ETA: 0s - loss: 0.1085 - accuracy: 0.9676
+on_train_batch_end: 1615775572.212950s
+
+on_train_batch_begin: 1615775572.213319s
+
+226 step training time: 0.011655s
+
+on_train_batch_end: 1615775572.224603s
+
+on_train_batch_begin: 1615775572.224969s
+
+227 step training time: 0.011651s
+
+on_train_batch_end: 1615775572.236195s
+
+on_train_batch_begin: 1615775572.236577s
+
+228 step training time: 0.011607s
+
+on_train_batch_end: 1615775572.247769s
+
+on_train_batch_begin: 1615775572.248137s
+
+229 step training time: 0.011560s
+
+on_train_batch_end: 1615775572.260073s
+
+on_train_batch_begin: 1615775572.260438s
+
+230 step training time: 0.012301s
+
+59136/60000 [============================>.] - ETA: 0s - loss: 0.1081 - accuracy: 0.9677
+on_train_batch_end: 1615775572.271783s
+
+on_train_batch_begin: 1615775572.272167s
+
+231 step training time: 0.011729s
+
+on_train_batch_end: 1615775572.283598s
+
+on_train_batch_begin: 1615775572.283968s
+
+232 step training time: 0.011801s
+
+on_train_batch_end: 1615775572.295465s
+
+on_train_batch_begin: 1615775572.295830s
+
+233 step training time: 0.011861s
+
+on_train_batch_end: 1615775572.307302s
+
+on_train_batch_begin: 1615775572.307528s
+
+234 step training time: 0.011699s
+
+on_train_batch_end: 1615775572.317515s
+
+on_test_batch_begin: 1615775572.318678s
+
+235 step training time: 0.011150s
+
+60000/60000 [==============================] - 3s 49us/step - loss: 0.1082 - accuracy: 0.9677 - val_loss: 0.0505 - val_accuracy: 0.9828
+
+on_epoch_end: 1615775572.551763s
+
+Validation time: 0.233074s
+
+Real time: 1615775572.551763s
+
+Epoch time: 2.9684031009674072s
+Epoch 3/5
+
+on_epoch_begin: 1615775572.552508s
+
+Real time: 1615775572.5525146
+
+on_train_batch_begin: 1615775572.554113s
+
+  256/60000 [..............................] - ETA: 3s - loss: 0.0788 - accuracy: 0.9688
+on_train_batch_end: 1615775572.565782s
+
+on_train_batch_begin: 1615775572.566155s
+
+1 step training time: 0.012043s
+
+on_train_batch_end: 1615775572.577492s
+
+on_train_batch_begin: 1615775572.577863s
+
+2 step training time: 0.011707s
+
+on_train_batch_end: 1615775572.589378s
+
+on_train_batch_begin: 1615775572.589748s
+
+3 step training time: 0.011885s
+
+on_train_batch_end: 1615775572.601125s
+
+on_train_batch_begin: 1615775572.601498s
+
+4 step training time: 0.011750s
+
+on_train_batch_end: 1615775572.612823s
+
+on_train_batch_begin: 1615775572.613210s
+
+5 step training time: 0.011712s
+
+ 1536/60000 [..............................] - ETA: 2s - loss: 0.0971 - accuracy: 0.9694
+on_train_batch_end: 1615775572.624723s
+
+on_train_batch_begin: 1615775572.625078s
+
+6 step training time: 0.011868s
+
+on_train_batch_end: 1615775572.636214s
+
+on_train_batch_begin: 1615775572.636598s
+
+7 step training time: 0.011520s
+
+on_train_batch_end: 1615775572.647633s
+
+on_train_batch_begin: 1615775572.648035s
+
+8 step training time: 0.011437s
+
+on_train_batch_end: 1615775572.659375s
+
+on_train_batch_begin: 1615775572.659749s
+
+9 step training time: 0.011714s
+
+on_train_batch_end: 1615775572.670941s
+
+on_train_batch_begin: 1615775572.671307s
+
+10 step training time: 0.011558s
+
+ 2816/60000 [>.............................] - ETA: 2s - loss: 0.0835 - accuracy: 0.9727
+on_train_batch_end: 1615775572.682806s
+
+on_train_batch_begin: 1615775572.683171s
+
+11 step training time: 0.011864s
+
+on_train_batch_end: 1615775572.694474s
+
+on_train_batch_begin: 1615775572.694864s
+
+12 step training time: 0.011693s
+
+on_train_batch_end: 1615775572.706069s
+
+on_train_batch_begin: 1615775572.706445s
+
+13 step training time: 0.011582s
+
+on_train_batch_end: 1615775572.717823s
+
+on_train_batch_begin: 1615775572.718188s
+
+14 step training time: 0.011742s
+
+on_train_batch_end: 1615775572.729609s
+
+on_train_batch_begin: 1615775572.729977s
+
+15 step training time: 0.011789s
+
+ 4096/60000 [=>............................] - ETA: 2s - loss: 0.0785 - accuracy: 0.9746
+on_train_batch_end: 1615775572.741257s
+
+on_train_batch_begin: 1615775572.741603s
+
+16 step training time: 0.011626s
+
+on_train_batch_end: 1615775572.752740s
+
+on_train_batch_begin: 1615775572.753134s
+
+17 step training time: 0.011531s
+
+on_train_batch_end: 1615775572.764485s
+
+on_train_batch_begin: 1615775572.764848s
+
+18 step training time: 0.011713s
+
+on_train_batch_end: 1615775572.775879s
+
+on_train_batch_begin: 1615775572.776243s
+
+19 step training time: 0.011396s
+
+on_train_batch_end: 1615775572.787318s
+
+on_train_batch_begin: 1615775572.787690s
+
+20 step training time: 0.011446s
+
+ 5376/60000 [=>............................] - ETA: 2s - loss: 0.0771 - accuracy: 0.9745
+on_train_batch_end: 1615775572.799304s
+
+on_train_batch_begin: 1615775572.799655s
+
+21 step training time: 0.011965s
+
+on_train_batch_end: 1615775572.811064s
+
+on_train_batch_begin: 1615775572.811423s
+
+22 step training time: 0.011768s
+
+on_train_batch_end: 1615775572.822768s
+
+on_train_batch_begin: 1615775572.823151s
+
+23 step training time: 0.011728s
+
+on_train_batch_end: 1615775572.834285s
+
+on_train_batch_begin: 1615775572.834650s
+
+24 step training time: 0.011499s
+
+on_train_batch_end: 1615775572.845764s
+
+on_train_batch_begin: 1615775572.846120s
+
+25 step training time: 0.011470s
+
+ 6656/60000 [==>...........................] - ETA: 2s - loss: 0.0752 - accuracy: 0.9758
+on_train_batch_end: 1615775572.857437s
+
+on_train_batch_begin: 1615775572.857780s
+
+26 step training time: 0.011659s
+
+on_train_batch_end: 1615775572.869450s
+
+on_train_batch_begin: 1615775572.869810s
+
+27 step training time: 0.012030s
+
+on_train_batch_end: 1615775572.880930s
+
+on_train_batch_begin: 1615775572.881300s
+
+28 step training time: 0.011491s
+
+on_train_batch_end: 1615775572.892417s
+
+on_train_batch_begin: 1615775572.892787s
+
+29 step training time: 0.011486s
+
+on_train_batch_end: 1615775572.903987s
+
+on_train_batch_begin: 1615775572.904344s
+
+30 step training time: 0.011558s
+
+ 7936/60000 [==>...........................] - ETA: 2s - loss: 0.0736 - accuracy: 0.9759
+on_train_batch_end: 1615775572.915500s
+
+on_train_batch_begin: 1615775572.915848s
+
+31 step training time: 0.011504s
+
+on_train_batch_end: 1615775572.927314s
+
+on_train_batch_begin: 1615775572.927686s
+
+32 step training time: 0.011838s
+
+on_train_batch_end: 1615775572.939021s
+
+on_train_batch_begin: 1615775572.939390s
+
+33 step training time: 0.011704s
+
+on_train_batch_end: 1615775572.950456s
+
+on_train_batch_begin: 1615775572.950845s
+
+34 step training time: 0.011455s
+
+on_train_batch_end: 1615775572.962047s
+
+on_train_batch_begin: 1615775572.962417s
+
+35 step training time: 0.011572s
+
+ 9216/60000 [===>..........................] - ETA: 2s - loss: 0.0733 - accuracy: 0.9760
+on_train_batch_end: 1615775572.973938s
+
+on_train_batch_begin: 1615775572.974291s
+
+36 step training time: 0.011873s
+
+on_train_batch_end: 1615775572.985498s
+
+on_train_batch_begin: 1615775572.985861s
+
+37 step training time: 0.011570s
+
+on_train_batch_end: 1615775572.997007s
+
+on_train_batch_begin: 1615775572.997375s
+
+38 step training time: 0.011513s
+
+on_train_batch_end: 1615775573.008591s
+
+on_train_batch_begin: 1615775573.008965s
+
+39 step training time: 0.011590s
+
+on_train_batch_end: 1615775573.020079s
+
+on_train_batch_begin: 1615775573.020451s
+
+40 step training time: 0.011486s
+
+10496/60000 [====>.........................] - ETA: 2s - loss: 0.0728 - accuracy: 0.9765
+on_train_batch_end: 1615775573.031739s
+
+on_train_batch_begin: 1615775573.032121s
+
+41 step training time: 0.011670s
+
+on_train_batch_end: 1615775573.043325s
+
+on_train_batch_begin: 1615775573.043692s
+
+42 step training time: 0.011571s
+
+on_train_batch_end: 1615775573.054789s
+
+on_train_batch_begin: 1615775573.055178s
+
+43 step training time: 0.011486s
+
+on_train_batch_end: 1615775573.066356s
+
+on_train_batch_begin: 1615775573.066738s
+
+44 step training time: 0.011559s
+
+on_train_batch_end: 1615775573.077900s
+
+on_train_batch_begin: 1615775573.078253s
+
+45 step training time: 0.011515s
+
+11776/60000 [====>.........................] - ETA: 2s - loss: 0.0727 - accuracy: 0.9768
+on_train_batch_end: 1615775573.089684s
+
+on_train_batch_begin: 1615775573.090031s
+
+46 step training time: 0.011778s
+
+on_train_batch_end: 1615775573.101200s
+
+on_train_batch_begin: 1615775573.101559s
+
+47 step training time: 0.011527s
+
+on_train_batch_end: 1615775573.112718s
+
+on_train_batch_begin: 1615775573.113094s
+
+48 step training time: 0.011535s
+
+on_train_batch_end: 1615775573.124082s
+
+on_train_batch_begin: 1615775573.124442s
+
+49 step training time: 0.011348s
+
+on_train_batch_end: 1615775573.135580s
+
+on_train_batch_begin: 1615775573.135940s
+
+50 step training time: 0.011497s
+
+13056/60000 [=====>........................] - ETA: 2s - loss: 0.0718 - accuracy: 0.9773
+on_train_batch_end: 1615775573.147410s
+
+on_train_batch_begin: 1615775573.147756s
+
+51 step training time: 0.011816s
+
+on_train_batch_end: 1615775573.158824s
+
+on_train_batch_begin: 1615775573.159185s
+
+52 step training time: 0.011430s
+
+on_train_batch_end: 1615775573.170505s
+
+on_train_batch_begin: 1615775573.170878s
+
+53 step training time: 0.011693s
+
+on_train_batch_end: 1615775573.182421s
+
+on_train_batch_begin: 1615775573.182812s
+
+54 step training time: 0.011933s
+
+on_train_batch_end: 1615775573.193894s
+
+on_train_batch_begin: 1615775573.194268s
+
+55 step training time: 0.011456s
+
+14336/60000 [======>.......................] - ETA: 2s - loss: 0.0724 - accuracy: 0.9777
+on_train_batch_end: 1615775573.205450s
+
+on_train_batch_begin: 1615775573.205808s
+
+56 step training time: 0.011540s
+
+on_train_batch_end: 1615775573.217485s
+
+on_train_batch_begin: 1615775573.217856s
+
+57 step training time: 0.012048s
+
+on_train_batch_end: 1615775573.229214s
+
+on_train_batch_begin: 1615775573.229586s
+
+58 step training time: 0.011730s
+
+on_train_batch_end: 1615775573.240691s
+
+on_train_batch_begin: 1615775573.241065s
+
+59 step training time: 0.011478s
+
+on_train_batch_end: 1615775573.252154s
+
+on_train_batch_begin: 1615775573.252532s
+
+60 step training time: 0.011468s
+
+15616/60000 [======>.......................] - ETA: 2s - loss: 0.0733 - accuracy: 0.9771
+on_train_batch_end: 1615775573.263678s
+
+on_train_batch_begin: 1615775573.264031s
+
+61 step training time: 0.011498s
+
+on_train_batch_end: 1615775573.275523s
+
+on_train_batch_begin: 1615775573.275894s
+
+62 step training time: 0.011863s
+
+on_train_batch_end: 1615775573.287169s
+
+on_train_batch_begin: 1615775573.287532s
+
+63 step training time: 0.011638s
+
+on_train_batch_end: 1615775573.298923s
+
+on_train_batch_begin: 1615775573.299299s
+
+64 step training time: 0.011766s
+
+on_train_batch_end: 1615775573.310274s
+
+on_train_batch_begin: 1615775573.310674s
+
+65 step training time: 0.011375s
+
+16896/60000 [=======>......................] - ETA: 1s - loss: 0.0746 - accuracy: 0.9769
+on_train_batch_end: 1615775573.321975s
+
+on_train_batch_begin: 1615775573.322337s
+
+66 step training time: 0.011663s
+
+on_train_batch_end: 1615775573.333555s
+
+on_train_batch_begin: 1615775573.333922s
+
+67 step training time: 0.011585s
+
+on_train_batch_end: 1615775573.345089s
+
+on_train_batch_begin: 1615775573.345463s
+
+68 step training time: 0.011541s
+
+on_train_batch_end: 1615775573.356696s
+
+on_train_batch_begin: 1615775573.357060s
+
+69 step training time: 0.011598s
+
+on_train_batch_end: 1615775573.368329s
+
+on_train_batch_begin: 1615775573.368699s
+
+70 step training time: 0.011638s
+
+18176/60000 [========>.....................] - ETA: 1s - loss: 0.0752 - accuracy: 0.9769
+on_train_batch_end: 1615775573.379974s
+
+on_train_batch_begin: 1615775573.380345s
+
+71 step training time: 0.011647s
+
+on_train_batch_end: 1615775573.391685s
+
+on_train_batch_begin: 1615775573.392088s
+
+72 step training time: 0.011742s
+
+on_train_batch_end: 1615775573.403246s
+
+on_train_batch_begin: 1615775573.403617s
+
+73 step training time: 0.011529s
+
+on_train_batch_end: 1615775573.414696s
+
+on_train_batch_begin: 1615775573.415071s
+
+74 step training time: 0.011454s
+
+on_train_batch_end: 1615775573.426360s
+
+on_train_batch_begin: 1615775573.426754s
+
+75 step training time: 0.011684s
+
+19456/60000 [========>.....................] - ETA: 1s - loss: 0.0762 - accuracy: 0.9767
+on_train_batch_end: 1615775573.437903s
+
+on_train_batch_begin: 1615775573.438261s
+
+76 step training time: 0.011507s
+
+on_train_batch_end: 1615775573.449365s
+
+on_train_batch_begin: 1615775573.449727s
+
+77 step training time: 0.011466s
+
+on_train_batch_end: 1615775573.460844s
+
+on_train_batch_begin: 1615775573.461215s
+
+78 step training time: 0.011488s
+
+on_train_batch_end: 1615775573.472377s
+
+on_train_batch_begin: 1615775573.472752s
+
+79 step training time: 0.011536s
+
+on_train_batch_end: 1615775573.483930s
+
+on_train_batch_begin: 1615775573.484303s
+
+80 step training time: 0.011551s
+
+20736/60000 [=========>....................] - ETA: 1s - loss: 0.0766 - accuracy: 0.9764
+on_train_batch_end: 1615775573.495656s
+
+on_train_batch_begin: 1615775573.496005s
+
+81 step training time: 0.011702s
+
+on_train_batch_end: 1615775573.506893s
+
+on_train_batch_begin: 1615775573.507265s
+
+82 step training time: 0.011260s
+
+on_train_batch_end: 1615775573.518982s
+
+on_train_batch_begin: 1615775573.519352s
+
+83 step training time: 0.012087s
+
+on_train_batch_end: 1615775573.530622s
+
+on_train_batch_begin: 1615775573.530995s
+
+84 step training time: 0.011643s
+
+on_train_batch_end: 1615775573.542411s
+
+on_train_batch_begin: 1615775573.542799s
+
+85 step training time: 0.011804s
+
+22016/60000 [==========>...................] - ETA: 1s - loss: 0.0771 - accuracy: 0.9765
+on_train_batch_end: 1615775573.553981s
+
+on_train_batch_begin: 1615775573.554343s
+
+86 step training time: 0.011544s
+
+on_train_batch_end: 1615775573.565554s
+
+on_train_batch_begin: 1615775573.565929s
+
+87 step training time: 0.011586s
+
+on_train_batch_end: 1615775573.577219s
+
+on_train_batch_begin: 1615775573.577591s
+
+88 step training time: 0.011662s
+
+on_train_batch_end: 1615775573.588646s
+
+on_train_batch_begin: 1615775573.589019s
+
+89 step training time: 0.011428s
+
+on_train_batch_end: 1615775573.600164s
+
+on_train_batch_begin: 1615775573.600537s
+
+90 step training time: 0.011517s
+
+23296/60000 [==========>...................] - ETA: 1s - loss: 0.0781 - accuracy: 0.9761
+on_train_batch_end: 1615775573.611715s
+
+on_train_batch_begin: 1615775573.612101s
+
+91 step training time: 0.011564s
+
+on_train_batch_end: 1615775573.623242s
+
+on_train_batch_begin: 1615775573.623619s
+
+92 step training time: 0.011518s
+
+on_train_batch_end: 1615775573.635058s
+
+on_train_batch_begin: 1615775573.635427s
+
+93 step training time: 0.011808s
+
+on_train_batch_end: 1615775573.646971s
+
+on_train_batch_begin: 1615775573.647342s
+
+94 step training time: 0.011915s
+
+on_train_batch_end: 1615775573.658579s
+
+on_train_batch_begin: 1615775573.658952s
+
+95 step training time: 0.011610s
+
+24576/60000 [===========>..................] - ETA: 1s - loss: 0.0791 - accuracy: 0.9755
+on_train_batch_end: 1615775573.670408s
+
+on_train_batch_begin: 1615775573.670779s
+
+96 step training time: 0.011828s
+
+on_train_batch_end: 1615775573.681803s
+
+on_train_batch_begin: 1615775573.682203s
+
+97 step training time: 0.011424s
+
+on_train_batch_end: 1615775573.693367s
+
+on_train_batch_begin: 1615775573.693738s
+
+98 step training time: 0.011535s
+
+on_train_batch_end: 1615775573.704720s
+
+on_train_batch_begin: 1615775573.705091s
+
+99 step training time: 0.011353s
+
+on_train_batch_end: 1615775573.716325s
+
+on_train_batch_begin: 1615775573.716691s
+
+100 step training time: 0.011600s
+
+25856/60000 [===========>..................] - ETA: 1s - loss: 0.0790 - accuracy: 0.9754
+on_train_batch_end: 1615775573.727763s
+
+on_train_batch_begin: 1615775573.728116s
+
+101 step training time: 0.011425s
+
+on_train_batch_end: 1615775573.739397s
+
+on_train_batch_begin: 1615775573.739770s
+
+102 step training time: 0.011655s
+
+on_train_batch_end: 1615775573.750984s
+
+on_train_batch_begin: 1615775573.751345s
+
+103 step training time: 0.011575s
+
+on_train_batch_end: 1615775573.762698s
+
+on_train_batch_begin: 1615775573.763084s
+
+104 step training time: 0.011739s
+
+on_train_batch_end: 1615775573.774015s
+
+on_train_batch_begin: 1615775573.774377s
+
+105 step training time: 0.011293s
+
+27136/60000 [============>.................] - ETA: 1s - loss: 0.0794 - accuracy: 0.9752
+on_train_batch_end: 1615775573.785625s
+
+on_train_batch_begin: 1615775573.785974s
+
+106 step training time: 0.011597s
+
+on_train_batch_end: 1615775573.797097s
+
+on_train_batch_begin: 1615775573.797452s
+
+107 step training time: 0.011478s
+
+on_train_batch_end: 1615775573.808685s
+
+on_train_batch_begin: 1615775573.809060s
+
+108 step training time: 0.011608s
+
+on_train_batch_end: 1615775573.820388s
+
+on_train_batch_begin: 1615775573.820751s
+
+109 step training time: 0.011691s
+
+on_train_batch_end: 1615775573.831843s
+
+on_train_batch_begin: 1615775573.832242s
+
+110 step training time: 0.011491s
+
+28416/60000 [=============>................] - ETA: 1s - loss: 0.0793 - accuracy: 0.9754
+on_train_batch_end: 1615775573.843424s
+
+on_train_batch_begin: 1615775573.843769s
+
+111 step training time: 0.011527s
+
+on_train_batch_end: 1615775573.855000s
+
+on_train_batch_begin: 1615775573.855367s
+
+112 step training time: 0.011598s
+
+on_train_batch_end: 1615775573.866670s
+
+on_train_batch_begin: 1615775573.867033s
+
+113 step training time: 0.011666s
+
+on_train_batch_end: 1615775573.877949s
+
+on_train_batch_begin: 1615775573.878315s
+
+114 step training time: 0.011282s
+
+on_train_batch_end: 1615775573.889443s
+
+on_train_batch_begin: 1615775573.889803s
+
+115 step training time: 0.011487s
+
+29696/60000 [=============>................] - ETA: 1s - loss: 0.0788 - accuracy: 0.9755
+on_train_batch_end: 1615775573.901102s
+
+on_train_batch_begin: 1615775573.901464s
+
+116 step training time: 0.011661s
+
+on_train_batch_end: 1615775573.912698s
+
+on_train_batch_begin: 1615775573.913081s
+
+117 step training time: 0.011617s
+
+on_train_batch_end: 1615775573.924302s
+
+on_train_batch_begin: 1615775573.924675s
+
+118 step training time: 0.011594s
+
+on_train_batch_end: 1615775573.936004s
+
+on_train_batch_begin: 1615775573.936367s
+
+119 step training time: 0.011692s
+
+on_train_batch_end: 1615775573.947545s
+
+on_train_batch_begin: 1615775573.947914s
+
+120 step training time: 0.011547s
+
+30976/60000 [==============>...............] - ETA: 1s - loss: 0.0793 - accuracy: 0.9756
+on_train_batch_end: 1615775573.959075s
+
+on_train_batch_begin: 1615775573.959432s
+
+121 step training time: 0.011518s
+
+on_train_batch_end: 1615775573.970762s
+
+on_train_batch_begin: 1615775573.971131s
+
+122 step training time: 0.011699s
+
+on_train_batch_end: 1615775573.982140s
+
+on_train_batch_begin: 1615775573.982528s
+
+123 step training time: 0.011397s
+
+on_train_batch_end: 1615775573.993334s
+
+on_train_batch_begin: 1615775573.993698s
+
+124 step training time: 0.011170s
+
+on_train_batch_end: 1615775574.004985s
+
+on_train_batch_begin: 1615775574.005341s
+
+125 step training time: 0.011642s
+
+32256/60000 [===============>..............] - ETA: 1s - loss: 0.0800 - accuracy: 0.9755
+on_train_batch_end: 1615775574.016568s
+
+on_train_batch_begin: 1615775574.016923s
+
+126 step training time: 0.011583s
+
+on_train_batch_end: 1615775574.027908s
+
+on_train_batch_begin: 1615775574.028268s
+
+127 step training time: 0.011345s
+
+on_train_batch_end: 1615775574.039363s
+
+on_train_batch_begin: 1615775574.039728s
+
+128 step training time: 0.011460s
+
+on_train_batch_end: 1615775574.050740s
+
+on_train_batch_begin: 1615775574.051100s
+
+129 step training time: 0.011372s
+
+on_train_batch_end: 1615775574.062098s
+
+on_train_batch_begin: 1615775574.062481s
+
+130 step training time: 0.011381s
+
+33536/60000 [===============>..............] - ETA: 1s - loss: 0.0809 - accuracy: 0.9754
+on_train_batch_end: 1615775574.073139s
+
+on_train_batch_begin: 1615775574.073486s
+
+131 step training time: 0.011005s
+
+on_train_batch_end: 1615775574.084883s
+
+on_train_batch_begin: 1615775574.085245s
+
+132 step training time: 0.011759s
+
+on_train_batch_end: 1615775574.096378s
+
+on_train_batch_begin: 1615775574.096735s
+
+133 step training time: 0.011490s
+
+on_train_batch_end: 1615775574.107858s
+
+on_train_batch_begin: 1615775574.108218s
+
+134 step training time: 0.011483s
+
+on_train_batch_end: 1615775574.119442s
+
+on_train_batch_begin: 1615775574.119802s
+
+135 step training time: 0.011584s
+
+34816/60000 [================>.............] - ETA: 1s - loss: 0.0808 - accuracy: 0.9755
+on_train_batch_end: 1615775574.131188s
+
+on_train_batch_begin: 1615775574.131541s
+
+136 step training time: 0.011739s
+
+on_train_batch_end: 1615775574.142577s
+
+on_train_batch_begin: 1615775574.142941s
+
+137 step training time: 0.011400s
+
+on_train_batch_end: 1615775574.153982s
+
+on_train_batch_begin: 1615775574.154347s
+
+138 step training time: 0.011406s
+
+on_train_batch_end: 1615775574.165572s
+
+on_train_batch_begin: 1615775574.165939s
+
+139 step training time: 0.011592s
+
+on_train_batch_end: 1615775574.177342s
+
+on_train_batch_begin: 1615775574.177706s
+
+140 step training time: 0.011768s
+
+36096/60000 [=================>............] - ETA: 1s - loss: 0.0805 - accuracy: 0.9755
+on_train_batch_end: 1615775574.188926s
+
+on_train_batch_begin: 1615775574.189275s
+
+141 step training time: 0.011569s
+
+on_train_batch_end: 1615775574.200550s
+
+on_train_batch_begin: 1615775574.200916s
+
+142 step training time: 0.011641s
+
+on_train_batch_end: 1615775574.212037s
+
+on_train_batch_begin: 1615775574.212401s
+
+143 step training time: 0.011485s
+
+on_train_batch_end: 1615775574.223547s
+
+on_train_batch_begin: 1615775574.223921s
+
+144 step training time: 0.011519s
+
+on_train_batch_end: 1615775574.235067s
+
+on_train_batch_begin: 1615775574.235434s
+
+145 step training time: 0.011513s
+
+37376/60000 [=================>............] - ETA: 1s - loss: 0.0807 - accuracy: 0.9755
+on_train_batch_end: 1615775574.246856s
+
+on_train_batch_begin: 1615775574.247212s
+
+146 step training time: 0.011778s
+
+on_train_batch_end: 1615775574.259062s
+
+on_train_batch_begin: 1615775574.259425s
+
+147 step training time: 0.012213s
+
+on_train_batch_end: 1615775574.270728s
+
+on_train_batch_begin: 1615775574.271090s
+
+148 step training time: 0.011664s
+
+on_train_batch_end: 1615775574.282265s
+
+on_train_batch_begin: 1615775574.282665s
+
+149 step training time: 0.011575s
+
+on_train_batch_end: 1615775574.293793s
+
+on_train_batch_begin: 1615775574.294159s
+
+150 step training time: 0.011495s
+
+38656/60000 [==================>...........] - ETA: 0s - loss: 0.0803 - accuracy: 0.9756
+on_train_batch_end: 1615775574.305296s
+
+on_train_batch_begin: 1615775574.305643s
+
+151 step training time: 0.011483s
+
+on_train_batch_end: 1615775574.316865s
+
+on_train_batch_begin: 1615775574.317234s
+
+152 step training time: 0.011591s
+
+on_train_batch_end: 1615775574.328507s
+
+on_train_batch_begin: 1615775574.328871s
+
+153 step training time: 0.011637s
+
+on_train_batch_end: 1615775574.340200s
+
+on_train_batch_begin: 1615775574.340565s
+
+154 step training time: 0.011694s
+
+on_train_batch_end: 1615775574.351927s
+
+on_train_batch_begin: 1615775574.352296s
+
+155 step training time: 0.011730s
+
+39936/60000 [==================>...........] - ETA: 0s - loss: 0.0801 - accuracy: 0.9758
+on_train_batch_end: 1615775574.363728s
+
+on_train_batch_begin: 1615775574.364068s
+
+156 step training time: 0.011772s
+
+on_train_batch_end: 1615775574.375335s
+
+on_train_batch_begin: 1615775574.375701s
+
+157 step training time: 0.011633s
+
+on_train_batch_end: 1615775574.386940s
+
+on_train_batch_begin: 1615775574.387303s
+
+158 step training time: 0.011602s
+
+on_train_batch_end: 1615775574.398752s
+
+on_train_batch_begin: 1615775574.399117s
+
+159 step training time: 0.011814s
+
+on_train_batch_end: 1615775574.410178s
+
+on_train_batch_begin: 1615775574.410561s
+
+160 step training time: 0.011444s
+
+41216/60000 [===================>..........] - ETA: 0s - loss: 0.0795 - accuracy: 0.9760
+on_train_batch_end: 1615775574.421410s
+
+on_train_batch_begin: 1615775574.421760s
+
+161 step training time: 0.011199s
+
+on_train_batch_end: 1615775574.433000s
+
+on_train_batch_begin: 1615775574.433378s
+
+162 step training time: 0.011617s
+
+on_train_batch_end: 1615775574.444796s
+
+on_train_batch_begin: 1615775574.445157s
+
+163 step training time: 0.011779s
+
+on_train_batch_end: 1615775574.456276s
+
+on_train_batch_begin: 1615775574.456645s
+
+164 step training time: 0.011488s
+
+on_train_batch_end: 1615775574.467822s
+
+on_train_batch_begin: 1615775574.468187s
+
+165 step training time: 0.011542s
+
+42496/60000 [====================>.........] - ETA: 0s - loss: 0.0798 - accuracy: 0.9760
+on_train_batch_end: 1615775574.479643s
+
+on_train_batch_begin: 1615775574.479995s
+
+166 step training time: 0.011809s
+
+on_train_batch_end: 1615775574.491356s
+
+on_train_batch_begin: 1615775574.491718s
+
+167 step training time: 0.011722s
+
+on_train_batch_end: 1615775574.503030s
+
+on_train_batch_begin: 1615775574.503406s
+
+168 step training time: 0.011688s
+
+on_train_batch_end: 1615775574.514878s
+
+on_train_batch_begin: 1615775574.515244s
+
+169 step training time: 0.011838s
+
+on_train_batch_end: 1615775574.526379s
+
+on_train_batch_begin: 1615775574.526761s
+
+170 step training time: 0.011518s
+
+43776/60000 [====================>.........] - ETA: 0s - loss: 0.0806 - accuracy: 0.9757
+on_train_batch_end: 1615775574.538402s
+
+on_train_batch_begin: 1615775574.538768s
+
+171 step training time: 0.012006s
+
+on_train_batch_end: 1615775574.549991s
+
+on_train_batch_begin: 1615775574.550367s
+
+172 step training time: 0.011599s
+
+on_train_batch_end: 1615775574.561517s
+
+on_train_batch_begin: 1615775574.561909s
+
+173 step training time: 0.011542s
+
+on_train_batch_end: 1615775574.572848s
+
+on_train_batch_begin: 1615775574.573229s
+
+174 step training time: 0.011320s
+
+on_train_batch_end: 1615775574.584305s
+
+on_train_batch_begin: 1615775574.584666s
+
+175 step training time: 0.011437s
+
+45056/60000 [=====================>........] - ETA: 0s - loss: 0.0803 - accuracy: 0.9758
+on_train_batch_end: 1615775574.595954s
+
+on_train_batch_begin: 1615775574.596306s
+
+176 step training time: 0.011641s
+
+on_train_batch_end: 1615775574.607589s
+
+on_train_batch_begin: 1615775574.607952s
+
+177 step training time: 0.011646s
+
+on_train_batch_end: 1615775574.619041s
+
+on_train_batch_begin: 1615775574.619408s
+
+178 step training time: 0.011456s
+
+on_train_batch_end: 1615775574.630413s
+
+on_train_batch_begin: 1615775574.630796s
+
+179 step training time: 0.011388s
+
+on_train_batch_end: 1615775574.641798s
+
+on_train_batch_begin: 1615775574.642195s
+
+180 step training time: 0.011399s
+
+46336/60000 [======================>.......] - ETA: 0s - loss: 0.0800 - accuracy: 0.9757
+on_train_batch_end: 1615775574.653482s
+
+on_train_batch_begin: 1615775574.653831s
+
+181 step training time: 0.011636s
+
+on_train_batch_end: 1615775574.664735s
+
+on_train_batch_begin: 1615775574.665098s
+
+182 step training time: 0.011267s
+
+on_train_batch_end: 1615775574.676294s
+
+on_train_batch_begin: 1615775574.676653s
+
+183 step training time: 0.011555s
+
+on_train_batch_end: 1615775574.688096s
+
+on_train_batch_begin: 1615775574.688462s
+
+184 step training time: 0.011809s
+
+on_train_batch_end: 1615775574.699612s
+
+on_train_batch_begin: 1615775574.699975s
+
+185 step training time: 0.011513s
+
+47616/60000 [======================>.......] - ETA: 0s - loss: 0.0799 - accuracy: 0.9759
+on_train_batch_end: 1615775574.711242s
+
+on_train_batch_begin: 1615775574.711595s
+
+186 step training time: 0.011620s
+
+on_train_batch_end: 1615775574.722569s
+
+on_train_batch_begin: 1615775574.722936s
+
+187 step training time: 0.011341s
+
+on_train_batch_end: 1615775574.734600s
+
+on_train_batch_begin: 1615775574.734965s
+
+188 step training time: 0.012029s
+
+on_train_batch_end: 1615775574.746366s
+
+on_train_batch_begin: 1615775574.746747s
+
+189 step training time: 0.011782s
+
+on_train_batch_end: 1615775574.757831s
+
+on_train_batch_begin: 1615775574.758196s
+
+190 step training time: 0.011449s
+
+48896/60000 [=======================>......] - ETA: 0s - loss: 0.0795 - accuracy: 0.9759
+on_train_batch_end: 1615775574.769354s
+
+on_train_batch_begin: 1615775574.769711s
+
+191 step training time: 0.011515s
+
+on_train_batch_end: 1615775574.780346s
+
+on_train_batch_begin: 1615775574.780712s
+
+192 step training time: 0.011002s
+
+on_train_batch_end: 1615775574.791948s
+
+on_train_batch_begin: 1615775574.792315s
+
+193 step training time: 0.011603s
+
+on_train_batch_end: 1615775574.803447s
+
+on_train_batch_begin: 1615775574.803831s
+
+194 step training time: 0.011515s
+
+on_train_batch_end: 1615775574.815007s
+
+on_train_batch_begin: 1615775574.815372s
+
+195 step training time: 0.011542s
+
+50176/60000 [========================>.....] - ETA: 0s - loss: 0.0789 - accuracy: 0.9761
+on_train_batch_end: 1615775574.826814s
+
+on_train_batch_begin: 1615775574.827163s
+
+196 step training time: 0.011790s
+
+on_train_batch_end: 1615775574.838079s
+
+on_train_batch_begin: 1615775574.838439s
+
+197 step training time: 0.011276s
+
+on_train_batch_end: 1615775574.849439s
+
+on_train_batch_begin: 1615775574.849805s
+
+198 step training time: 0.011366s
+
+on_train_batch_end: 1615775574.860891s
+
+on_train_batch_begin: 1615775574.861252s
+
+199 step training time: 0.011447s
+
+on_train_batch_end: 1615775574.872347s
+
+on_train_batch_begin: 1615775574.872715s
+
+200 step training time: 0.011462s
+
+51456/60000 [========================>.....] - ETA: 0s - loss: 0.0786 - accuracy: 0.9762
+on_train_batch_end: 1615775574.883517s
+
+on_train_batch_begin: 1615775574.883865s
+
+201 step training time: 0.011151s
+
+on_train_batch_end: 1615775574.894918s
+
+on_train_batch_begin: 1615775574.895281s
+
+202 step training time: 0.011415s
+
+on_train_batch_end: 1615775574.906332s
+
+on_train_batch_begin: 1615775574.906712s
+
+203 step training time: 0.011431s
+
+on_train_batch_end: 1615775574.917910s
+
+on_train_batch_begin: 1615775574.918271s
+
+204 step training time: 0.011560s
+
+on_train_batch_end: 1615775574.929621s
+
+on_train_batch_begin: 1615775574.929984s
+
+205 step training time: 0.011713s
+
+52736/60000 [=========================>....] - ETA: 0s - loss: 0.0788 - accuracy: 0.9762
+on_train_batch_end: 1615775574.941347s
+
+on_train_batch_begin: 1615775574.941702s
+
+206 step training time: 0.011718s
+
+on_train_batch_end: 1615775574.952708s
+
+on_train_batch_begin: 1615775574.953085s
+
+207 step training time: 0.011383s
+
+on_train_batch_end: 1615775574.964388s
+
+on_train_batch_begin: 1615775574.964759s
+
+208 step training time: 0.011674s
+
+on_train_batch_end: 1615775574.975688s
+
+on_train_batch_begin: 1615775574.976053s
+
+209 step training time: 0.011294s
+
+on_train_batch_end: 1615775574.987218s
+
+on_train_batch_begin: 1615775574.987585s
+
+210 step training time: 0.011532s
+
+54016/60000 [==========================>...] - ETA: 0s - loss: 0.0784 - accuracy: 0.9764
+on_train_batch_end: 1615775574.998847s
+
+on_train_batch_begin: 1615775574.999193s
+
+211 step training time: 0.011608s
+
+on_train_batch_end: 1615775575.010479s
+
+on_train_batch_begin: 1615775575.010890s
+
+212 step training time: 0.011697s
+
+on_train_batch_end: 1615775575.022019s
+
+on_train_batch_begin: 1615775575.022389s
+
+213 step training time: 0.011499s
+
+on_train_batch_end: 1615775575.033982s
+
+on_train_batch_begin: 1615775575.034348s
+
+214 step training time: 0.011960s
+
+on_train_batch_end: 1615775575.045643s
+
+on_train_batch_begin: 1615775575.046004s
+
+215 step training time: 0.011656s
+
+55296/60000 [==========================>...] - ETA: 0s - loss: 0.0786 - accuracy: 0.9764
+on_train_batch_end: 1615775575.057324s
+
+on_train_batch_begin: 1615775575.057677s
+
+216 step training time: 0.011673s
+
+on_train_batch_end: 1615775575.068903s
+
+on_train_batch_begin: 1615775575.069270s
+
+217 step training time: 0.011593s
+
+on_train_batch_end: 1615775575.079965s
+
+on_train_batch_begin: 1615775575.080339s
+
+218 step training time: 0.011069s
+
+on_train_batch_end: 1615775575.091716s
+
+on_train_batch_begin: 1615775575.092113s
+
+219 step training time: 0.011773s
+
+on_train_batch_end: 1615775575.103107s
+
+on_train_batch_begin: 1615775575.103470s
+
+220 step training time: 0.011357s
+
+56576/60000 [===========================>..] - ETA: 0s - loss: 0.0783 - accuracy: 0.9764
+on_train_batch_end: 1615775575.114738s
+
+on_train_batch_begin: 1615775575.115082s
+
+221 step training time: 0.011612s
+
+on_train_batch_end: 1615775575.126350s
+
+on_train_batch_begin: 1615775575.126742s
+
+222 step training time: 0.011660s
+
+on_train_batch_end: 1615775575.137917s
+
+on_train_batch_begin: 1615775575.138280s
+
+223 step training time: 0.011538s
+
+on_train_batch_end: 1615775575.149345s
+
+on_train_batch_begin: 1615775575.149721s
+
+224 step training time: 0.011441s
+
+on_train_batch_end: 1615775575.160720s
+
+on_train_batch_begin: 1615775575.161087s
+
+225 step training time: 0.011366s
+
+57856/60000 [===========================>..] - ETA: 0s - loss: 0.0778 - accuracy: 0.9765
+on_train_batch_end: 1615775575.172284s
+
+on_train_batch_begin: 1615775575.172644s
+
+226 step training time: 0.011557s
+
+on_train_batch_end: 1615775575.183910s
+
+on_train_batch_begin: 1615775575.184279s
+
+227 step training time: 0.011635s
+
+on_train_batch_end: 1615775575.195538s
+
+on_train_batch_begin: 1615775575.195911s
+
+228 step training time: 0.011632s
+
+on_train_batch_end: 1615775575.207213s
+
+on_train_batch_begin: 1615775575.207588s
+
+229 step training time: 0.011677s
+
+on_train_batch_end: 1615775575.218142s
+
+on_train_batch_begin: 1615775575.218535s
+
+230 step training time: 0.010947s
+
+59136/60000 [============================>.] - ETA: 0s - loss: 0.0778 - accuracy: 0.9767
+on_train_batch_end: 1615775575.230101s
+
+on_train_batch_begin: 1615775575.230453s
+
+231 step training time: 0.011919s
+
+on_train_batch_end: 1615775575.241757s
+
+on_train_batch_begin: 1615775575.242169s
+
+232 step training time: 0.011716s
+
+on_train_batch_end: 1615775575.253313s
+
+on_train_batch_begin: 1615775575.253680s
+
+233 step training time: 0.011511s
+
+on_train_batch_end: 1615775575.264695s
+
+on_train_batch_begin: 1615775575.264930s
+
+234 step training time: 0.011250s
+
+on_train_batch_end: 1615775575.275135s
+
+on_test_batch_begin: 1615775575.276258s
+
+235 step training time: 0.011327s
+
+60000/60000 [==============================] - 3s 49us/step - loss: 0.0775 - accuracy: 0.9767 - val_loss: 0.0380 - val_accuracy: 0.9868
+
+on_epoch_end: 1615775575.510862s
+
+Validation time: 0.234595s
+
+Real time: 1615775575.510862s
+
+Epoch time: 2.9583559036254883s
+Epoch 4/5
+
+on_epoch_begin: 1615775575.511578s
+
+Real time: 1615775575.5115845
+
+on_train_batch_begin: 1615775575.513247s
+
+  256/60000 [..............................] - ETA: 3s - loss: 0.0869 - accuracy: 0.9766
+on_train_batch_end: 1615775575.524717s
+
+on_train_batch_begin: 1615775575.525079s
+
+1 step training time: 0.011832s
+
+on_train_batch_end: 1615775575.536237s
+
+on_train_batch_begin: 1615775575.536609s
+
+2 step training time: 0.011529s
+
+on_train_batch_end: 1615775575.547799s
+
+on_train_batch_begin: 1615775575.548165s
+
+3 step training time: 0.011556s
+
+on_train_batch_end: 1615775575.560104s
+
+on_train_batch_begin: 1615775575.560477s
+
+4 step training time: 0.012313s
+
+on_train_batch_end: 1615775575.571636s
+
+on_train_batch_begin: 1615775575.572053s
+
+5 step training time: 0.011576s
+
+ 1536/60000 [..............................] - ETA: 2s - loss: 0.0595 - accuracy: 0.9824
+on_train_batch_end: 1615775575.583666s
+
+on_train_batch_begin: 1615775575.584018s
+
+6 step training time: 0.011965s
+
+on_train_batch_end: 1615775575.595542s
+
+on_train_batch_begin: 1615775575.595913s
+
+7 step training time: 0.011895s
+
+on_train_batch_end: 1615775575.607415s
+
+on_train_batch_begin: 1615775575.607795s
+
+8 step training time: 0.011882s
+
+on_train_batch_end: 1615775575.619198s
+
+on_train_batch_begin: 1615775575.619572s
+
+9 step training time: 0.011777s
+
+on_train_batch_end: 1615775575.630604s
+
+on_train_batch_begin: 1615775575.630978s
+
+10 step training time: 0.011406s
+
+ 2816/60000 [>.............................] - ETA: 2s - loss: 0.0620 - accuracy: 0.9801
+on_train_batch_end: 1615775575.642542s
+
+on_train_batch_begin: 1615775575.642903s
+
+11 step training time: 0.011925s
+
+on_train_batch_end: 1615775575.653897s
+
+on_train_batch_begin: 1615775575.654274s
+
+12 step training time: 0.011371s
+
+on_train_batch_end: 1615775575.665600s
+
+on_train_batch_begin: 1615775575.665970s
+
+13 step training time: 0.011697s
+
+on_train_batch_end: 1615775575.677376s
+
+on_train_batch_begin: 1615775575.677749s
+
+14 step training time: 0.011779s
+
+on_train_batch_end: 1615775575.689224s
+
+on_train_batch_begin: 1615775575.689594s
+
+15 step training time: 0.011844s
+
+ 4096/60000 [=>............................] - ETA: 2s - loss: 0.0634 - accuracy: 0.9800
+on_train_batch_end: 1615775575.701128s
+
+on_train_batch_begin: 1615775575.701484s
+
+16 step training time: 0.011890s
+
+on_train_batch_end: 1615775575.712707s
+
+on_train_batch_begin: 1615775575.713100s
+
+17 step training time: 0.011616s
+
+on_train_batch_end: 1615775575.724339s
+
+on_train_batch_begin: 1615775575.724710s
+
+18 step training time: 0.011610s
+
+on_train_batch_end: 1615775575.735803s
+
+on_train_batch_begin: 1615775575.736181s
+
+19 step training time: 0.011472s
+
+on_train_batch_end: 1615775575.747263s
+
+on_train_batch_begin: 1615775575.747630s
+
+20 step training time: 0.011449s
+
+ 5376/60000 [=>............................] - ETA: 2s - loss: 0.0644 - accuracy: 0.9797
+on_train_batch_end: 1615775575.759306s
+
+on_train_batch_begin: 1615775575.759663s
+
+21 step training time: 0.012033s
+
+on_train_batch_end: 1615775575.770948s
+
+on_train_batch_begin: 1615775575.771327s
+
+22 step training time: 0.011664s
+
+on_train_batch_end: 1615775575.782527s
+
+on_train_batch_begin: 1615775575.782903s
+
+23 step training time: 0.011576s
+
+on_train_batch_end: 1615775575.794404s
+
+on_train_batch_begin: 1615775575.794825s
+
+24 step training time: 0.011922s
+
+on_train_batch_end: 1615775575.806221s
+
+on_train_batch_begin: 1615775575.806622s
+
+25 step training time: 0.011797s
+
+ 6656/60000 [==>...........................] - ETA: 2s - loss: 0.0664 - accuracy: 0.9799
+on_train_batch_end: 1615775575.817742s
+
+on_train_batch_begin: 1615775575.818110s
+
+26 step training time: 0.011488s
+
+on_train_batch_end: 1615775575.829306s
+
+on_train_batch_begin: 1615775575.829690s
+
+27 step training time: 0.011580s
+
+on_train_batch_end: 1615775575.840800s
+
+on_train_batch_begin: 1615775575.841167s
+
+28 step training time: 0.011477s
+
+on_train_batch_end: 1615775575.852231s
+
+on_train_batch_begin: 1615775575.852600s
+
+29 step training time: 0.011433s
+
+on_train_batch_end: 1615775575.863765s
+
+on_train_batch_begin: 1615775575.864133s
+
+30 step training time: 0.011533s
+
+ 7936/60000 [==>...........................] - ETA: 2s - loss: 0.0660 - accuracy: 0.9801
+on_train_batch_end: 1615775575.875545s
+
+on_train_batch_begin: 1615775575.875904s
+
+31 step training time: 0.011771s
+
+on_train_batch_end: 1615775575.887321s
+
+on_train_batch_begin: 1615775575.887688s
+
+32 step training time: 0.011785s
+
+on_train_batch_end: 1615775575.898783s
+
+on_train_batch_begin: 1615775575.899161s
+
+33 step training time: 0.011472s
+
+on_train_batch_end: 1615775575.910299s
+
+on_train_batch_begin: 1615775575.910688s
+
+34 step training time: 0.011528s
+
+on_train_batch_end: 1615775575.922026s
+
+on_train_batch_begin: 1615775575.922398s
+
+35 step training time: 0.011710s
+
+ 9216/60000 [===>..........................] - ETA: 2s - loss: 0.0660 - accuracy: 0.9806
+on_train_batch_end: 1615775575.933825s
+
+on_train_batch_begin: 1615775575.934176s
+
+36 step training time: 0.011778s
+
+on_train_batch_end: 1615775575.944723s
+
+on_train_batch_begin: 1615775575.945089s
+
+37 step training time: 0.010913s
+
+on_train_batch_end: 1615775575.956202s
+
+on_train_batch_begin: 1615775575.956563s
+
+38 step training time: 0.011474s
+
+on_train_batch_end: 1615775575.967664s
+
+on_train_batch_begin: 1615775575.968029s
+
+39 step training time: 0.011466s
+
+on_train_batch_end: 1615775575.979362s
+
+on_train_batch_begin: 1615775575.979734s
+
+40 step training time: 0.011705s
+
+10496/60000 [====>.........................] - ETA: 2s - loss: 0.0645 - accuracy: 0.9808
+on_train_batch_end: 1615775575.991152s
+
+on_train_batch_begin: 1615775575.991507s
+
+41 step training time: 0.011773s
+
+on_train_batch_end: 1615775576.002699s
+
+on_train_batch_begin: 1615775576.003095s
+
+42 step training time: 0.011588s
+
+on_train_batch_end: 1615775576.014338s
+
+on_train_batch_begin: 1615775576.014744s
+
+43 step training time: 0.011649s
+
+on_train_batch_end: 1615775576.025921s
+
+on_train_batch_begin: 1615775576.026294s
+
+44 step training time: 0.011550s
+
+on_train_batch_end: 1615775576.037426s
+
+on_train_batch_begin: 1615775576.037798s
+
+45 step training time: 0.011504s
+
+11776/60000 [====>.........................] - ETA: 2s - loss: 0.0654 - accuracy: 0.9805
+on_train_batch_end: 1615775576.049112s
+
+on_train_batch_begin: 1615775576.049465s
+
+46 step training time: 0.011667s
+
+on_train_batch_end: 1615775576.060891s
+
+on_train_batch_begin: 1615775576.061261s
+
+47 step training time: 0.011795s
+
+on_train_batch_end: 1615775576.073008s
+
+on_train_batch_begin: 1615775576.073389s
+
+48 step training time: 0.012128s
+
+on_train_batch_end: 1615775576.084542s
+
+on_train_batch_begin: 1615775576.084917s
+
+49 step training time: 0.011528s
+
+on_train_batch_end: 1615775576.096014s
+
+on_train_batch_begin: 1615775576.096388s
+
+50 step training time: 0.011471s
+
+13056/60000 [=====>........................] - ETA: 2s - loss: 0.0658 - accuracy: 0.9805
+on_train_batch_end: 1615775576.107897s
+
+on_train_batch_begin: 1615775576.108281s
+
+51 step training time: 0.011893s
+
+on_train_batch_end: 1615775576.119847s
+
+on_train_batch_begin: 1615775576.120214s
+
+52 step training time: 0.011933s
+
+on_train_batch_end: 1615775576.131586s
+
+on_train_batch_begin: 1615775576.131987s
+
+53 step training time: 0.011773s
+
+on_train_batch_end: 1615775576.143225s
+
+on_train_batch_begin: 1615775576.143591s
+
+54 step training time: 0.011605s
+
+on_train_batch_end: 1615775576.154679s
+
+on_train_batch_begin: 1615775576.155050s
+
+55 step training time: 0.011459s
+
+14336/60000 [======>.......................] - ETA: 2s - loss: 0.0677 - accuracy: 0.9797
+on_train_batch_end: 1615775576.166326s
+
+on_train_batch_begin: 1615775576.166692s
+
+56 step training time: 0.011642s
+
+on_train_batch_end: 1615775576.178050s
+
+on_train_batch_begin: 1615775576.178426s
+
+57 step training time: 0.011734s
+
+on_train_batch_end: 1615775576.189690s
+
+on_train_batch_begin: 1615775576.190058s
+
+58 step training time: 0.011631s
+
+on_train_batch_end: 1615775576.201402s
+
+on_train_batch_begin: 1615775576.201768s
+
+59 step training time: 0.011710s
+
+on_train_batch_end: 1615775576.212862s
+
+on_train_batch_begin: 1615775576.213251s
+
+60 step training time: 0.011483s
+
+15616/60000 [======>.......................] - ETA: 2s - loss: 0.0680 - accuracy: 0.9795
+on_train_batch_end: 1615775576.224402s
+
+on_train_batch_begin: 1615775576.224761s
+
+61 step training time: 0.011510s
+
+on_train_batch_end: 1615775576.236029s
+
+on_train_batch_begin: 1615775576.236397s
+
+62 step training time: 0.011636s
+
+on_train_batch_end: 1615775576.247456s
+
+on_train_batch_begin: 1615775576.247825s
+
+63 step training time: 0.011428s
+
+on_train_batch_end: 1615775576.259032s
+
+on_train_batch_begin: 1615775576.259416s
+
+64 step training time: 0.011591s
+
+on_train_batch_end: 1615775576.270572s
+
+on_train_batch_begin: 1615775576.270942s
+
+65 step training time: 0.011526s
+
+16896/60000 [=======>......................] - ETA: 1s - loss: 0.0671 - accuracy: 0.9797
+on_train_batch_end: 1615775576.282479s
+
+on_train_batch_begin: 1615775576.282860s
+
+66 step training time: 0.011918s
+
+on_train_batch_end: 1615775576.294107s
+
+on_train_batch_begin: 1615775576.294500s
+
+67 step training time: 0.011641s
+
+on_train_batch_end: 1615775576.305953s
+
+on_train_batch_begin: 1615775576.306320s
+
+68 step training time: 0.011820s
+
+on_train_batch_end: 1615775576.317646s
+
+on_train_batch_begin: 1615775576.318021s
+
+69 step training time: 0.011701s
+
+on_train_batch_end: 1615775576.329250s
+
+on_train_batch_begin: 1615775576.329621s
+
+70 step training time: 0.011600s
+
+18176/60000 [========>.....................] - ETA: 1s - loss: 0.0668 - accuracy: 0.9801
+on_train_batch_end: 1615775576.340742s
+
+on_train_batch_begin: 1615775576.341106s
+
+71 step training time: 0.011485s
+
+on_train_batch_end: 1615775576.352081s
+
+on_train_batch_begin: 1615775576.352463s
+
+72 step training time: 0.011357s
+
+on_train_batch_end: 1615775576.363700s
+
+on_train_batch_begin: 1615775576.364072s
+
+73 step training time: 0.011609s
+
+on_train_batch_end: 1615775576.375136s
+
+on_train_batch_begin: 1615775576.375506s
+
+74 step training time: 0.011434s
+
+on_train_batch_end: 1615775576.386656s
+
+on_train_batch_begin: 1615775576.387029s
+
+75 step training time: 0.011523s
+
+19456/60000 [========>.....................] - ETA: 1s - loss: 0.0654 - accuracy: 0.9803
+on_train_batch_end: 1615775576.398315s
+
+on_train_batch_begin: 1615775576.398700s
+
+76 step training time: 0.011671s
+
+on_train_batch_end: 1615775576.409785s
+
+on_train_batch_begin: 1615775576.410170s
+
+77 step training time: 0.011471s
+
+on_train_batch_end: 1615775576.421591s
+
+on_train_batch_begin: 1615775576.421996s
+
+78 step training time: 0.011826s
+
+on_train_batch_end: 1615775576.433051s
+
+on_train_batch_begin: 1615775576.433438s
+
+79 step training time: 0.011441s
+
+on_train_batch_end: 1615775576.444484s
+
+on_train_batch_begin: 1615775576.444848s
+
+80 step training time: 0.011410s
+
+20736/60000 [=========>....................] - ETA: 1s - loss: 0.0656 - accuracy: 0.9802
+on_train_batch_end: 1615775576.456261s
+
+on_train_batch_begin: 1615775576.456646s
+
+81 step training time: 0.011798s
+
+on_train_batch_end: 1615775576.467971s
+
+on_train_batch_begin: 1615775576.468337s
+
+82 step training time: 0.011691s
+
+on_train_batch_end: 1615775576.480295s
+
+on_train_batch_begin: 1615775576.480673s
+
+83 step training time: 0.012336s
+
+on_train_batch_end: 1615775576.492043s
+
+on_train_batch_begin: 1615775576.492410s
+
+84 step training time: 0.011736s
+
+on_train_batch_end: 1615775576.503527s
+
+on_train_batch_begin: 1615775576.503904s
+
+85 step training time: 0.011494s
+
+22016/60000 [==========>...................] - ETA: 1s - loss: 0.0663 - accuracy: 0.9802
+on_train_batch_end: 1615775576.515094s
+
+on_train_batch_begin: 1615775576.515445s
+
+86 step training time: 0.011540s
+
+on_train_batch_end: 1615775576.526965s
+
+on_train_batch_begin: 1615775576.527361s
+
+87 step training time: 0.011916s
+
+on_train_batch_end: 1615775576.538855s
+
+on_train_batch_begin: 1615775576.539236s
+
+88 step training time: 0.011875s
+
+on_train_batch_end: 1615775576.550356s
+
+on_train_batch_begin: 1615775576.550745s
+
+89 step training time: 0.011508s
+
+on_train_batch_end: 1615775576.561814s
+
+on_train_batch_begin: 1615775576.562222s
+
+90 step training time: 0.011477s
+
+23296/60000 [==========>...................] - ETA: 1s - loss: 0.0672 - accuracy: 0.9800
+on_train_batch_end: 1615775576.573494s
+
+on_train_batch_begin: 1615775576.573849s
+
+91 step training time: 0.011627s
+
+on_train_batch_end: 1615775576.585038s
+
+on_train_batch_begin: 1615775576.585406s
+
+92 step training time: 0.011557s
+
+on_train_batch_end: 1615775576.596328s
+
+on_train_batch_begin: 1615775576.596705s
+
+93 step training time: 0.011299s
+
+on_train_batch_end: 1615775576.607890s
+
+on_train_batch_begin: 1615775576.608262s
+
+94 step training time: 0.011556s
+
+on_train_batch_end: 1615775576.619532s
+
+on_train_batch_begin: 1615775576.619906s
+
+95 step training time: 0.011645s
+
+24576/60000 [===========>..................] - ETA: 1s - loss: 0.0679 - accuracy: 0.9799
+on_train_batch_end: 1615775576.631621s
+
+on_train_batch_begin: 1615775576.632009s
+
+96 step training time: 0.012103s
+
+on_train_batch_end: 1615775576.643401s
+
+on_train_batch_begin: 1615775576.643779s
+
+97 step training time: 0.011770s
+
+on_train_batch_end: 1615775576.655191s
+
+on_train_batch_begin: 1615775576.655558s
+
+98 step training time: 0.011779s
+
+on_train_batch_end: 1615775576.666732s
+
+on_train_batch_begin: 1615775576.667107s
+
+99 step training time: 0.011549s
+
+on_train_batch_end: 1615775576.678075s
+
+on_train_batch_begin: 1615775576.678444s
+
+100 step training time: 0.011338s
+
+25856/60000 [===========>..................] - ETA: 1s - loss: 0.0681 - accuracy: 0.9798
+on_train_batch_end: 1615775576.689571s
+
+on_train_batch_begin: 1615775576.689924s
+
+101 step training time: 0.011479s
+
+on_train_batch_end: 1615775576.701346s
+
+on_train_batch_begin: 1615775576.701712s
+
+102 step training time: 0.011788s
+
+on_train_batch_end: 1615775576.712901s
+
+on_train_batch_begin: 1615775576.713293s
+
+103 step training time: 0.011580s
+
+on_train_batch_end: 1615775576.724604s
+
+on_train_batch_begin: 1615775576.724970s
+
+104 step training time: 0.011678s
+
+on_train_batch_end: 1615775576.736322s
+
+on_train_batch_begin: 1615775576.736694s
+
+105 step training time: 0.011724s
+
+27136/60000 [============>.................] - ETA: 1s - loss: 0.0683 - accuracy: 0.9797
+on_train_batch_end: 1615775576.747994s
+
+on_train_batch_begin: 1615775576.748341s
+
+106 step training time: 0.011647s
+
+on_train_batch_end: 1615775576.759716s
+
+on_train_batch_begin: 1615775576.760095s
+
+107 step training time: 0.011754s
+
+on_train_batch_end: 1615775576.771322s
+
+on_train_batch_begin: 1615775576.771688s
+
+108 step training time: 0.011593s
+
+on_train_batch_end: 1615775576.783064s
+
+on_train_batch_begin: 1615775576.783457s
+
+109 step training time: 0.011770s
+
+on_train_batch_end: 1615775576.794884s
+
+on_train_batch_begin: 1615775576.795253s
+
+110 step training time: 0.011796s
+
+28416/60000 [=============>................] - ETA: 1s - loss: 0.0686 - accuracy: 0.9798
+on_train_batch_end: 1615775576.806298s
+
+on_train_batch_begin: 1615775576.806677s
+
+111 step training time: 0.011424s
+
+on_train_batch_end: 1615775576.817706s
+
+on_train_batch_begin: 1615775576.818080s
+
+112 step training time: 0.011404s
+
+on_train_batch_end: 1615775576.829535s
+
+on_train_batch_begin: 1615775576.829910s
+
+113 step training time: 0.011829s
+
+on_train_batch_end: 1615775576.841173s
+
+on_train_batch_begin: 1615775576.841537s
+
+114 step training time: 0.011627s
+
+on_train_batch_end: 1615775576.852587s
+
+on_train_batch_begin: 1615775576.852958s
+
+115 step training time: 0.011422s
+
+29696/60000 [=============>................] - ETA: 1s - loss: 0.0686 - accuracy: 0.9799
+on_train_batch_end: 1615775576.864413s
+
+on_train_batch_begin: 1615775576.864763s
+
+116 step training time: 0.011805s
+
+on_train_batch_end: 1615775576.876020s
+
+on_train_batch_begin: 1615775576.876391s
+
+117 step training time: 0.011628s
+
+on_train_batch_end: 1615775576.887395s
+
+on_train_batch_begin: 1615775576.887758s
+
+118 step training time: 0.011367s
+
+on_train_batch_end: 1615775576.899119s
+
+on_train_batch_begin: 1615775576.899484s
+
+119 step training time: 0.011725s
+
+on_train_batch_end: 1615775576.910975s
+
+on_train_batch_begin: 1615775576.911353s
+
+120 step training time: 0.011869s
+
+30976/60000 [==============>...............] - ETA: 1s - loss: 0.0679 - accuracy: 0.9800
+on_train_batch_end: 1615775576.922701s
+
+on_train_batch_begin: 1615775576.923080s
+
+121 step training time: 0.011728s
+
+on_train_batch_end: 1615775576.934001s
+
+on_train_batch_begin: 1615775576.934356s
+
+122 step training time: 0.011276s
+
+on_train_batch_end: 1615775576.946074s
+
+on_train_batch_begin: 1615775576.946451s
+
+123 step training time: 0.012095s
+
+on_train_batch_end: 1615775576.957843s
+
+on_train_batch_begin: 1615775576.958245s
+
+124 step training time: 0.011795s
+
+on_train_batch_end: 1615775576.969772s
+
+on_train_batch_begin: 1615775576.970152s
+
+125 step training time: 0.011907s
+
+32256/60000 [===============>..............] - ETA: 1s - loss: 0.0672 - accuracy: 0.9802
+on_train_batch_end: 1615775576.981395s
+
+on_train_batch_begin: 1615775576.981748s
+
+126 step training time: 0.011595s
+
+on_train_batch_end: 1615775576.993210s
+
+on_train_batch_begin: 1615775576.993609s
+
+127 step training time: 0.011862s
+
+on_train_batch_end: 1615775577.004987s
+
+on_train_batch_begin: 1615775577.005381s
+
+128 step training time: 0.011772s
+
+on_train_batch_end: 1615775577.016636s
+
+on_train_batch_begin: 1615775577.017004s
+
+129 step training time: 0.011623s
+
+on_train_batch_end: 1615775577.028117s
+
+on_train_batch_begin: 1615775577.028495s
+
+130 step training time: 0.011491s
+
+33536/60000 [===============>..............] - ETA: 1s - loss: 0.0666 - accuracy: 0.9803
+on_train_batch_end: 1615775577.039960s
+
+on_train_batch_begin: 1615775577.040320s
+
+131 step training time: 0.011825s
+
+on_train_batch_end: 1615775577.051445s
+
+on_train_batch_begin: 1615775577.051823s
+
+132 step training time: 0.011503s
+
+on_train_batch_end: 1615775577.063017s
+
+on_train_batch_begin: 1615775577.063411s
+
+133 step training time: 0.011588s
+
+on_train_batch_end: 1615775577.074768s
+
+on_train_batch_begin: 1615775577.075144s
+
+134 step training time: 0.011732s
+
+on_train_batch_end: 1615775577.086537s
+
+on_train_batch_begin: 1615775577.086914s
+
+135 step training time: 0.011770s
+
+34816/60000 [================>.............] - ETA: 1s - loss: 0.0660 - accuracy: 0.9804
+on_train_batch_end: 1615775577.098067s
+
+on_train_batch_begin: 1615775577.098426s
+
+136 step training time: 0.011512s
+
+on_train_batch_end: 1615775577.109757s
+
+on_train_batch_begin: 1615775577.110135s
+
+137 step training time: 0.011709s
+
+on_train_batch_end: 1615775577.121489s
+
+on_train_batch_begin: 1615775577.121876s
+
+138 step training time: 0.011741s
+
+on_train_batch_end: 1615775577.133059s
+
+on_train_batch_begin: 1615775577.133453s
+
+139 step training time: 0.011577s
+
+on_train_batch_end: 1615775577.144730s
+
+on_train_batch_begin: 1615775577.145102s
+
+140 step training time: 0.011649s
+
+36096/60000 [=================>............] - ETA: 1s - loss: 0.0658 - accuracy: 0.9804
+on_train_batch_end: 1615775577.156446s
+
+on_train_batch_begin: 1615775577.156790s
+
+141 step training time: 0.011688s
+
+on_train_batch_end: 1615775577.168184s
+
+on_train_batch_begin: 1615775577.168548s
+
+142 step training time: 0.011758s
+
+on_train_batch_end: 1615775577.180038s
+
+on_train_batch_begin: 1615775577.180414s
+
+143 step training time: 0.011866s
+
+on_train_batch_end: 1615775577.191915s
+
+on_train_batch_begin: 1615775577.192307s
+
+144 step training time: 0.011893s
+
+on_train_batch_end: 1615775577.203348s
+
+on_train_batch_begin: 1615775577.203726s
+
+145 step training time: 0.011419s
+
+37376/60000 [=================>............] - ETA: 1s - loss: 0.0654 - accuracy: 0.9805
+on_train_batch_end: 1615775577.214919s
+
+on_train_batch_begin: 1615775577.215270s
+
+146 step training time: 0.011544s
+
+on_train_batch_end: 1615775577.226740s
+
+on_train_batch_begin: 1615775577.227116s
+
+147 step training time: 0.011846s
+
+on_train_batch_end: 1615775577.238077s
+
+on_train_batch_begin: 1615775577.238454s
+
+148 step training time: 0.011338s
+
+on_train_batch_end: 1615775577.249705s
+
+on_train_batch_begin: 1615775577.250082s
+
+149 step training time: 0.011628s
+
+on_train_batch_end: 1615775577.261424s
+
+on_train_batch_begin: 1615775577.261800s
+
+150 step training time: 0.011718s
+
+38656/60000 [==================>...........] - ETA: 0s - loss: 0.0648 - accuracy: 0.9806
+on_train_batch_end: 1615775577.272549s
+
+on_train_batch_begin: 1615775577.272912s
+
+151 step training time: 0.011112s
+
+on_train_batch_end: 1615775577.284018s
+
+on_train_batch_begin: 1615775577.284397s
+
+152 step training time: 0.011485s
+
+on_train_batch_end: 1615775577.295603s
+
+on_train_batch_begin: 1615775577.295975s
+
+153 step training time: 0.011578s
+
+on_train_batch_end: 1615775577.307118s
+
+on_train_batch_begin: 1615775577.307492s
+
+154 step training time: 0.011517s
+
+on_train_batch_end: 1615775577.318809s
+
+on_train_batch_begin: 1615775577.319181s
+
+155 step training time: 0.011689s
+
+39936/60000 [==================>...........] - ETA: 0s - loss: 0.0651 - accuracy: 0.9806
+on_train_batch_end: 1615775577.330515s
+
+on_train_batch_begin: 1615775577.330872s
+
+156 step training time: 0.011691s
+
+on_train_batch_end: 1615775577.341766s
+
+on_train_batch_begin: 1615775577.342168s
+
+157 step training time: 0.011296s
+
+on_train_batch_end: 1615775577.353401s
+
+on_train_batch_begin: 1615775577.353785s
+
+158 step training time: 0.011617s
+
+on_train_batch_end: 1615775577.364842s
+
+on_train_batch_begin: 1615775577.365218s
+
+159 step training time: 0.011433s
+
+on_train_batch_end: 1615775577.376434s
+
+on_train_batch_begin: 1615775577.376808s
+
+160 step training time: 0.011590s
+
+41216/60000 [===================>..........] - ETA: 0s - loss: 0.0652 - accuracy: 0.9805
+on_train_batch_end: 1615775577.388532s
+
+on_train_batch_begin: 1615775577.388887s
+
+161 step training time: 0.012078s
+
+on_train_batch_end: 1615775577.399942s
+
+on_train_batch_begin: 1615775577.400324s
+
+162 step training time: 0.011438s
+
+on_train_batch_end: 1615775577.411564s
+
+on_train_batch_begin: 1615775577.411967s
+
+163 step training time: 0.011642s
+
+on_train_batch_end: 1615775577.423059s
+
+on_train_batch_begin: 1615775577.423446s
+
+164 step training time: 0.011480s
+
+on_train_batch_end: 1615775577.434870s
+
+on_train_batch_begin: 1615775577.435248s
+
+165 step training time: 0.011801s
+
+42496/60000 [====================>.........] - ETA: 0s - loss: 0.0651 - accuracy: 0.9805
+on_train_batch_end: 1615775577.446339s
+
+on_train_batch_begin: 1615775577.446725s
+
+166 step training time: 0.011477s
+
+on_train_batch_end: 1615775577.457880s
+
+on_train_batch_begin: 1615775577.458251s
+
+167 step training time: 0.011525s
+
+on_train_batch_end: 1615775577.469585s
+
+on_train_batch_begin: 1615775577.469953s
+
+168 step training time: 0.011702s
+
+on_train_batch_end: 1615775577.481252s
+
+on_train_batch_begin: 1615775577.481630s
+
+169 step training time: 0.011677s
+
+on_train_batch_end: 1615775577.492691s
+
+on_train_batch_begin: 1615775577.493073s
+
+170 step training time: 0.011444s
+
+43776/60000 [====================>.........] - ETA: 0s - loss: 0.0646 - accuracy: 0.9808
+on_train_batch_end: 1615775577.504436s
+
+on_train_batch_begin: 1615775577.504798s
+
+171 step training time: 0.011724s
+
+on_train_batch_end: 1615775577.516157s
+
+on_train_batch_begin: 1615775577.516522s
+
+172 step training time: 0.011724s
+
+on_train_batch_end: 1615775577.527670s
+
+on_train_batch_begin: 1615775577.528029s
+
+173 step training time: 0.011507s
+
+on_train_batch_end: 1615775577.539354s
+
+on_train_batch_begin: 1615775577.539722s
+
+174 step training time: 0.011694s
+
+on_train_batch_end: 1615775577.551007s
+
+on_train_batch_begin: 1615775577.551379s
+
+175 step training time: 0.011657s
+
+45056/60000 [=====================>........] - ETA: 0s - loss: 0.0649 - accuracy: 0.9807
+on_train_batch_end: 1615775577.562642s
+
+on_train_batch_begin: 1615775577.563004s
+
+176 step training time: 0.011625s
+
+on_train_batch_end: 1615775577.574196s
+
+on_train_batch_begin: 1615775577.574584s
+
+177 step training time: 0.011580s
+
+on_train_batch_end: 1615775577.585644s
+
+on_train_batch_begin: 1615775577.586016s
+
+178 step training time: 0.011432s
+
+on_train_batch_end: 1615775577.597308s
+
+on_train_batch_begin: 1615775577.597675s
+
+179 step training time: 0.011659s
+
+on_train_batch_end: 1615775577.608630s
+
+on_train_batch_begin: 1615775577.609005s
+
+180 step training time: 0.011330s
+
+46336/60000 [======================>.......] - ETA: 0s - loss: 0.0648 - accuracy: 0.9808
+on_train_batch_end: 1615775577.620324s
+
+on_train_batch_begin: 1615775577.620677s
+
+181 step training time: 0.011672s
+
+on_train_batch_end: 1615775577.631864s
+
+on_train_batch_begin: 1615775577.632262s
+
+182 step training time: 0.011585s
+
+on_train_batch_end: 1615775577.643097s
+
+on_train_batch_begin: 1615775577.643470s
+
+183 step training time: 0.011208s
+
+on_train_batch_end: 1615775577.654715s
+
+on_train_batch_begin: 1615775577.655093s
+
+184 step training time: 0.011623s
+
+on_train_batch_end: 1615775577.666257s
+
+on_train_batch_begin: 1615775577.666650s
+
+185 step training time: 0.011557s
+
+47616/60000 [======================>.......] - ETA: 0s - loss: 0.0644 - accuracy: 0.9809
+on_train_batch_end: 1615775577.677951s
+
+on_train_batch_begin: 1615775577.678317s
+
+186 step training time: 0.011667s
+
+on_train_batch_end: 1615775577.689711s
+
+on_train_batch_begin: 1615775577.690078s
+
+187 step training time: 0.011761s
+
+on_train_batch_end: 1615775577.701148s
+
+on_train_batch_begin: 1615775577.701522s
+
+188 step training time: 0.011444s
+
+on_train_batch_end: 1615775577.712662s
+
+on_train_batch_begin: 1615775577.713048s
+
+189 step training time: 0.011526s
+
+on_train_batch_end: 1615775577.724351s
+
+on_train_batch_begin: 1615775577.724726s
+
+190 step training time: 0.011678s
+
+48896/60000 [=======================>......] - ETA: 0s - loss: 0.0644 - accuracy: 0.9809
+on_train_batch_end: 1615775577.736158s
+
+on_train_batch_begin: 1615775577.736514s
+
+191 step training time: 0.011788s
+
+on_train_batch_end: 1615775577.747633s
+
+on_train_batch_begin: 1615775577.748010s
+
+192 step training time: 0.011496s
+
+on_train_batch_end: 1615775577.759333s
+
+on_train_batch_begin: 1615775577.759705s
+
+193 step training time: 0.011694s
+
+on_train_batch_end: 1615775577.770823s
+
+on_train_batch_begin: 1615775577.771199s
+
+194 step training time: 0.011495s
+
+on_train_batch_end: 1615775577.782666s
+
+on_train_batch_begin: 1615775577.783069s
+
+195 step training time: 0.011869s
+
+50176/60000 [========================>.....] - ETA: 0s - loss: 0.0648 - accuracy: 0.9809
+on_train_batch_end: 1615775577.794411s
+
+on_train_batch_begin: 1615775577.794813s
+
+196 step training time: 0.011744s
+
+on_train_batch_end: 1615775577.806141s
+
+on_train_batch_begin: 1615775577.806564s
+
+197 step training time: 0.011751s
+
+on_train_batch_end: 1615775577.817870s
+
+on_train_batch_begin: 1615775577.818247s
+
+198 step training time: 0.011683s
+
+on_train_batch_end: 1615775577.829743s
+
+on_train_batch_begin: 1615775577.830109s
+
+199 step training time: 0.011862s
+
+on_train_batch_end: 1615775577.841241s
+
+on_train_batch_begin: 1615775577.841614s
+
+200 step training time: 0.011505s
+
+51456/60000 [========================>.....] - ETA: 0s - loss: 0.0650 - accuracy: 0.9808
+on_train_batch_end: 1615775577.853020s
+
+on_train_batch_begin: 1615775577.853391s
+
+201 step training time: 0.011777s
+
+on_train_batch_end: 1615775577.864879s
+
+on_train_batch_begin: 1615775577.865252s
+
+202 step training time: 0.011861s
+
+on_train_batch_end: 1615775577.876845s
+
+on_train_batch_begin: 1615775577.877207s
+
+203 step training time: 0.011956s
+
+on_train_batch_end: 1615775577.888572s
+
+on_train_batch_begin: 1615775577.888942s
+
+204 step training time: 0.011735s
+
+on_train_batch_end: 1615775577.900190s
+
+on_train_batch_begin: 1615775577.900547s
+
+205 step training time: 0.011604s
+
+52736/60000 [=========================>....] - ETA: 0s - loss: 0.0653 - accuracy: 0.9806
+on_train_batch_end: 1615775577.911634s
+
+on_train_batch_begin: 1615775577.912021s
+
+206 step training time: 0.011475s
+
+on_train_batch_end: 1615775577.922959s
+
+on_train_batch_begin: 1615775577.923355s
+
+207 step training time: 0.011334s
+
+on_train_batch_end: 1615775577.934611s
+
+on_train_batch_begin: 1615775577.934985s
+
+208 step training time: 0.011629s
+
+on_train_batch_end: 1615775577.946329s
+
+on_train_batch_begin: 1615775577.946710s
+
+209 step training time: 0.011726s
+
+on_train_batch_end: 1615775577.957973s
+
+on_train_batch_begin: 1615775577.958338s
+
+210 step training time: 0.011627s
+
+54016/60000 [==========================>...] - ETA: 0s - loss: 0.0655 - accuracy: 0.9805
+on_train_batch_end: 1615775577.969592s
+
+on_train_batch_begin: 1615775577.969938s
+
+211 step training time: 0.011600s
+
+on_train_batch_end: 1615775577.981419s
+
+on_train_batch_begin: 1615775577.981785s
+
+212 step training time: 0.011847s
+
+on_train_batch_end: 1615775577.993054s
+
+on_train_batch_begin: 1615775577.993422s
+
+213 step training time: 0.011637s
+
+on_train_batch_end: 1615775578.004981s
+
+on_train_batch_begin: 1615775578.005352s
+
+214 step training time: 0.011930s
+
+on_train_batch_end: 1615775578.016611s
+
+on_train_batch_begin: 1615775578.016972s
+
+215 step training time: 0.011620s
+
+55296/60000 [==========================>...] - ETA: 0s - loss: 0.0651 - accuracy: 0.9805
+on_train_batch_end: 1615775578.028789s
+
+on_train_batch_begin: 1615775578.029136s
+
+216 step training time: 0.012164s
+
+on_train_batch_end: 1615775578.040450s
+
+on_train_batch_begin: 1615775578.040810s
+
+217 step training time: 0.011674s
+
+on_train_batch_end: 1615775578.051982s
+
+on_train_batch_begin: 1615775578.052358s
+
+218 step training time: 0.011549s
+
+on_train_batch_end: 1615775578.063180s
+
+on_train_batch_begin: 1615775578.063550s
+
+219 step training time: 0.011192s
+
+on_train_batch_end: 1615775578.074991s
+
+on_train_batch_begin: 1615775578.075346s
+
+220 step training time: 0.011796s
+
+56576/60000 [===========================>..] - ETA: 0s - loss: 0.0651 - accuracy: 0.9805
+on_train_batch_end: 1615775578.086808s
+
+on_train_batch_begin: 1615775578.087156s
+
+221 step training time: 0.011810s
+
+on_train_batch_end: 1615775578.098548s
+
+on_train_batch_begin: 1615775578.098911s
+
+222 step training time: 0.011755s
+
+on_train_batch_end: 1615775578.110251s
+
+on_train_batch_begin: 1615775578.110636s
+
+223 step training time: 0.011725s
+
+on_train_batch_end: 1615775578.121838s
+
+on_train_batch_begin: 1615775578.122230s
+
+224 step training time: 0.011594s
+
+on_train_batch_end: 1615775578.133489s
+
+on_train_batch_begin: 1615775578.133847s
+
+225 step training time: 0.011617s
+
+57856/60000 [===========================>..] - ETA: 0s - loss: 0.0647 - accuracy: 0.9805
+on_train_batch_end: 1615775578.145162s
+
+on_train_batch_begin: 1615775578.145509s
+
+226 step training time: 0.011662s
+
+on_train_batch_end: 1615775578.156967s
+
+on_train_batch_begin: 1615775578.157332s
+
+227 step training time: 0.011823s
+
+on_train_batch_end: 1615775578.168518s
+
+on_train_batch_begin: 1615775578.168880s
+
+228 step training time: 0.011549s
+
+on_train_batch_end: 1615775578.180282s
+
+on_train_batch_begin: 1615775578.180648s
+
+229 step training time: 0.011768s
+
+on_train_batch_end: 1615775578.192086s
+
+on_train_batch_begin: 1615775578.192456s
+
+230 step training time: 0.011808s
+
+59136/60000 [============================>.] - ETA: 0s - loss: 0.0645 - accuracy: 0.9806
+on_train_batch_end: 1615775578.203772s
+
+on_train_batch_begin: 1615775578.204116s
+
+231 step training time: 0.011660s
+
+on_train_batch_end: 1615775578.215315s
+
+on_train_batch_begin: 1615775578.215687s
+
+232 step training time: 0.011571s
+
+on_train_batch_end: 1615775578.227023s
+
+on_train_batch_begin: 1615775578.227391s
+
+233 step training time: 0.011704s
+
+on_train_batch_end: 1615775578.238743s
+
+on_train_batch_begin: 1615775578.238980s
+
+234 step training time: 0.011590s
+
+on_train_batch_end: 1615775578.249442s
+
+on_test_batch_begin: 1615775578.250596s
+
+235 step training time: 0.011616s
+
+60000/60000 [==============================] - 3s 50us/step - loss: 0.0641 - accuracy: 0.9807 - val_loss: 0.0331 - val_accuracy: 0.9892
+
+on_epoch_end: 1615775578.483479s
+
+Validation time: 0.232873s
+
+Real time: 1615775578.483479s
+
+Epoch time: 2.9719021320343018s
+Epoch 5/5
+
+on_epoch_begin: 1615775578.484179s
+
+Real time: 1615775578.484186
+
+on_train_batch_begin: 1615775578.485784s
+
+  256/60000 [..............................] - ETA: 3s - loss: 0.0358 - accuracy: 0.9844
+on_train_batch_end: 1615775578.497115s
+
+on_train_batch_begin: 1615775578.497466s
+
+1 step training time: 0.011683s
+
+on_train_batch_end: 1615775578.508718s
+
+on_train_batch_begin: 1615775578.509083s
+
+2 step training time: 0.011617s
+
+on_train_batch_end: 1615775578.520134s
+
+on_train_batch_begin: 1615775578.520493s
+
+3 step training time: 0.011410s
+
+on_train_batch_end: 1615775578.531966s
+
+on_train_batch_begin: 1615775578.532339s
+
+4 step training time: 0.011846s
+
+on_train_batch_end: 1615775578.543429s
+
+on_train_batch_begin: 1615775578.543784s
+
+5 step training time: 0.011445s
+
+ 1536/60000 [..............................] - ETA: 2s - loss: 0.0738 - accuracy: 0.9792
+on_train_batch_end: 1615775578.554980s
+
+on_train_batch_begin: 1615775578.555327s
+
+6 step training time: 0.011543s
+
+on_train_batch_end: 1615775578.566555s
+
+on_train_batch_begin: 1615775578.566917s
+
+7 step training time: 0.011590s
+
+on_train_batch_end: 1615775578.578607s
+
+on_train_batch_begin: 1615775578.578965s
+
+8 step training time: 0.012048s
+
+on_train_batch_end: 1615775578.590737s
+
+on_train_batch_begin: 1615775578.591115s
+
+9 step training time: 0.012150s
+
+on_train_batch_end: 1615775578.602631s
+
+on_train_batch_begin: 1615775578.602998s
+
+10 step training time: 0.011883s
+
+ 2816/60000 [>.............................] - ETA: 2s - loss: 0.0656 - accuracy: 0.9808
+on_train_batch_end: 1615775578.614434s
+
+on_train_batch_begin: 1615775578.614802s
+
+11 step training time: 0.011804s
+
+on_train_batch_end: 1615775578.626053s
+
+on_train_batch_begin: 1615775578.626417s
+
+12 step training time: 0.011615s
+
+on_train_batch_end: 1615775578.637727s
+
+on_train_batch_begin: 1615775578.638091s
+
+13 step training time: 0.011674s
+
+on_train_batch_end: 1615775578.649358s
+
+on_train_batch_begin: 1615775578.649717s
+
+14 step training time: 0.011626s
+
+on_train_batch_end: 1615775578.661099s
+
+on_train_batch_begin: 1615775578.661468s
+
+15 step training time: 0.011751s
+
+ 4096/60000 [=>............................] - ETA: 2s - loss: 0.0617 - accuracy: 0.9814
+on_train_batch_end: 1615775578.672622s
+
+on_train_batch_begin: 1615775578.672979s
+
+16 step training time: 0.011511s
+
+on_train_batch_end: 1615775578.684243s
+
+on_train_batch_begin: 1615775578.684596s
+
+17 step training time: 0.011617s
+
+on_train_batch_end: 1615775578.695677s
+
+on_train_batch_begin: 1615775578.696039s
+
+18 step training time: 0.011443s
+
+on_train_batch_end: 1615775578.707162s
+
+on_train_batch_begin: 1615775578.707536s
+
+19 step training time: 0.011497s
+
+on_train_batch_end: 1615775578.718970s
+
+on_train_batch_begin: 1615775578.719333s
+
+20 step training time: 0.011797s
+
+ 5376/60000 [=>............................] - ETA: 2s - loss: 0.0560 - accuracy: 0.9831
+on_train_batch_end: 1615775578.730711s
+
+on_train_batch_begin: 1615775578.731068s
+
+21 step training time: 0.011735s
+
+on_train_batch_end: 1615775578.742192s
+
+on_train_batch_begin: 1615775578.742575s
+
+22 step training time: 0.011507s
+
+on_train_batch_end: 1615775578.753678s
+
+on_train_batch_begin: 1615775578.754042s
+
+23 step training time: 0.011467s
+
+on_train_batch_end: 1615775578.765337s
+
+on_train_batch_begin: 1615775578.765695s
+
+24 step training time: 0.011652s
+
+on_train_batch_end: 1615775578.776732s
+
+on_train_batch_begin: 1615775578.777099s
+
+25 step training time: 0.011404s
+
+ 6656/60000 [==>...........................] - ETA: 2s - loss: 0.0527 - accuracy: 0.9844
+on_train_batch_end: 1615775578.788282s
+
+on_train_batch_begin: 1615775578.788650s
+
+26 step training time: 0.011551s
+
+on_train_batch_end: 1615775578.799854s
+
+on_train_batch_begin: 1615775578.800217s
+
+27 step training time: 0.011567s
+
+on_train_batch_end: 1615775578.811575s
+
+on_train_batch_begin: 1615775578.811989s
+
+28 step training time: 0.011772s
+
+on_train_batch_end: 1615775578.823084s
+
+on_train_batch_begin: 1615775578.823447s
+
+29 step training time: 0.011458s
+
+on_train_batch_end: 1615775578.834525s
+
+on_train_batch_begin: 1615775578.834893s
+
+30 step training time: 0.011447s
+
+ 7936/60000 [==>...........................] - ETA: 2s - loss: 0.0529 - accuracy: 0.9840
+on_train_batch_end: 1615775578.846112s
+
+on_train_batch_begin: 1615775578.846462s
+
+31 step training time: 0.011568s
+
+on_train_batch_end: 1615775578.857868s
+
+on_train_batch_begin: 1615775578.858227s
+
+32 step training time: 0.011765s
+
+on_train_batch_end: 1615775578.869546s
+
+on_train_batch_begin: 1615775578.869908s
+
+33 step training time: 0.011681s
+
+on_train_batch_end: 1615775578.881178s
+
+on_train_batch_begin: 1615775578.881539s
+
+34 step training time: 0.011631s
+
+on_train_batch_end: 1615775578.892709s
+
+on_train_batch_begin: 1615775578.893093s
+
+35 step training time: 0.011554s
+
+ 9216/60000 [===>..........................] - ETA: 2s - loss: 0.0579 - accuracy: 0.9831
+on_train_batch_end: 1615775578.904456s
+
+on_train_batch_begin: 1615775578.904807s
+
+36 step training time: 0.011714s
+
+on_train_batch_end: 1615775578.916085s
+
+on_train_batch_begin: 1615775578.916448s
+
+37 step training time: 0.011640s
+
+on_train_batch_end: 1615775578.927624s
+
+on_train_batch_begin: 1615775578.927979s
+
+38 step training time: 0.011531s
+
+on_train_batch_end: 1615775578.939139s
+
+on_train_batch_begin: 1615775578.939510s
+
+39 step training time: 0.011531s
+
+on_train_batch_end: 1615775578.950715s
+
+on_train_batch_begin: 1615775578.951071s
+
+40 step training time: 0.011561s
+
+10496/60000 [====>.........................] - ETA: 2s - loss: 0.0582 - accuracy: 0.9831
+on_train_batch_end: 1615775578.962264s
+
+on_train_batch_begin: 1615775578.962641s
+
+41 step training time: 0.011570s
+
+on_train_batch_end: 1615775578.973708s
+
+on_train_batch_begin: 1615775578.974058s
+
+42 step training time: 0.011417s
+
+on_train_batch_end: 1615775578.985429s
+
+on_train_batch_begin: 1615775578.985795s
+
+43 step training time: 0.011737s
+
+on_train_batch_end: 1615775578.996808s
+
+on_train_batch_begin: 1615775578.997166s
+
+44 step training time: 0.011371s
+
+on_train_batch_end: 1615775579.008547s
+
+on_train_batch_begin: 1615775579.008914s
+
+45 step training time: 0.011748s
+
+11776/60000 [====>.........................] - ETA: 2s - loss: 0.0557 - accuracy: 0.9839
+on_train_batch_end: 1615775579.020160s
+
+on_train_batch_begin: 1615775579.020503s
+
+46 step training time: 0.011589s
+
+on_train_batch_end: 1615775579.031535s
+
+on_train_batch_begin: 1615775579.031924s
+
+47 step training time: 0.011420s
+
+on_train_batch_end: 1615775579.043136s
+
+on_train_batch_begin: 1615775579.043490s
+
+48 step training time: 0.011566s
+
+on_train_batch_end: 1615775579.054401s
+
+on_train_batch_begin: 1615775579.054779s
+
+49 step training time: 0.011289s
+
+on_train_batch_end: 1615775579.065753s
+
+on_train_batch_begin: 1615775579.066106s
+
+50 step training time: 0.011327s
+
+13056/60000 [=====>........................] - ETA: 2s - loss: 0.0558 - accuracy: 0.9839
+on_train_batch_end: 1615775579.077248s
+
+on_train_batch_begin: 1615775579.077594s
+
+51 step training time: 0.011488s
+
+on_train_batch_end: 1615775579.088945s
+
+on_train_batch_begin: 1615775579.089302s
+
+52 step training time: 0.011708s
+
+on_train_batch_end: 1615775579.100492s
+
+on_train_batch_begin: 1615775579.100852s
+
+53 step training time: 0.011549s
+
+on_train_batch_end: 1615775579.112115s
+
+on_train_batch_begin: 1615775579.112484s
+
+54 step training time: 0.011632s
+
+on_train_batch_end: 1615775579.123554s
+
+on_train_batch_begin: 1615775579.123928s
+
+55 step training time: 0.011444s
+
+14336/60000 [======>.......................] - ETA: 2s - loss: 0.0552 - accuracy: 0.9841
+on_train_batch_end: 1615775579.135174s
+
+on_train_batch_begin: 1615775579.135516s
+
+56 step training time: 0.011588s
+
+on_train_batch_end: 1615775579.146852s
+
+on_train_batch_begin: 1615775579.147209s
+
+57 step training time: 0.011693s
+
+on_train_batch_end: 1615775579.158423s
+
+on_train_batch_begin: 1615775579.158789s
+
+58 step training time: 0.011580s
+
+on_train_batch_end: 1615775579.169894s
+
+on_train_batch_begin: 1615775579.170260s
+
+59 step training time: 0.011471s
+
+on_train_batch_end: 1615775579.181774s
+
+on_train_batch_begin: 1615775579.182164s
+
+60 step training time: 0.011903s
+
+15616/60000 [======>.......................] - ETA: 2s - loss: 0.0547 - accuracy: 0.9842
+on_train_batch_end: 1615775579.193366s
+
+on_train_batch_begin: 1615775579.193707s
+
+61 step training time: 0.011544s
+
+on_train_batch_end: 1615775579.204911s
+
+on_train_batch_begin: 1615775579.205265s
+
+62 step training time: 0.011557s
+
+on_train_batch_end: 1615775579.216257s
+
+on_train_batch_begin: 1615775579.216614s
+
+63 step training time: 0.011349s
+
+on_train_batch_end: 1615775579.227745s
+
+on_train_batch_begin: 1615775579.228107s
+
+64 step training time: 0.011493s
+
+on_train_batch_end: 1615775579.239196s
+
+on_train_batch_begin: 1615775579.239560s
+
+65 step training time: 0.011453s
+
+16896/60000 [=======>......................] - ETA: 1s - loss: 0.0539 - accuracy: 0.9840
+on_train_batch_end: 1615775579.250931s
+
+on_train_batch_begin: 1615775579.251276s
+
+66 step training time: 0.011716s
+
+on_train_batch_end: 1615775579.262388s
+
+on_train_batch_begin: 1615775579.262779s
+
+67 step training time: 0.011503s
+
+on_train_batch_end: 1615775579.274044s
+
+on_train_batch_begin: 1615775579.274399s
+
+68 step training time: 0.011620s
+
+on_train_batch_end: 1615775579.285620s
+
+on_train_batch_begin: 1615775579.285980s
+
+69 step training time: 0.011581s
+
+on_train_batch_end: 1615775579.297131s
+
+on_train_batch_begin: 1615775579.297497s
+
+70 step training time: 0.011518s
+
+18176/60000 [========>.....................] - ETA: 1s - loss: 0.0542 - accuracy: 0.9839
+on_train_batch_end: 1615775579.308553s
+
+on_train_batch_begin: 1615775579.308901s
+
+71 step training time: 0.011404s
+
+on_train_batch_end: 1615775579.319847s
+
+on_train_batch_begin: 1615775579.320206s
+
+72 step training time: 0.011306s
+
+on_train_batch_end: 1615775579.331341s
+
+on_train_batch_begin: 1615775579.331722s
+
+73 step training time: 0.011516s
+
+on_train_batch_end: 1615775579.343229s
+
+on_train_batch_begin: 1615775579.343599s
+
+74 step training time: 0.011876s
+
+on_train_batch_end: 1615775579.354914s
+
+on_train_batch_begin: 1615775579.355282s
+
+75 step training time: 0.011683s
+
+19456/60000 [========>.....................] - ETA: 1s - loss: 0.0550 - accuracy: 0.9837
+on_train_batch_end: 1615775579.366417s
+
+on_train_batch_begin: 1615775579.366779s
+
+76 step training time: 0.011497s
+
+on_train_batch_end: 1615775579.377397s
+
+on_train_batch_begin: 1615775579.377746s
+
+77 step training time: 0.010967s
+
+on_train_batch_end: 1615775579.388694s
+
+on_train_batch_begin: 1615775579.389047s
+
+78 step training time: 0.011302s
+
+on_train_batch_end: 1615775579.400073s
+
+on_train_batch_begin: 1615775579.400422s
+
+79 step training time: 0.011374s
+
+on_train_batch_end: 1615775579.411697s
+
+on_train_batch_begin: 1615775579.412088s
+
+80 step training time: 0.011667s
+
+20736/60000 [=========>....................] - ETA: 1s - loss: 0.0538 - accuracy: 0.9838
+on_train_batch_end: 1615775579.423493s
+
+on_train_batch_begin: 1615775579.423833s
+
+81 step training time: 0.011745s
+
+on_train_batch_end: 1615775579.435037s
+
+on_train_batch_begin: 1615775579.435396s
+
+82 step training time: 0.011563s
+
+on_train_batch_end: 1615775579.446535s
+
+on_train_batch_begin: 1615775579.446892s
+
+83 step training time: 0.011496s
+
+on_train_batch_end: 1615775579.457930s
+
+on_train_batch_begin: 1615775579.458286s
+
+84 step training time: 0.011394s
+
+on_train_batch_end: 1615775579.469314s
+
+on_train_batch_begin: 1615775579.469676s
+
+85 step training time: 0.011390s
+
+22016/60000 [==========>...................] - ETA: 1s - loss: 0.0536 - accuracy: 0.9838
+on_train_batch_end: 1615775579.480983s
+
+on_train_batch_begin: 1615775579.481323s
+
+86 step training time: 0.011647s
+
+on_train_batch_end: 1615775579.492589s
+
+on_train_batch_begin: 1615775579.492955s
+
+87 step training time: 0.011632s
+
+on_train_batch_end: 1615775579.503716s
+
+on_train_batch_begin: 1615775579.504075s
+
+88 step training time: 0.011120s
+
+on_train_batch_end: 1615775579.515165s
+
+on_train_batch_begin: 1615775579.515525s
+
+89 step training time: 0.011451s
+
+on_train_batch_end: 1615775579.526968s
+
+on_train_batch_begin: 1615775579.527324s
+
+90 step training time: 0.011799s
+
+23296/60000 [==========>...................] - ETA: 1s - loss: 0.0536 - accuracy: 0.9839
+on_train_batch_end: 1615775579.538381s
+
+on_train_batch_begin: 1615775579.538746s
+
+91 step training time: 0.011421s
+
+on_train_batch_end: 1615775579.549835s
+
+on_train_batch_begin: 1615775579.550197s
+
+92 step training time: 0.011451s
+
+on_train_batch_end: 1615775579.561471s
+
+on_train_batch_begin: 1615775579.561850s
+
+93 step training time: 0.011653s
+
+on_train_batch_end: 1615775579.572777s
+
+on_train_batch_begin: 1615775579.573152s
+
+94 step training time: 0.011302s
+
+on_train_batch_end: 1615775579.584439s
+
+on_train_batch_begin: 1615775579.584796s
+
+95 step training time: 0.011644s
+
+24576/60000 [===========>..................] - ETA: 1s - loss: 0.0533 - accuracy: 0.9840
+on_train_batch_end: 1615775579.596085s
+
+on_train_batch_begin: 1615775579.596432s
+
+96 step training time: 0.011636s
+
+on_train_batch_end: 1615775579.607491s
+
+on_train_batch_begin: 1615775579.607847s
+
+97 step training time: 0.011415s
+
+on_train_batch_end: 1615775579.618888s
+
+on_train_batch_begin: 1615775579.619244s
+
+98 step training time: 0.011397s
+
+on_train_batch_end: 1615775579.630500s
+
+on_train_batch_begin: 1615775579.630861s
+
+99 step training time: 0.011617s
+
+on_train_batch_end: 1615775579.642080s
+
+on_train_batch_begin: 1615775579.642445s
+
+100 step training time: 0.011584s
+
+25856/60000 [===========>..................] - ETA: 1s - loss: 0.0538 - accuracy: 0.9838
+on_train_batch_end: 1615775579.653158s
+
+on_train_batch_begin: 1615775579.653503s
+
+101 step training time: 0.011058s
+
+on_train_batch_end: 1615775579.664665s
+
+on_train_batch_begin: 1615775579.665016s
+
+102 step training time: 0.011513s
+
+on_train_batch_end: 1615775579.676112s
+
+on_train_batch_begin: 1615775579.676465s
+
+103 step training time: 0.011449s
+
+on_train_batch_end: 1615775579.687456s
+
+on_train_batch_begin: 1615775579.687808s
+
+104 step training time: 0.011343s
+
+on_train_batch_end: 1615775579.699040s
+
+on_train_batch_begin: 1615775579.699413s
+
+105 step training time: 0.011605s
+
+27136/60000 [============>.................] - ETA: 1s - loss: 0.0533 - accuracy: 0.9840
+on_train_batch_end: 1615775579.710839s
+
+on_train_batch_begin: 1615775579.711183s
+
+106 step training time: 0.011770s
+
+on_train_batch_end: 1615775579.722181s
+
+on_train_batch_begin: 1615775579.722562s
+
+107 step training time: 0.011379s
+
+on_train_batch_end: 1615775579.733936s
+
+on_train_batch_begin: 1615775579.734300s
+
+108 step training time: 0.011738s
+
+on_train_batch_end: 1615775579.745467s
+
+on_train_batch_begin: 1615775579.745833s
+
+109 step training time: 0.011533s
+
+on_train_batch_end: 1615775579.756567s
+
+on_train_batch_begin: 1615775579.756939s
+
+110 step training time: 0.011106s
+
+28416/60000 [=============>................] - ETA: 1s - loss: 0.0543 - accuracy: 0.9836
+on_train_batch_end: 1615775579.768356s
+
+on_train_batch_begin: 1615775579.768706s
+
+111 step training time: 0.011767s
+
+on_train_batch_end: 1615775579.779854s
+
+on_train_batch_begin: 1615775579.780208s
+
+112 step training time: 0.011502s
+
+on_train_batch_end: 1615775579.791457s
+
+on_train_batch_begin: 1615775579.791814s
+
+113 step training time: 0.011606s
+
+on_train_batch_end: 1615775579.803540s
+
+on_train_batch_begin: 1615775579.803915s
+
+114 step training time: 0.012101s
+
+on_train_batch_end: 1615775579.814519s
+
+on_train_batch_begin: 1615775579.814886s
+
+115 step training time: 0.010971s
+
+29696/60000 [=============>................] - ETA: 1s - loss: 0.0542 - accuracy: 0.9837
+on_train_batch_end: 1615775579.825769s
+
+on_train_batch_begin: 1615775579.826115s
+
+116 step training time: 0.011230s
+
+on_train_batch_end: 1615775579.837695s
+
+on_train_batch_begin: 1615775579.838058s
+
+117 step training time: 0.011943s
+
+on_train_batch_end: 1615775579.849399s
+
+on_train_batch_begin: 1615775579.849770s
+
+118 step training time: 0.011711s
+
+on_train_batch_end: 1615775579.861045s
+
+on_train_batch_begin: 1615775579.861402s
+
+119 step training time: 0.011632s
+
+on_train_batch_end: 1615775579.872427s
+
+on_train_batch_begin: 1615775579.872788s
+
+120 step training time: 0.011386s
+
+30976/60000 [==============>...............] - ETA: 1s - loss: 0.0541 - accuracy: 0.9836
+on_train_batch_end: 1615775579.883945s
+
+on_train_batch_begin: 1615775579.884291s
+
+121 step training time: 0.011503s
+
+on_train_batch_end: 1615775579.895404s
+
+on_train_batch_begin: 1615775579.895758s
+
+122 step training time: 0.011467s
+
+on_train_batch_end: 1615775579.906809s
+
+on_train_batch_begin: 1615775579.907175s
+
+123 step training time: 0.011417s
+
+on_train_batch_end: 1615775579.918441s
+
+on_train_batch_begin: 1615775579.918812s
+
+124 step training time: 0.011637s
+
+on_train_batch_end: 1615775579.930073s
+
+on_train_batch_begin: 1615775579.930437s
+
+125 step training time: 0.011626s
+
+32256/60000 [===============>..............] - ETA: 1s - loss: 0.0546 - accuracy: 0.9836
+on_train_batch_end: 1615775579.941609s
+
+on_train_batch_begin: 1615775579.941984s
+
+126 step training time: 0.011546s
+
+on_train_batch_end: 1615775579.953006s
+
+on_train_batch_begin: 1615775579.953374s
+
+127 step training time: 0.011391s
+
+on_train_batch_end: 1615775579.964721s
+
+on_train_batch_begin: 1615775579.965076s
+
+128 step training time: 0.011702s
+
+on_train_batch_end: 1615775579.976448s
+
+on_train_batch_begin: 1615775579.976800s
+
+129 step training time: 0.011724s
+
+on_train_batch_end: 1615775579.987923s
+
+on_train_batch_begin: 1615775579.988281s
+
+130 step training time: 0.011481s
+
+33536/60000 [===============>..............] - ETA: 1s - loss: 0.0551 - accuracy: 0.9835
+on_train_batch_end: 1615775579.999697s
+
+on_train_batch_begin: 1615775580.000047s
+
+131 step training time: 0.011766s
+
+on_train_batch_end: 1615775580.011380s
+
+on_train_batch_begin: 1615775580.011733s
+
+132 step training time: 0.011686s
+
+on_train_batch_end: 1615775580.022961s
+
+on_train_batch_begin: 1615775580.023329s
+
+133 step training time: 0.011597s
+
+on_train_batch_end: 1615775580.034633s
+
+on_train_batch_begin: 1615775580.034988s
+
+134 step training time: 0.011658s
+
+on_train_batch_end: 1615775580.046046s
+
+on_train_batch_begin: 1615775580.046405s
+
+135 step training time: 0.011418s
+
+34816/60000 [================>.............] - ETA: 1s - loss: 0.0549 - accuracy: 0.9833
+on_train_batch_end: 1615775580.057226s
+
+on_train_batch_begin: 1615775580.057570s
+
+136 step training time: 0.011164s
+
+on_train_batch_end: 1615775580.068841s
+
+on_train_batch_begin: 1615775580.069199s
+
+137 step training time: 0.011629s
+
+on_train_batch_end: 1615775580.080391s
+
+on_train_batch_begin: 1615775580.080743s
+
+138 step training time: 0.011545s
+
+on_train_batch_end: 1615775580.091764s
+
+on_train_batch_begin: 1615775580.092165s
+
+139 step training time: 0.011421s
+
+on_train_batch_end: 1615775580.103161s
+
+on_train_batch_begin: 1615775580.103515s
+
+140 step training time: 0.011351s
+
+36096/60000 [=================>............] - ETA: 1s - loss: 0.0546 - accuracy: 0.9833
+on_train_batch_end: 1615775580.115042s
+
+on_train_batch_begin: 1615775580.115386s
+
+141 step training time: 0.011870s
+
+on_train_batch_end: 1615775580.126631s
+
+on_train_batch_begin: 1615775580.126988s
+
+142 step training time: 0.011602s
+
+on_train_batch_end: 1615775580.138149s
+
+on_train_batch_begin: 1615775580.138525s
+
+143 step training time: 0.011537s
+
+on_train_batch_end: 1615775580.149617s
+
+on_train_batch_begin: 1615775580.149985s
+
+144 step training time: 0.011461s
+
+on_train_batch_end: 1615775580.161267s
+
+on_train_batch_begin: 1615775580.161622s
+
+145 step training time: 0.011637s
+
+37376/60000 [=================>............] - ETA: 1s - loss: 0.0540 - accuracy: 0.9835
+on_train_batch_end: 1615775580.173108s
+
+on_train_batch_begin: 1615775580.173445s
+
+146 step training time: 0.011823s
+
+on_train_batch_end: 1615775580.184661s
+
+on_train_batch_begin: 1615775580.185019s
+
+147 step training time: 0.011574s
+
+on_train_batch_end: 1615775580.196275s
+
+on_train_batch_begin: 1615775580.196628s
+
+148 step training time: 0.011609s
+
+on_train_batch_end: 1615775580.207887s
+
+on_train_batch_begin: 1615775580.208248s
+
+149 step training time: 0.011620s
+
+on_train_batch_end: 1615775580.219703s
+
+on_train_batch_begin: 1615775580.220076s
+
+150 step training time: 0.011828s
+
+38656/60000 [==================>...........] - ETA: 0s - loss: 0.0541 - accuracy: 0.9835
+on_train_batch_end: 1615775580.231576s
+
+on_train_batch_begin: 1615775580.231952s
+
+151 step training time: 0.011877s
+
+on_train_batch_end: 1615775580.243134s
+
+on_train_batch_begin: 1615775580.243490s
+
+152 step training time: 0.011537s
+
+on_train_batch_end: 1615775580.254640s
+
+on_train_batch_begin: 1615775580.254996s
+
+153 step training time: 0.011506s
+
+on_train_batch_end: 1615775580.266333s
+
+on_train_batch_begin: 1615775580.266707s
+
+154 step training time: 0.011711s
+
+on_train_batch_end: 1615775580.277901s
+
+on_train_batch_begin: 1615775580.278254s
+
+155 step training time: 0.011546s
+
+39936/60000 [==================>...........] - ETA: 0s - loss: 0.0547 - accuracy: 0.9834
+on_train_batch_end: 1615775580.289469s
+
+on_train_batch_begin: 1615775580.289813s
+
+156 step training time: 0.011559s
+
+on_train_batch_end: 1615775580.301082s
+
+on_train_batch_begin: 1615775580.301461s
+
+157 step training time: 0.011648s
+
+on_train_batch_end: 1615775580.312500s
+
+on_train_batch_begin: 1615775580.312860s
+
+158 step training time: 0.011399s
+
+on_train_batch_end: 1615775580.324023s
+
+on_train_batch_begin: 1615775580.324382s
+
+159 step training time: 0.011522s
+
+on_train_batch_end: 1615775580.335634s
+
+on_train_batch_begin: 1615775580.335987s
+
+160 step training time: 0.011605s
+
+41216/60000 [===================>..........] - ETA: 0s - loss: 0.0546 - accuracy: 0.9834
+on_train_batch_end: 1615775580.347296s
+
+on_train_batch_begin: 1615775580.347637s
+
+161 step training time: 0.011650s
+
+on_train_batch_end: 1615775580.359026s
+
+on_train_batch_begin: 1615775580.359392s
+
+162 step training time: 0.011755s
+
+on_train_batch_end: 1615775580.370771s
+
+on_train_batch_begin: 1615775580.371134s
+
+163 step training time: 0.011742s
+
+on_train_batch_end: 1615775580.382222s
+
+on_train_batch_begin: 1615775580.382615s
+
+164 step training time: 0.011481s
+
+on_train_batch_end: 1615775580.393858s
+
+on_train_batch_begin: 1615775580.394217s
+
+165 step training time: 0.011602s
+
+42496/60000 [====================>.........] - ETA: 0s - loss: 0.0543 - accuracy: 0.9834
+on_train_batch_end: 1615775580.405675s
+
+on_train_batch_begin: 1615775580.406020s
+
+166 step training time: 0.011803s
+
+on_train_batch_end: 1615775580.417799s
+
+on_train_batch_begin: 1615775580.418157s
+
+167 step training time: 0.012137s
+
+on_train_batch_end: 1615775580.429517s
+
+on_train_batch_begin: 1615775580.429873s
+
+168 step training time: 0.011716s
+
+on_train_batch_end: 1615775580.441137s
+
+on_train_batch_begin: 1615775580.441500s
+
+169 step training time: 0.011627s
+
+on_train_batch_end: 1615775580.452973s
+
+on_train_batch_begin: 1615775580.453346s
+
+170 step training time: 0.011845s
+
+43776/60000 [====================>.........] - ETA: 0s - loss: 0.0543 - accuracy: 0.9834
+on_train_batch_end: 1615775580.464367s
+
+on_train_batch_begin: 1615775580.464709s
+
+171 step training time: 0.011364s
+
+on_train_batch_end: 1615775580.475906s
+
+on_train_batch_begin: 1615775580.476267s
+
+172 step training time: 0.011558s
+
+on_train_batch_end: 1615775580.487314s
+
+on_train_batch_begin: 1615775580.487679s
+
+173 step training time: 0.011412s
+
+on_train_batch_end: 1615775580.499142s
+
+on_train_batch_begin: 1615775580.499499s
+
+174 step training time: 0.011820s
+
+on_train_batch_end: 1615775580.510977s
+
+on_train_batch_begin: 1615775580.511345s
+
+175 step training time: 0.011847s
+
+45056/60000 [=====================>........] - ETA: 0s - loss: 0.0541 - accuracy: 0.9834
+on_train_batch_end: 1615775580.522815s
+
+on_train_batch_begin: 1615775580.523177s
+
+176 step training time: 0.011831s
+
+on_train_batch_end: 1615775580.534271s
+
+on_train_batch_begin: 1615775580.534647s
+
+177 step training time: 0.011470s
+
+on_train_batch_end: 1615775580.545825s
+
+on_train_batch_begin: 1615775580.546185s
+
+178 step training time: 0.011538s
+
+on_train_batch_end: 1615775580.557207s
+
+on_train_batch_begin: 1615775580.557570s
+
+179 step training time: 0.011385s
+
+on_train_batch_end: 1615775580.569189s
+
+on_train_batch_begin: 1615775580.569547s
+
+180 step training time: 0.011977s
+
+46336/60000 [======================>.......] - ETA: 0s - loss: 0.0543 - accuracy: 0.9834
+on_train_batch_end: 1615775580.580758s
+
+on_train_batch_begin: 1615775580.581110s
+
+181 step training time: 0.011563s
+
+on_train_batch_end: 1615775580.592351s
+
+on_train_batch_begin: 1615775580.592698s
+
+182 step training time: 0.011588s
+
+on_train_batch_end: 1615775580.603901s
+
+on_train_batch_begin: 1615775580.604262s
+
+183 step training time: 0.011564s
+
+on_train_batch_end: 1615775580.615438s
+
+on_train_batch_begin: 1615775580.615796s
+
+184 step training time: 0.011534s
+
+on_train_batch_end: 1615775580.626875s
+
+on_train_batch_begin: 1615775580.627234s
+
+185 step training time: 0.011437s
+
+47616/60000 [======================>.......] - ETA: 0s - loss: 0.0545 - accuracy: 0.9834
+on_train_batch_end: 1615775580.638587s
+
+on_train_batch_begin: 1615775580.638934s
+
+186 step training time: 0.011700s
+
+on_train_batch_end: 1615775580.650563s
+
+on_train_batch_begin: 1615775580.650922s
+
+187 step training time: 0.011988s
+
+on_train_batch_end: 1615775580.662116s
+
+on_train_batch_begin: 1615775580.662501s
+
+188 step training time: 0.011579s
+
+on_train_batch_end: 1615775580.673613s
+
+on_train_batch_begin: 1615775580.673973s
+
+189 step training time: 0.011472s
+
+on_train_batch_end: 1615775580.685318s
+
+on_train_batch_begin: 1615775580.685676s
+
+190 step training time: 0.011703s
+
+48896/60000 [=======================>......] - ETA: 0s - loss: 0.0543 - accuracy: 0.9834
+on_train_batch_end: 1615775580.697039s
+
+on_train_batch_begin: 1615775580.697379s
+
+191 step training time: 0.011703s
+
+on_train_batch_end: 1615775580.709036s
+
+on_train_batch_begin: 1615775580.709390s
+
+192 step training time: 0.012011s
+
+on_train_batch_end: 1615775580.720516s
+
+on_train_batch_begin: 1615775580.720878s
+
+193 step training time: 0.011488s
+
+on_train_batch_end: 1615775580.732060s
+
+on_train_batch_begin: 1615775580.732426s
+
+194 step training time: 0.011548s
+
+on_train_batch_end: 1615775580.743670s
+
+on_train_batch_begin: 1615775580.744031s
+
+195 step training time: 0.011606s
+
+50176/60000 [========================>.....] - ETA: 0s - loss: 0.0545 - accuracy: 0.9833
+on_train_batch_end: 1615775580.755179s
+
+on_train_batch_begin: 1615775580.755527s
+
+196 step training time: 0.011496s
+
+on_train_batch_end: 1615775580.766870s
+
+on_train_batch_begin: 1615775580.767225s
+
+197 step training time: 0.011698s
+
+on_train_batch_end: 1615775580.778668s
+
+on_train_batch_begin: 1615775580.779027s
+
+198 step training time: 0.011802s
+
+on_train_batch_end: 1615775580.790344s
+
+on_train_batch_begin: 1615775580.790721s
+
+199 step training time: 0.011694s
+
+on_train_batch_end: 1615775580.802072s
+
+on_train_batch_begin: 1615775580.802505s
+
+200 step training time: 0.011785s
+
+51456/60000 [========================>.....] - ETA: 0s - loss: 0.0544 - accuracy: 0.9834
+on_train_batch_end: 1615775580.813913s
+
+on_train_batch_begin: 1615775580.814273s
+
+201 step training time: 0.011767s
+
+on_train_batch_end: 1615775580.825662s
+
+on_train_batch_begin: 1615775580.826031s
+
+202 step training time: 0.011758s
+
+on_train_batch_end: 1615775580.837187s
+
+on_train_batch_begin: 1615775580.837556s
+
+203 step training time: 0.011525s
+
+on_train_batch_end: 1615775580.848927s
+
+on_train_batch_begin: 1615775580.849292s
+
+204 step training time: 0.011736s
+
+on_train_batch_end: 1615775580.860532s
+
+on_train_batch_begin: 1615775580.860890s
+
+205 step training time: 0.011598s
+
+52736/60000 [=========================>....] - ETA: 0s - loss: 0.0549 - accuracy: 0.9833
+on_train_batch_end: 1615775580.871900s
+
+on_train_batch_begin: 1615775580.872262s
+
+206 step training time: 0.011372s
+
+on_train_batch_end: 1615775580.883622s
+
+on_train_batch_begin: 1615775580.883988s
+
+207 step training time: 0.011726s
+
+on_train_batch_end: 1615775580.895097s
+
+on_train_batch_begin: 1615775580.895462s
+
+208 step training time: 0.011474s
+
+on_train_batch_end: 1615775580.906605s
+
+on_train_batch_begin: 1615775580.906964s
+
+209 step training time: 0.011503s
+
+on_train_batch_end: 1615775580.918749s
+
+on_train_batch_begin: 1615775580.919126s
+
+210 step training time: 0.012161s
+
+54016/60000 [==========================>...] - ETA: 0s - loss: 0.0549 - accuracy: 0.9832
+on_train_batch_end: 1615775580.930317s
+
+on_train_batch_begin: 1615775580.930708s
+
+211 step training time: 0.011583s
+
+on_train_batch_end: 1615775580.941976s
+
+on_train_batch_begin: 1615775580.942350s
+
+212 step training time: 0.011642s
+
+on_train_batch_end: 1615775580.953627s
+
+on_train_batch_begin: 1615775580.954001s
+
+213 step training time: 0.011650s
+
+on_train_batch_end: 1615775580.965540s
+
+on_train_batch_begin: 1615775580.965917s
+
+214 step training time: 0.011916s
+
+on_train_batch_end: 1615775580.977300s
+
+on_train_batch_begin: 1615775580.977671s
+
+215 step training time: 0.011754s
+
+55296/60000 [==========================>...] - ETA: 0s - loss: 0.0546 - accuracy: 0.9832
+on_train_batch_end: 1615775580.989037s
+
+on_train_batch_begin: 1615775580.989385s
+
+216 step training time: 0.011714s
+
+on_train_batch_end: 1615775581.000834s
+
+on_train_batch_begin: 1615775581.001191s
+
+217 step training time: 0.011806s
+
+on_train_batch_end: 1615775581.012484s
+
+on_train_batch_begin: 1615775581.012866s
+
+218 step training time: 0.011675s
+
+on_train_batch_end: 1615775581.024288s
+
+on_train_batch_begin: 1615775581.024677s
+
+219 step training time: 0.011811s
+
+on_train_batch_end: 1615775581.036034s
+
+on_train_batch_begin: 1615775581.036401s
+
+220 step training time: 0.011724s
+
+56576/60000 [===========================>..] - ETA: 0s - loss: 0.0549 - accuracy: 0.9832
+on_train_batch_end: 1615775581.047654s
+
+on_train_batch_begin: 1615775581.048009s
+
+221 step training time: 0.011609s
+
+on_train_batch_end: 1615775581.059363s
+
+on_train_batch_begin: 1615775581.059736s
+
+222 step training time: 0.011727s
+
+on_train_batch_end: 1615775581.071096s
+
+on_train_batch_begin: 1615775581.071480s
+
+223 step training time: 0.011743s
+
+on_train_batch_end: 1615775581.082845s
+
+on_train_batch_begin: 1615775581.083231s
+
+224 step training time: 0.011752s
+
+on_train_batch_end: 1615775581.094763s
+
+on_train_batch_begin: 1615775581.095164s
+
+225 step training time: 0.011932s
+
+57856/60000 [===========================>..] - ETA: 0s - loss: 0.0549 - accuracy: 0.9832
+on_train_batch_end: 1615775581.106651s
+
+on_train_batch_begin: 1615775581.107024s
+
+226 step training time: 0.011860s
+
+on_train_batch_end: 1615775581.118256s
+
+on_train_batch_begin: 1615775581.118708s
+
+227 step training time: 0.011684s
+
+on_train_batch_end: 1615775581.130417s
+
+on_train_batch_begin: 1615775581.130860s
+
+228 step training time: 0.012151s
+
+on_train_batch_end: 1615775581.142189s
+
+on_train_batch_begin: 1615775581.142602s
+
+229 step training time: 0.011743s
+
+on_train_batch_end: 1615775581.153899s
+
+on_train_batch_begin: 1615775581.154272s
+
+230 step training time: 0.011670s
+
+59136/60000 [============================>.] - ETA: 0s - loss: 0.0548 - accuracy: 0.9832
+on_train_batch_end: 1615775581.165565s
+
+on_train_batch_begin: 1615775581.165928s
+
+231 step training time: 0.011656s
+
+on_train_batch_end: 1615775581.177462s
+
+on_train_batch_begin: 1615775581.177841s
+
+232 step training time: 0.011914s
+
+on_train_batch_end: 1615775581.189492s
+
+on_train_batch_begin: 1615775581.189865s
+
+233 step training time: 0.012023s
+
+on_train_batch_end: 1615775581.201026s
+
+on_train_batch_begin: 1615775581.201263s
+
+234 step training time: 0.011399s
+
+on_train_batch_end: 1615775581.211201s
+
+on_test_batch_begin: 1615775581.212407s
+
+235 step training time: 0.011143s
+
+60000/60000 [==============================] - 3s 49us/step - loss: 0.0546 - accuracy: 0.9833 - val_loss: 0.0376 - val_accuracy: 0.9877
+
+on_epoch_end: 1615775581.445159s
+
+Validation time: 0.232741s
+
+Real time: 1615775581.445159s
+
+Epoch time: 2.9609811305999756s
+Duracao do treinamento: 26.926759719848633
+Test loss: 0.03755132726860175
+Test accuracy: 0.9876999855041504
+
+Training complete.
